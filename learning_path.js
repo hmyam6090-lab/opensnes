@@ -10,17 +10,19 @@ var learning_path =
       [ "Stage 6 — \"Can I finish and ship?\"", "learning_path.html#stage-6--can-i-finish-and-ship", [
         [ "More horsepower — the cartridge coprocessors", "learning_path.html#more-horsepower--the-cartridge-coprocessors", null ],
         [ "What you'll learn", "examples_text_print_string.html#what-youll-learn-35", null ],
-        [ "SNES concepts", "examples_text_print_string.html#snes-concepts-51", null ],
-        [ "How to build", "examples_text_print_string.html#how-to-build-20", null ],
-        [ "Modules used", "examples_text_print_string.html#modules-used-72", null ],
+        [ "SNES concepts", "examples_text_print_string.html#snes-concepts-53", null ],
+        [ "How to build", "examples_text_print_string.html#how-to-build-22", null ],
+        [ "Modules used", "examples_text_print_string.html#modules-used-74", null ],
         [ "Next rung", "examples_text_print_string.html#next-rung", null ]
       ] ]
     ] ],
     [ "Scroll a message", "examples_text_scroll_message.html", null ],
+    [ "Pixel Text", "examples_text_pixel_text.html", null ],
     [ "Mode 1 Example", "examples_backgrounds_mode1.html", null ],
     [ "Simple Sprite -- Your First OAM Sprite", "examples_sprites_simple_sprite.html", null ],
     [ "Animated Sprite -- Direction States and Sprite Sheets", "examples_sprites_animated_sprite.html", null ],
     [ "sprite_swarm — a bouncing swarm, and the OAM throughput ceiling", "examples_sprites_sprite_swarm.html", null ],
+    [ "World Sprites", "examples_sprites_world_sprites.html", null ],
     [ "Fundamentals: how a glyph is drawn", "examples_fundamentals_text_glyphs.html", null ],
     [ "Controller Input", "examples_input_controller.html", null ],
     [ "Two Players Example", "examples_input_two_players.html", null ],

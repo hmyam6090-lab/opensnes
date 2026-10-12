@@ -126,19 +126,22 @@ $(function(){initNavTree('tutorial_sa1.html','',''); });
 <h2 class="doxsection"><a class="anchor" id="what-is-sa-1"></a>
 What Is SA-1?</h2>
 <p>The SA-1 is a <b>65c816 clone</b> clocked at 10.74 MHz (vs 3.58 MHz for the main CPU). It shares the same instruction set, so you already know how to program it — in assembly: the SDK does not run C on it, because the C runtime lives in work RAM, which the SA-1 cannot see (table below).</p>
-<p><b>How fast it really runs depends on memory, not on the clock.</b> The higan SA-1 speed tests measured (<a href="https://gitlab.com/higan/snes-test-roms">higan test ROMs</a>, "SA-1 Speed Test"):</p>
+<p><b>How fast it really runs depends on memory, not on the clock.</b> The SA-1 Speed Test of the <a href="https://gitlab.com/higan/snes-test-roms">higan test ROMs</a> was photographed running on a real console (one console, one board: 1L8B-10). Read off those photographs:</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Main CPU runs from  </th><th class="markdownTableHeadNone">SA-1 runs from  </th><th class="markdownTableHeadNone">SA-1 effective speed  </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">WRAM or ROM  </td><td class="markdownTableBodyNone">I-RAM  </td><td class="markdownTableBodyNone">~10.7 MHz (~3.7 MHz if the main CPU also works in I-RAM)  </td></tr>
+<td class="markdownTableBodyNone">WRAM  </td><td class="markdownTableBodyNone">I-RAM  </td><td class="markdownTableBodyNone">10.74 MHz  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">WRAM  </td><td class="markdownTableBodyNone">ROM  </td><td class="markdownTableBodyNone">~10 MHz  </td></tr>
+<td class="markdownTableBodyNone">I-RAM  </td><td class="markdownTableBodyNone">I-RAM  </td><td class="markdownTableBodyNone">3.72 MHz  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">ROM  </td><td class="markdownTableBodyNone">ROM  </td><td class="markdownTableBodyNone">**~5.4 MHz** — the two CPUs share the ROM bus  </td></tr>
+<td class="markdownTableBodyNone">WRAM  </td><td class="markdownTableBodyNone">ROM  </td><td class="markdownTableBodyNone">10.07 MHz (7.67 across a <span class="tt">JMP</span>)  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">any  </td><td class="markdownTableBodyNone">BW-RAM  </td><td class="markdownTableBodyNone">~5.4 MHz, ~2.7 MHz if both use BW-RAM  </td></tr>
+<td class="markdownTableBodyNone">ROM  </td><td class="markdownTableBodyNone">ROM  </td><td class="markdownTableBodyNone"><b>5.04 MHz</b> — the two CPUs share the ROM bus  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">BW-RAM  </td><td class="markdownTableBodyNone">BW-RAM  </td><td class="markdownTableBodyNone">2.69 MHz  </td></tr>
 </table>
+<p>The summary table in that test's README gives about 5.4 MHz for ROM / ROM and is the figure most often repeated; the photographs of the same run say 5.04, and the measurement is what this page follows. No reference manual states these speeds: they are measurements, on one machine.</p>
 <p>So "3× the main CPU" holds only for SA-1 code that keeps off the ROM while the main CPU is on it. The table gives the rate while both CPUs are in a case; a real program moves between cases, so its effective speed is a mix, and a property of the scene rather than of the cartridge. Measure it. <span class="tt">examples/chips/sa1_starfield</span> builds both ways: by default its SA-1 copies its loop and sine table into I-RAM at boot and runs there; built with <span class="tt">make clean &amp;&amp; make SA1_CODE_IN=ROM</span> they stay in ROM.</p>
 <div class="fragment"><div class="line">luna profile examples/chips/sa1_starfield/sa1_starfield.sfc \</div>
 <div class="line">    --from-frame 60 --until-frame 180 --top 0</div>

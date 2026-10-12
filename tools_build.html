@@ -220,6 +220,9 @@ Audio</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">SOUNDBANK_BANK</span>  </td><td class="markdownTableBodyNone"><span class="tt">1</span>  </td><td class="markdownTableBodyNone">ROM bank passed to <span class="tt">smconv -<a class="el" href="games_2breakout_2main_8c.html#a15f49ee344ac4630061e33b7661f1405">b</a></span> for the soundbank data  </td></tr>
 </table>
+<h2 class="doxsection"><a class="anchor" id="what-a-change-rebuilds"></a>
+What a change rebuilds</h2>
+<p>A C object depends on every header of the library (<span class="tt"><a class="el" href="snes_8h.html" title="OpenSNES common-case master header.">lib/include/snes.h</a></span>, <span class="tt">lib/include/snes/*.h</span>), on every header of the project (<span class="tt">*.h</span>, <span class="tt">*.inc</span>, <span class="tt">res/*.h</span>, <span class="tt">res/*.inc</span>, next to each C source), on the generated graphics headers, on the memory map and on <span class="tt">.opensnes_config</span>; and, through a stamp that holds a checksum of <span class="tt">bin/cc65816</span>, <span class="tt">cproc-qbe</span> and <span class="tt">qbe</span>, on the compiler itself. So a header edited anywhere rebuilds every C file of the project, and an SDK update rebuilds them too — coarse, and never stale. An assembled object depends on the files its <span class="tt">.incbin</span> lines name. The link runs again whenever an object did.</p>
 <h2 class="doxsection"><a class="anchor" id="build-checks"></a>
 Build checks</h2>
 <p>Every link runs checks that catch silent failures (a const table read through the wrong bank, RAM past <span class="tt">$2000</span>, the stack reaching the C variables). Their thresholds are variables; lowering one is a decision to write down, raising it is almost always wrong (<span class="tt">.claude/rules/bank0_budget.md</span>).</p>

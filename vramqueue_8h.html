@@ -306,7 +306,7 @@ Variables</h2></td></tr>
 <p>Note one transfer for the next <a class="el" href="#afbd23358a6f4ed779b6b4361ab054234" title="Send every queued transfer to VRAM and empty the queue.">vramQueueFlush()</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">src</td><td>Source bytes (ROM, plain RAM or FAR RAM) </td></tr>
+    <tr><td class="paramname">src</td><td>Source bytes (ROM, plain RAM or FAR RAM) The queue keeps the POINTER: the bytes are read at the flush, not here. They must not change before <a class="el" href="#afbd23358a6f4ed779b6b4361ab054234" title="Send every queued transfer to VRAM and empty the queue.">vramQueueFlush()</a>; a buffer filled again before the flush sends its last contents for every entry that points to it. </td></tr>
     <tr><td class="paramname">addr</td><td>VRAM word address </td></tr>
     <tr><td class="paramname">size</td><td>Bytes (even; an entry of 0 bytes is skipped by the flush) </td></tr>
     <tr><td class="paramname">step</td><td>VRAM_QUEUE_ROW or VRAM_QUEUE_COLUMN </td></tr>
@@ -345,7 +345,7 @@ Variables</h2></td></tr>
 <p>A sprite frame in OBJ VRAM is <span class="tt">size_px / 8</span> rows of tiles; each row is a strip of <span class="tt">size_px * 4</span> bytes (at 4 bpp), and the rows are 16 tiles apart: 512 bytes in the sheet, 256 words in VRAM. That is the layout <span class="tt">opensnes-sprite sheet</span> writes (a 128-pixel-wide raster) and the one OBJ VRAM expects. This notes the 1, 2, 4 or 8 strips of one frame.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">src</td><td>First byte of the frame in the sheet (its top-left tile). The frame must not straddle a bank boundary. </td></tr>
+    <tr><td class="paramname">src</td><td>First byte of the frame in the sheet (its top-left tile). The frame must not straddle a bank boundary. Read at the flush, like <a class="el" href="#ade39bb80a8d7cf72a11075c930410086" title="Note one transfer for the next vramQueueFlush().">vramQueuePush()</a>: the bytes must not change before <a class="el" href="#afbd23358a6f4ed779b6b4361ab054234" title="Send every queued transfer to VRAM and empty the queue.">vramQueueFlush()</a>. </td></tr>
     <tr><td class="paramname">addr</td><td>VRAM word address of the frame's top-left tile </td></tr>
     <tr><td class="paramname">size_px</td><td>Width and height of the sprite: 8, 16, 32 or 64 </td></tr>
   </table>

@@ -50,7 +50,7 @@ var searchData=
   ['snes_5fnocash_47',['SNES_NOCASH',['../debug_8h.html#a0d70da9a3ad98f46019e0066b9805837',1,'debug.h']]],
   ['spc_5fbase_48',['SPC_BASE',['../audio_2apu__switch_2main_8c.html#a23e04ddbaa1a9179a401e01986f5bbea',1,'SPC_BASE:&#160;main.c'],['../audio_2pitch__mod_2main_8c.html#a23e04ddbaa1a9179a401e01986f5bbea',1,'SPC_BASE:&#160;main.c'],['../audio_2play__noise_2main_8c.html#a23e04ddbaa1a9179a401e01986f5bbea',1,'SPC_BASE:&#160;main.c'],['../audio_2speech__synth_2main_8c.html#a23e04ddbaa1a9179a401e01986f5bbea',1,'SPC_BASE:&#160;main.c']]],
   ['speed_5ftable_5flen_49',['SPEED_TABLE_LEN',['../games_2tetris_2main_8c.html#abffd5bbb5e691c51af4d3b4a90f3d3ed',1,'main.c']]],
-  ['spr_5fvram_50',['SPR_VRAM',['../basics_2game__skeleton_2main_8c.html#a6bb8764daa4560fdad7f6f1f9c9139f0',1,'SPR_VRAM:&#160;main.c'],['../sprites_2sprite__swarm_2main_8c.html#a6bb8764daa4560fdad7f6f1f9c9139f0',1,'SPR_VRAM:&#160;main.c']]],
+  ['spr_5fvram_50',['SPR_VRAM',['../basics_2game__skeleton_2main_8c.html#a6bb8764daa4560fdad7f6f1f9c9139f0',1,'SPR_VRAM:&#160;main.c'],['../sprites_2sprite__swarm_2main_8c.html#a6bb8764daa4560fdad7f6f1f9c9139f0',1,'SPR_VRAM:&#160;main.c'],['../sprites_2world__sprites_2main_8c.html#a6bb8764daa4560fdad7f6f1f9c9139f0',1,'SPR_VRAM:&#160;main.c']]],
   ['sprite_5fgargoyle_51',['SPRITE_GARGOYLE',['../maps_2dynamic__map_2main_8c.html#a9aaa6ccc6e62fad36ea1b4448e58565d',1,'main.c']]],
   ['sprite_5frockford_52',['SPRITE_ROCKFORD',['../maps_2dynamic__map_2main_8c.html#acc0379dc42a2a5e3cba577361b96776c',1,'main.c']]],
   ['sram_5ferr_5fno_5fsram_53',['SRAM_ERR_NO_SRAM',['../sram_8h.html#ac212fcfc7b67cd50eb15d00e099a3b82',1,'sram.h']]],

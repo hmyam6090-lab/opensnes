@@ -212,14 +212,15 @@ Functions</h2></td></tr>
 <p>Configure echo parameters. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">delay</td><td>Echo delay 1-7 (delay_ms = value * 16; values above 7 are clamped — the ARAM map reserves 14 KB max for the echo ring, keeping 46 KB for samples) </td></tr>
+    <tr><td class="paramname">delay</td><td>Echo delay 1-7 (delay_ms = value * 16; values above 7 are clamped — the echo ring takes up to 14 KB from $C000, and the first call brings the sample area down from 62 KB to 46 KB: see <a class="el" href="group__audio__samples.html#ga76b4689468ab6db5a7a0180111a27d85" title="Get available SPC700 RAM for samples.">audioGetFreeMemory()</a>) </td></tr>
     <tr><td class="paramname">feedback</td><td>Feedback amount (-128 to 127) </td></tr>
     <tr><td class="paramname">volumeL</td><td>Left echo volume (-128 to 127) </td></tr>
     <tr><td class="paramname">volumeR</td><td>Right echo volume (-128 to 127)</td></tr>
   </table>
   </dd>
 </dl>
-<p>Reconfiguration clears the whole echo ring before re-enabling echo writes (~9 ms per delay unit) — call at scene setup, not per frame. Call this BEFORE <a class="el" href="#ga66fe4109c3920b0a0aaa2a3dbe1c9d5c" title="Enable echo for specific voices.">audioEnableEcho()</a>. </p>
+<p>Reconfiguration clears the whole echo ring before re-enabling echo writes (~9 ms per delay unit) — call at scene setup, not per frame. Call this BEFORE <a class="el" href="#ga66fe4109c3920b0a0aaa2a3dbe1c9d5c" title="Enable echo for specific voices.">audioEnableEcho()</a>.</p>
+<dl class="section return"><dt>Returns</dt><dd>AUDIO_OK; AUDIO_ERR_NO_MEMORY when samples already loaded reach past $C000, where the ring goes (nothing is changed then); AUDIO_ERR_TIMEOUT if the driver does not answer </dd></dl>
 
 </div>
 </div>

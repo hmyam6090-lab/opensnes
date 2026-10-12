@@ -131,6 +131,8 @@ $(function(){initNavTree('tile_8h.html','',''); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:aa9eef28679b52dd479bff3449a952524" id="r_aa9eef28679b52dd479bff3449a952524"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aa9eef28679b52dd479bff3449a952524">tileBlitGlyph2bpp</a> (<a class="el" href="group__types.html#gaed742c436da53c1080638ce6ef7d13de">u8</a> <a class="el" href="group__volatile__types.html#gaef060b3456fdcc093a7210a762d5f2ed">FAR</a> *tile, <a class="el" href="group__types.html#gaed742c436da53c1080638ce6ef7d13de">u8</a> <a class="el" href="group__volatile__types.html#gaef060b3456fdcc093a7210a762d5f2ed">FAR</a> *right, const <a class="el" href="group__types.html#gaed742c436da53c1080638ce6ef7d13de">u8</a> <a class="el" href="group__volatile__types.html#gaef060b3456fdcc093a7210a762d5f2ed">FAR</a> *glyph, <a class="el" href="group__types.html#gaed742c436da53c1080638ce6ef7d13de">u8</a> glyph_row, <a class="el" href="group__types.html#gaed742c436da53c1080638ce6ef7d13de">u8</a> tile_row, <a class="el" href="group__types.html#gaed742c436da53c1080638ce6ef7d13de">u8</a> rows, <a class="el" href="group__types.html#gaed742c436da53c1080638ce6ef7d13de">u8</a> shift)</td></tr>
+<tr class="memdesc:aa9eef28679b52dd479bff3449a952524"><td class="mdescLeft">&#160;</td><td class="mdescRight">OR rows of a 2bpp glyph into a tile at a pixel offset.  <br /></td></tr>
 <tr class="memitem:a6e39973c09828171e1ae29697dee107f" id="r_a6e39973c09828171e1ae29697dee107f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a6e39973c09828171e1ae29697dee107f">tileEncode2bpp</a> (const <a class="el" href="group__types.html#gaed742c436da53c1080638ce6ef7d13de">u8</a> *pixels, <a class="el" href="group__types.html#gaed742c436da53c1080638ce6ef7d13de">u8</a> *tile)</td></tr>
 <tr class="memdesc:a6e39973c09828171e1ae29697dee107f"><td class="mdescLeft">&#160;</td><td class="mdescRight">64 colour indices (0-3) to one 2bpp tile  <br /></td></tr>
 <tr class="memitem:a6c06d0d08039a4c900c3a8ab0eeadb0a" id="r_a6c06d0d08039a4c900c3a8ab0eeadb0a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a6c06d0d08039a4c900c3a8ab0eeadb0a">tileEncode4bpp</a> (const <a class="el" href="group__types.html#gaed742c436da53c1080638ce6ef7d13de">u8</a> *pixels, <a class="el" href="group__types.html#gaed742c436da53c1080638ce6ef7d13de">u8</a> *tile)</td></tr>
@@ -152,6 +154,75 @@ Functions</h2></td></tr>
 <div class="ttc" id="atile_8h_html_a6c06d0d08039a4c900c3a8ab0eeadb0a"><div class="ttname"><a href="#a6c06d0d08039a4c900c3a8ab0eeadb0a">tileEncode4bpp</a></div><div class="ttdeci">void tileEncode4bpp(const u8 *pixels, u8 *tile)</div><div class="ttdoc">64 colour indices (0-15) to one 4bpp tile</div></div>
 </div><!-- fragment --><p>Link with <span class="tt">LIB_MODULES += tile</span>. Colour bits above the depth are ignored. Cost: about 47 000 master cycles a tile (an eighth of a frame), measured on luna — build tiles during loading, or a few per frame. Four examples carried a C copy of this loop until 2026-09-29, at ~310 000 a tile. </p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+<a id="aa9eef28679b52dd479bff3449a952524" name="aa9eef28679b52dd479bff3449a952524"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9eef28679b52dd479bff3449a952524">&#9670;&#160;</a></span>tileBlitGlyph2bpp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void tileBlitGlyph2bpp </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaed742c436da53c1080638ce6ef7d13de">u8</a> <a class="el" href="group__volatile__types.html#gaef060b3456fdcc093a7210a762d5f2ed">FAR</a> *</td>          <td class="paramname"><span class="paramname"><em>tile</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaed742c436da53c1080638ce6ef7d13de">u8</a> <a class="el" href="group__volatile__types.html#gaef060b3456fdcc093a7210a762d5f2ed">FAR</a> *</td>          <td class="paramname"><span class="paramname"><em>right</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__types.html#gaed742c436da53c1080638ce6ef7d13de">u8</a> <a class="el" href="group__volatile__types.html#gaef060b3456fdcc093a7210a762d5f2ed">FAR</a> *</td>          <td class="paramname"><span class="paramname"><em>glyph</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaed742c436da53c1080638ce6ef7d13de">u8</a></td>          <td class="paramname"><span class="paramname"><em>glyph_row</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaed742c436da53c1080638ce6ef7d13de">u8</a></td>          <td class="paramname"><span class="paramname"><em>tile_row</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaed742c436da53c1080638ce6ef7d13de">u8</a></td>          <td class="paramname"><span class="paramname"><em>rows</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaed742c436da53c1080638ce6ef7d13de">u8</a></td>          <td class="paramname"><span class="paramname"><em>shift</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>OR rows of a 2bpp glyph into a tile at a pixel offset. </p>
+<p>Puts <span class="tt">rows</span> rows of <span class="tt">glyph</span> (a 2bpp tile: 16 bytes, planes 0/1 interleaved per row) into <span class="tt">tile</span>, from the glyph's row <span class="tt">glyph_row</span> onto the tile's row <span class="tt">tile_row</span>, each row shifted right by <span class="tt">shift</span> pixels (0-7). The bits that leave the tile on the right go into <span class="tt">right</span>, the tile next to it (NULL: they are dropped). Only ORs: the tile keeps what it had, so glyphs may overlap, and a buffer is cleared with <a class="el" href="string_8h.html#a4f2933a10c46fe88c376b49f50dea67c" title="Fill n bytes with a value.">memset()</a> before a new layout.</p>
+<p>This is the primitive of text composed at the pixel in a 2bpp layer kept in RAM (a proportional font at a 6-pixel pitch, a label at any x and y): a glyph placed at (x, y) touches up to four tiles, and two calls cover it, one per tile row, with <span class="tt">right</span> the tile to the right of each:</p>
+<div class="fragment"><div class="line"><a class="code hl_typedef" href="group__types.html#gaed742c436da53c1080638ce6ef7d13de">u8</a> top = y &amp; 7;                      <span class="comment">// the glyph&#39;s first row in the tile</span></div>
+<div class="line"><a class="code hl_function" href="#aa9eef28679b52dd479bff3449a952524">tileBlitGlyph2bpp</a>(t, tr, g, 0, top, 8 - top, x &amp; 7);        <span class="comment">// upper tiles</span></div>
+<div class="line"><span class="keywordflow">if</span> (top)</div>
+<div class="line">    <a class="code hl_function" href="#aa9eef28679b52dd479bff3449a952524">tileBlitGlyph2bpp</a>(<a class="code hl_variable" href="games_2breakout_2main_8c.html#a15f49ee344ac4630061e33b7661f1405">b</a>, br, g, 8 - top, 0, top, x &amp; 7);    <span class="comment">// lower tiles</span></div>
+<div class="ttc" id="agames_2breakout_2main_8c_html_a15f49ee344ac4630061e33b7661f1405"><div class="ttname"><a href="games_2breakout_2main_8c.html#a15f49ee344ac4630061e33b7661f1405">b</a></div><div class="ttdeci">static u16 b</div><div class="ttdef"><b>Definition</b> main.c:156</div></div>
+<div class="ttc" id="atile_8h_html_aa9eef28679b52dd479bff3449a952524"><div class="ttname"><a href="#aa9eef28679b52dd479bff3449a952524">tileBlitGlyph2bpp</a></div><div class="ttdeci">void tileBlitGlyph2bpp(u8 FAR *tile, u8 FAR *right, const u8 FAR *glyph, u8 glyph_row, u8 tile_row, u8 rows, u8 shift)</div><div class="ttdoc">OR rows of a 2bpp glyph into a tile at a pixel offset.</div></div>
+</div><!-- fragment --><p>All pointers are far: the layer lives in FAR RAM and the font in an asset bank. Cost: about 9 000 master cycles for the eight rows of a glyph with a right tile (two calls), measured on luna; the C loop it replaces in the first game on the SDK cost about 41 000.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tile</td><td>the tile that receives the glyph's left part (never NULL) </td></tr>
+    <tr><td class="paramname">right</td><td>the tile to its right, for the bits shifted out; NULL to drop them (always safe when <span class="tt">shift</span> is 0) </td></tr>
+    <tr><td class="paramname">glyph</td><td>16 bytes, planes 0/1 interleaved per row (a 2bpp tile) </td></tr>
+    <tr><td class="paramname">glyph_row</td><td>first row of the glyph to put (0-7) </td></tr>
+    <tr><td class="paramname">tile_row</td><td>row of the tile that receives it (0-7) </td></tr>
+    <tr><td class="paramname">rows</td><td>number of rows (1-8; <span class="tt">glyph_row + rows</span> and <span class="tt">tile_row + rows</span> at most 8) </td></tr>
+    <tr><td class="paramname">shift</td><td>pixels to shift right (0-7) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a6e39973c09828171e1ae29697dee107f" name="a6e39973c09828171e1ae29697dee107f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6e39973c09828171e1ae29697dee107f">&#9670;&#160;</a></span>tileEncode2bpp()</h2>
 

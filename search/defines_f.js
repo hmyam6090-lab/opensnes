@@ -79,5 +79,6 @@ var searchData=
   ['reg_5fsfr_5fl_76',['REG_SFR_L',['../superfx_8h.html#ada011548944b13eb92dd71f1b7f480c3',1,'superfx.h']]],
   ['reg_5fvcr_77',['REG_VCR',['../superfx_8h.html#a91683548098fd503db2acca934effa7c',1,'superfx.h']]],
   ['rgb_78',['RGB',['../video_8h.html#a4a118ad3ee36468a3fa616977a64864e',1,'video.h']]],
-  ['rgb24_79',['RGB24',['../video_8h.html#ad8da1514f9cd03e3cda94953525627f2',1,'video.h']]]
+  ['rgb24_79',['RGB24',['../video_8h.html#ad8da1514f9cd03e3cda94953525627f2',1,'video.h']]],
+  ['rows_80',['ROWS',['../text_2pixel__text_2main_8c.html#a3cfd3aa62338d12609f6d65bce97e9cd',1,'main.c']]]
 ];

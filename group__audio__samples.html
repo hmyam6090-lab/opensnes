@@ -152,7 +152,11 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get available SPC700 RAM for samples. </p>
-<dl class="section return"><dt>Returns</dt><dd>Free bytes available </dd></dl>
+<p>The sample area starts at $0B00 of the sound CPU's 64 KB (below it: the driver and the sample directory) and ends</p><ul>
+<li>at <b>$FFC0, 62,656 bytes</b>, as long as the game has configured no echo;</li>
+<li>at <b>$C000, 46,336 bytes</b>, from the first <a class="el" href="group__audio__echo.html#gab48ad4e6beefd0728ba5fd76dfd9dd07" title="Configure echo parameters.">audioSetEcho()</a>: the echo ring lives above. <a class="el" href="group__audio__echo.html#gab48ad4e6beefd0728ba5fd76dfd9dd07" title="Configure echo parameters.">audioSetEcho()</a> answers AUDIO_ERR_NO_MEMORY when samples already loaded reach into it, so a game that wants an echo calls <a class="el" href="group__audio__echo.html#gab48ad4e6beefd0728ba5fd76dfd9dd07" title="Configure echo parameters.">audioSetEcho()</a> before loading, or keeps its samples under 46 KB.</li>
+</ul>
+<dl class="section return"><dt>Returns</dt><dd>Free bytes available, under the limit that applies now </dd></dl>
 
 </div>
 </div>
@@ -222,7 +226,7 @@ Functions</h2></td></tr>
     <tr><td class="paramname">id</td><td>Sample slot (0-63) </td></tr>
     <tr><td class="paramname">brrData</td><td>Pointer to BRR sample data </td></tr>
     <tr><td class="paramname">size</td><td>Size in bytes (must be multiple of 9) </td></tr>
-    <tr><td class="paramname">loopPoint</td><td>Loop offset in bytes, or 0 for no loop </td></tr>
+    <tr><td class="paramname">loopPoint</td><td>Loop offset in bytes from the start of the sample (a multiple of 9, one BRR block). It is where a sample that loops comes back to — 0 for a loop from the very start. WHETHER the sample loops is the loop flag of its last BRR block (opensnes-sample sets it), not this value: a one-shot sample ignores it. </td></tr>
   </table>
   </dd>
 </dl>

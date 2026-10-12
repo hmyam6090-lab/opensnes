@@ -20,5 +20,6 @@ var searchData=
   ['7_20vram_20format_17',['1. Mode 7 VRAM format',['../examples_mode7_rotate_scale.html#autotoc_md1-mode-7-vram-format',1,'']]],
   ['7_20vram_20layout_18',['Mode 7 VRAM Layout',['../mode7_8h.html#mode-7-vram-layout',1,'']]],
   ['7_20writes_20shared_20latch_19',['🟡 HDMA on BG1 scroll can corrupt Mode 7 writes (shared latch)',['../tutorial_hdma.html#autotoc_md-hdma-on-bg1-scroll-can-corrupt-mode-7-writes-shared-latch',1,'']]],
-  ['7f_20',['FIR Filter Coefficients (COEF 0F-7F)',['../snes_sound_guide.html#fir-filter-coefficients-coef-0f-7f',1,'']]]
+  ['79_20characters_20refused_20never_20truncated_20',['🟢 A C identifier is at most 79 characters (refused, never truncated)',['../KNOWN_LIMITATIONS.html#autotoc_md-a-c-identifier-is-at-most-79-characters-refused-never-truncated',1,'']]],
+  ['7f_21',['FIR Filter Coefficients (COEF 0F-7F)',['../snes_sound_guide.html#fir-filter-coefficients-coef-0f-7f',1,'']]]
 ];

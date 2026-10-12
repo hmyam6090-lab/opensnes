@@ -29,5 +29,6 @@ var examples_sprites =
     [ "Metasprite", "examples_sprites_metasprite.html", null ],
     [ "Simple Sprite -- Your First OAM Sprite", "examples_sprites_simple_sprite.html", null ],
     [ "Object Size -- All 6 SNES Sprite Size Modes", "examples_sprites_sprite_sizes.html", null ],
-    [ "sprite_swarm — a bouncing swarm, and the OAM throughput ceiling", "examples_sprites_sprite_swarm.html", null ]
+    [ "sprite_swarm — a bouncing swarm, and the OAM throughput ceiling", "examples_sprites_sprite_swarm.html", null ],
+    [ "World Sprites", "examples_sprites_world_sprites.html", null ]
 ];

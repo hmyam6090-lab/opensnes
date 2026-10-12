@@ -1,0 +1,25 @@
+var text_2pixel__text_2main_8c =
+[
+    [ "COLS", "text_2pixel__text_2main_8c.html#ab59ad2ee1a48b83c2eef1f019ed8cc48", null ],
+    [ "LAYER_VRAM", "text_2pixel__text_2main_8c.html#a9789c52aae0c5020a764e84c994dd743", null ],
+    [ "MAP_COL", "text_2pixel__text_2main_8c.html#af205394e8cf1225dd1746ef3fe0c08cb", null ],
+    [ "MAP_ROW", "text_2pixel__text_2main_8c.html#a10604f7360d0cbdedf200b32365215a7", null ],
+    [ "MAP_VRAM", "text_2pixel__text_2main_8c.html#af53226ffd949ef2f3857166c4f1c673c", null ],
+    [ "PITCH", "text_2pixel__text_2main_8c.html#acd633835a520a62245ec6cfeb6d00e97", null ],
+    [ "ROWS", "text_2pixel__text_2main_8c.html#a3cfd3aa62338d12609f6d65bce97e9cd", null ],
+    [ "TILES", "text_2pixel__text_2main_8c.html#a24efc2648ce6ac7ab8397cbb8fb4c044", null ],
+    [ "build_glyphs", "text_2pixel__text_2main_8c.html#add0572e233d765645baee21852a26f04", null ],
+    [ "compose", "text_2pixel__text_2main_8c.html#ac9d33e13996bfa7f9b18e21017588889", null ],
+    [ "draw_text", "text_2pixel__text_2main_8c.html#a8f4aa9e7962999ad8f03ac06a8f79811", null ],
+    [ "glyph_of", "text_2pixel__text_2main_8c.html#a2c5743c20e9786141bc74ce51b696237", null ],
+    [ "main", "text_2pixel__text_2main_8c.html#a840291bc02cba5474a4cb46a9b9566fe", null ],
+    [ "place_tiles", "text_2pixel__text_2main_8c.html#a58b9cea07dafd9e3f25249796db532b2", null ],
+    [ "font5x7", "text_2pixel__text_2main_8c.html#ac159ff712651efb0085066d6439b5d5f", null ],
+    [ "glyphs", "text_2pixel__text_2main_8c.html#a0a6a5050ca8d2ff3b6b07c54529b52ec", null ],
+    [ "layer", "text_2pixel__text_2main_8c.html#ac5dc75c53d056fc2eac4a38a985682dc", null ],
+    [ "layer_sum", "text_2pixel__text_2main_8c.html#a4752c84186bc313be68c538889a17147", null ],
+    [ "palette", "text_2pixel__text_2main_8c.html#aed41e53efdee92d24f64b3bae717c207", null ],
+    [ "presses", "text_2pixel__text_2main_8c.html#a5dad31518edd93c9de095e6521651b13", null ],
+    [ "upload", "text_2pixel__text_2main_8c.html#aeea3914633a8e2a2b265c646a881f6ad", null ],
+    [ "x_off", "text_2pixel__text_2main_8c.html#a10a8c9763c73a9b6eb3299776e818dda", null ]
+];

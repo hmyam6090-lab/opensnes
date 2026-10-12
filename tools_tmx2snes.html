@@ -138,7 +138,7 @@ What goes in, what comes out</h2>
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">File  </th><th class="markdownTableHeadNone">Named after  </th><th class="markdownTableHeadNone">What it is  </th><th class="markdownTableHeadNone">Loaded with  </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">&lt;layer&gt;.m16</span>  </td><td class="markdownTableBodyNone">the Tiled <em>layer</em>  </td><td class="markdownTableBodyNone">the tilemap  </td><td class="markdownTableBodyNone"><span class="tt"><a class="el" href="map_8h.html#a4895959148c67700bc9d52dab9501136" title="Load map data into the engine and flush to VRAM.">mapLoad</a></span> (arg 1)  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">&lt;<a class="el" href="text_2pixel__text_2main_8c.html#ac5dc75c53d056fc2eac4a38a985682dc">layer</a>&gt;.m16</span>  </td><td class="markdownTableBodyNone">the Tiled <em>layer</em>  </td><td class="markdownTableBodyNone">the tilemap  </td><td class="markdownTableBodyNone"><span class="tt"><a class="el" href="map_8h.html#a4895959148c67700bc9d52dab9501136" title="Load map data into the engine and flush to VRAM.">mapLoad</a></span> (arg 1)  </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><span class="tt">&lt;base&gt;.t16</span>  </td><td class="markdownTableBodyNone">the map  </td><td class="markdownTableBodyNone">per-tile palette + priority  </td><td class="markdownTableBodyNone"><span class="tt"><a class="el" href="map_8h.html#a4895959148c67700bc9d52dab9501136" title="Load map data into the engine and flush to VRAM.">mapLoad</a></span> (arg 2)  </td></tr>
 <tr class="markdownTableRowOdd">
@@ -153,9 +153,9 @@ What goes in, what comes out</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><span class="tt">-e</span>  </td><td class="markdownTableBodyNone"><span class="tt">&lt;map&gt;.inc</span> — the Entities layer as C <span class="tt">#define</span>s  </td><td class="markdownTableBodyNone">referencing objects from game code  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><span class="tt">-Q</span>  </td><td class="markdownTableBodyNone"><span class="tt">&lt;layer&gt;.q16</span> — a quadrant-ordered 64×64 tilemap  </td><td class="markdownTableBodyNone">a <span class="tt"><a class="el" href="dma_8h.html#a428ee7d96f20485046c89d95f8719ca5" title="Copy data to VRAM (PVSnesLib compatible).">dmaCopyVram</a></span>-straight-to-VRAM map you scroll yourself  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">-Q</span>  </td><td class="markdownTableBodyNone"><span class="tt">&lt;<a class="el" href="text_2pixel__text_2main_8c.html#ac5dc75c53d056fc2eac4a38a985682dc">layer</a>&gt;.q16</span> — a quadrant-ordered 64×64 tilemap  </td><td class="markdownTableBodyNone">a <span class="tt"><a class="el" href="dma_8h.html#a428ee7d96f20485046c89d95f8719ca5" title="Copy data to VRAM (PVSnesLib compatible).">dmaCopyVram</a></span>-straight-to-VRAM map you scroll yourself  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><span class="tt">-C</span>  </td><td class="markdownTableBodyNone"><span class="tt">&lt;layer&gt;.c16</span> — one collision byte per cell  </td><td class="markdownTableBodyNone"><span class="tt"><a class="el" href="collision_8h.html#a3d1308f57854050bc7d9b288aefcdc04" title="Check collision with tile at pixel coordinates.">collideTile</a></span> on a plain grid  </td></tr>
+<td class="markdownTableBodyNone"><span class="tt">-C</span>  </td><td class="markdownTableBodyNone"><span class="tt">&lt;<a class="el" href="text_2pixel__text_2main_8c.html#ac5dc75c53d056fc2eac4a38a985682dc">layer</a>&gt;.c16</span> — one collision byte per cell  </td><td class="markdownTableBodyNone"><span class="tt"><a class="el" href="collision_8h.html#a3d1308f57854050bc7d9b288aefcdc04" title="Check collision with tile at pixel coordinates.">collideTile</a></span> on a plain grid  </td></tr>
 </table>
 <h2 class="doxsection"><a class="anchor" id="how-you-actually-use-it-1"></a>
 How you actually use it</h2>

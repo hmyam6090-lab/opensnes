@@ -143,7 +143,7 @@ What you need</h2>
 <td class="markdownTableBodyNone">The ROMs  </td><td class="markdownTableBodyNone"><span class="tt">make hardware-kit</span> collects the ROMs of this protocol into <span class="tt">release/hardware-kit/</span>, numbered in the order of the grid. Copy that folder to the SD card. Build from a clean tree at the tag you are verifying (<span class="tt">git checkout vX.Y.Z &amp;&amp; make clean &amp;&amp; make</span>).  </td></tr>
 </table>
 <p>Record the tag or commit the ROMs were built from. The grid is meaningless without it.</p>
-<p>Before the session, <span class="tt">make hardware-preflight</span> replays the same ROMs on luna from pseudo-random RAM (three seeds) and under PAL, and checks that every VRAM DMA byte lands in blank: the two cheapest ways a ROM green on luna's defaults fails on a console. A row that fails there is fixed before it is carried to the hardware; <span class="tt">ROWS=1-7</span> restricts the run to the gate rows.</p>
+<p>Before the session, <span class="tt">make hardware-preflight</span> replays the same ROMs on luna from pseudo-random RAM (three seeds) and under PAL, and checks that every VRAM DMA byte lands in blank: the two cheapest ways a ROM green on luna's defaults fails on a console. A row that fails there is fixed before it is carried to the hardware; <span class="tt"><a class="el" href="text_2pixel__text_2main_8c.html#a3cfd3aa62338d12609f6d65bce97e9cd">ROWS</a>=1-7</span> restricts the run to the gate rows.</p>
 <h2 class="doxsection"><a class="anchor" id="how-to-run-a-row"></a>
 How to run a row</h2>
 <ol type="1">

@@ -37,5 +37,5 @@ var tools =
     [ "opensnes-save — battery save files", "tools_opensnes_save.html", null ],
     [ "opensnes — the project tool", "tools_opensnes.html", null ],
     [ "Your project's Makefile", "tools_build.html", null ],
-    [ "luna — command reference (pinned v1.34.0)", "tools_luna.html", null ]
+    [ "luna — command reference (pinned v1.38.0)", "tools_luna.html", null ]
 ];

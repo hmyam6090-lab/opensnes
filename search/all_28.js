@@ -34,7 +34,7 @@ var searchData=
   ['—_20can_20i_20put_20something_20on_20screen_31',['Stage 1 — &quot;Can I put something on screen?&quot;',['../learning_path.html#stage-1--can-i-put-something-on-screen',1,'']]],
   ['—_20can_20the_20player_20act_32',['Stage 2 — &quot;Can the player act?&quot;',['../learning_path.html#stage-2--can-the-player-act',1,'']]],
   ['—_20color_20math_20not_20palette_20edits_33',['Hit flash — color math, not palette edits',['../craft_game_feel.html#hit-flash--color-math-not-palette-edits',1,'']]],
-  ['—_20command_20reference_20pinned_20v1_2034_200_34',['luna — command reference (pinned v1.34.0)',['../tools_luna.html',1,'tools']]],
+  ['—_20command_20reference_20pinned_20v1_2038_200_34',['luna — command reference (pinned v1.38.0)',['../tools_luna.html',1,'tools']]],
   ['—_20constructs_20cc65816_20refuses_35',['Step 3 — constructs cc65816 refuses',['../migrating_pvsneslib.html#step-3--constructs-cc65816-refuses',1,'']]],
   ['—_20deadzone_20it_36',['Don&apos;t glue the camera to the player — deadzone it',['../craft_camera.html#dont-glue-the-camera-to-the-player--deadzone-it',1,'']]],
   ['—_20depth_20from_20motion_37',['Parallax — depth from motion',['../craft_backgrounds.html#parallax--depth-from-motion',1,'']]],

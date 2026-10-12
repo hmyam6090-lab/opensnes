@@ -134,8 +134,15 @@ Encode</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#define jump_brr_size 1035   </span><span class="comment">/* bytes: 115 BRR blocks of 16 samples */</span><span class="preprocessor"></span></div>
 <div class="line"><span class="preprocessor">#define jump_brr_loop 0      </span><span class="comment">/* byte offset of the loop point; 0 with no loop */</span><span class="preprocessor"></span></div>
 <div class="line"><span class="preprocessor">#define jump_brr_loops 0     </span><span class="comment">/* 1 = the sample loops */</span><span class="preprocessor"></span></div>
+<div class="line"><span class="preprocessor">#define jump_tuning 4096     </span><span class="comment">/* x4096: 4096 = plays at the pitch it was encoded at */</span><span class="preprocessor"></span></div>
 <div class="line"><span class="preprocessor">#define jump_rate 32000      </span><span class="comment">/* Hz of the source; the DSP plays at 32000 */</span><span class="preprocessor"></span></div>
-</div><!-- fragment --><p>Bake the <span class="tt">.brr</span> into the ROM and load it with the sizes from the header:</p>
+</div><!-- fragment --><p><b>A loop has to be a whole number of 16-sample blocks</b>, because BRR is. When the one you give is not, the tool makes it so, in one of two ways:</p>
+<ul>
+<li><b>it repeats the loop</b> until the total is a multiple of 16, when that stays under 2,000 samples: a waveform of 8 samples becomes one block holding it twice, one of 12 samples becomes three blocks holding it four times. Nothing changes in pitch, and <span class="tt">_tuning</span> is 4096;</li>
+<li><b>it resamples the loop</b> to the next multiple of 16 otherwise. The sample then plays slightly lower, the tool warns, and <span class="tt">_tuning</span> (and <span class="tt">"tuning_x4096"</span> in <span class="tt">--json</span>) carries the factor: multiply the playback pitch by <span class="tt">_tuning / 4096</span> to get the original pitch back.</li>
+</ul>
+<p>A loop that does not start on a block boundary is preceded by silence so that it does. <span class="tt">_brr_loop</span> is the byte offset the loop comes back to; 0 means "from the start", not "no loop": <span class="tt">_brr_loops</span> says whether it loops.</p>
+<p>Bake the <span class="tt">.brr</span> into the ROM and load it with the sizes from the header:</p>
 <div class="fragment"><div class="line">ASSET_SECTION &quot;samples&quot;</div>
 <div class="line">jump_brr:  .incbin &quot;res/jump.brr&quot;</div>
 <div class="line">.ENDS</div>

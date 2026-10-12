@@ -62,15 +62,15 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "BENCHMARK.html",
-"dir_73eeb5547b39d97bc3ac59f165437536.html",
-"examples_color_direct_color.html#modules-used-29",
-"examples_sprites_animated_sprite.html",
-"globals_vars_i.html",
-"group__ppu__regs.html#ga466a20c79b0739bae02668b1b764d8f1",
-"input_8h_source.html",
-"piece_8h.html#af61f6b9ea3ffb9213de838f02c4cdd9b",
-"sprites_2metasprite_2vram__map_8h.html",
-"superfx_8h.html#a804577ccbf422bf02562e1eb210fb1c7"
+"dir_6b17615a765730034c6961a55152114f.html",
+"examples_color_direct_color.html",
+"examples_sprites.html#the-ladder-9",
+"globals_vars_b.html",
+"group__ppu__regs.html#ga31783a38f8bf7129cd0186641e598fe4",
+"input_8h.html#a4f095dc343f6b5ac5712cc69e1bd20b5",
+"piece_8h.html#a91553c0e2fac0272cc71951d9787bf7e",
+"sprite_8h.html#afaa85a4b677edfc58a4b9e26df8890f7",
+"superfx_8h.html#a5c6d08013690338aaa4dc06074da9d73"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

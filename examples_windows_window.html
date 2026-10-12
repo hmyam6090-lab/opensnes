@@ -128,7 +128,7 @@ $(function(){initNavTree('examples_windows_window.html','',''); });
 Screenshot</div></div>
     <p>A triangle-shaped window mask driven by HDMA, showing how per-scanline window boundary updates create non-rectangular shapes. Press <b>A</b>, <b>X</b>, or <b>B</b> to apply the window to different background layers.</p>
 <p>Ported from PVSnesLib "Window" example.</p>
-<h2 class="doxsection"><a class="anchor" id="controls-38"></a>
+<h2 class="doxsection"><a class="anchor" id="controls-40"></a>
 Controls</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -173,11 +173,11 @@ Switching Layers</h3>
 <p>When you press A/X/B, the code:</p><ol type="1">
 <li>Disables HDMA channels</li>
 <li>Resets all window registers via <span class="tt"><a class="el" href="window_8h.html#a950e61e7616f970db1d7dab2a851a8b7" title="Initialize window system.">windowInit()</a></span></li>
-<li>Enables window 1 on the new layer(s) with inversion</li>
-<li>Sets TMW for the new layer(s)</li>
+<li>Enables window 1 on the new <a class="el" href="text_2pixel__text_2main_8c.html#ac5dc75c53d056fc2eac4a38a985682dc">layer(s)</a> with inversion</li>
+<li>Sets TMW for the new <a class="el" href="text_2pixel__text_2main_8c.html#ac5dc75c53d056fc2eac4a38a985682dc">layer(s)</a></li>
 <li>Re-enables HDMA</li>
 </ol>
-<h2 class="doxsection"><a class="anchor" id="snes-concepts-55"></a>
+<h2 class="doxsection"><a class="anchor" id="snes-concepts-57"></a>
 SNES Concepts</h2>
 <h3 class="doxsection"><a class="anchor" id="w12sel-register-2123"></a>
 W12SEL Register ($2123)</h3>
@@ -239,7 +239,7 @@ Going Further</h2>
 </ul>
 </li>
 </ul>
-<h2 class="doxsection"><a class="anchor" id="modules-used-77"></a>
+<h2 class="doxsection"><a class="anchor" id="modules-used-79"></a>
 Modules Used</h2>
 <p><span class="tt">console</span>, <span class="tt">sprite</span>, <span class="tt">dma</span>, <span class="tt">input</span>, <span class="tt">background</span>, <span class="tt">window</span>, <span class="tt">hdma</span> (<span class="tt">LIB_MODULES</span> in the Makefile). </p>
 </div></div><!-- contents -->

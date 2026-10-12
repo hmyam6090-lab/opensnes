@@ -7,5 +7,6 @@ var dir_8255dfd51ee4c46f21051355523b5d1f =
     [ "metasprite", "dir_75792543266ec4b9abf9426b452dcf6e.html", "dir_75792543266ec4b9abf9426b452dcf6e" ],
     [ "simple_sprite", "dir_d1c4d4e18108b0da04b70be719c527c4.html", "dir_d1c4d4e18108b0da04b70be719c527c4" ],
     [ "sprite_sizes", "dir_85d712b33364a953843b09849ef6a225.html", "dir_85d712b33364a953843b09849ef6a225" ],
-    [ "sprite_swarm", "dir_3e7ecf43e3621e2ba8c86c8ce7e59cb3.html", "dir_3e7ecf43e3621e2ba8c86c8ce7e59cb3" ]
+    [ "sprite_swarm", "dir_3e7ecf43e3621e2ba8c86c8ce7e59cb3.html", "dir_3e7ecf43e3621e2ba8c86c8ce7e59cb3" ],
+    [ "world_sprites", "dir_58aa4cebe2af14ef96cac3d5c6688de1.html", "dir_58aa4cebe2af14ef96cac3d5c6688de1" ]
 ];

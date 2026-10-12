@@ -78,6 +78,8 @@ var group__examples =
     [ "main.c", "sprites_2simple__sprite_2main_8c.html", null ],
     [ "main.c", "sprites_2sprite__sizes_2main_8c.html", null ],
     [ "main.c", "sprites_2sprite__swarm_2main_8c.html", null ],
+    [ "main.c", "sprites_2world__sprites_2main_8c.html", null ],
+    [ "main.c", "text_2pixel__text_2main_8c.html", null ],
     [ "main.c", "text_2print__string_2main_8c.html", null ],
     [ "main.c", "text_2scroll__message_2main_8c.html", null ],
     [ "main.c", "transitions_2fading_2main_8c.html", null ],

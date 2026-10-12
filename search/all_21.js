@@ -2,7 +2,7 @@ var searchData=
 [
   ['v_20counters_20and_20cut_20its_20own_20wait_20short_20the_20command_20queue_20wrapped_20fixed_202026_2010_2003_0',['🟢 &lt;span class=&quot;tt&quot;&gt;snesmodProcess()&lt;/span&gt; latched the H/V counters and cut its own wait short; the command queue wrapped (fixed 2026-10-03)',['../KNOWN_LIMITATIONS.html#autotoc_md-snesmodprocess-latched-the-hv-counters-and-cut-its-own-wait-short-the-command-queue-wrapped-fixed-2026-10-03',1,'']]],
   ['v0_2020_200_1',['🟢 &lt;span class=&quot;tt&quot;&gt;int&lt;/span&gt; and &lt;span class=&quot;tt&quot;&gt;long&lt;/span&gt; sizes are correct on this target (since v0.20.0)',['../tutorial_math.html#autotoc_md-int-and-long-sizes-are-correct-on-this-target-since-v0200',1,'']]],
-  ['v1_2034_200_2',['luna — command reference (pinned v1.34.0)',['../tools_luna.html',1,'tools']]],
+  ['v1_2038_200_2',['luna — command reference (pinned v1.38.0)',['../tools_luna.html',1,'tools']]],
   ['v1_209_200_3',['v1 9 0',['../examples_mode7_perspective_rotate.html#measured-parity-luna-v190',1,'Measured parity (luna v1.9.0)'],['../examples_backgrounds_mode5_hires.html#validation-notes-luna-v190',1,'Validation notes (luna v1.9.0)']]],
   ['v1_209_200_20mesen2_20cross_20check_4',['Measured parity (luna v1.9.0 + Mesen2 cross-check)',['../examples_color_hicolor_1792.html#measured-parity-luna-v190--mesen2-cross-check',1,'']]],
   ['v2_20—_20samples_20and_20effects_20from_20pure_20c_5',['The audio module (v2) — samples and effects from pure C',['../tutorial_audio.html#the-audio-module-v2--samples-and-effects-from-pure-c',1,'']]],
