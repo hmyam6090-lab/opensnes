@@ -9,7 +9,7 @@ ROM_NAME := TEMMIE BATTLE
 CSRC     := main.c src/platform.c src/sound.c src/textbox.c src/content.c \
             src/attacks.c src/battle.c src/sprite_layout.c
 
-ASMSRC   := gss_data.asm
+ASMSRC   := gss_data.asm gss_sfx_data.asm
 
 USE_LIB     := 1
 LIB_MODULES := console sprite dma input background text audio apu

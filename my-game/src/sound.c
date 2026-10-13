@@ -18,10 +18,11 @@
  *     the music), gss_music_loop[] whether it loops (done in code: no loop
  *     point needed in SNESGSS). A new song: an .incbin line in gss_data.asm, an extern
  *     below, a row in gss_music[].
- *   - Sound effects: made in the same SNESGSS project (its sound effect
- *     list), exported with the music; the driver numbers them 0, 1, 2...
- *     in the order of SNESGSS's sounds.h. gss_sfx[] gives each hook its
- *     number (GSS_NONE = silent).
+ *   - Sound effects: WAV files, listed in res/gss/sfx.toml and added to
+ *     the driver by tools/gss_add_sfx.py (it writes spc700_sfx.bin, the
+ *     sample bank and gss_sfx.h). gss_sfx[] gives each hook its effect,
+ *     volume and channel (GSS_NONE = silent). To add one: a WAV in
+ *     assets/sfx/, an [[sfx]] in sfx.toml, run the script, fill the row.
  *
  * The protocol (65816 side) is SNESGSS's own snes/sneslib.asm and
  * sneslib.h: the driver is uploaded at $0200 through the IPL boot ROM,
@@ -47,6 +48,7 @@
 #if GAME_SOUND == SOUND_GSS
 
 #include <snes/apu.h>
+#include "gss_sfx.h"
 
 /* gss_data.asm */
 extern const u8 gss_driver[];
@@ -64,7 +66,6 @@ extern const u8 gss_music_1[];
 
 #define GSS_DRIVER_ADDR      0x0200
 #define GSS_NONE             0xFF
-#define GSS_SFX_CHANNEL      7     /* channel for effects: keep it above the song's */
 #define GSS_SFX_PAN          128   /* 0 left .. 255 right */
 
 /* Which song each music hook plays; 0 = stop the music. */
@@ -81,27 +82,35 @@ static const u8 gss_music_loop[BGM_COUNT] = {
     [BGM_BATTLE] = 1,
 };
 
-/* Which SNESGSS sound effect each hook plays, and how loud (0..127). */
-typedef struct { u8 sfx; u8 volume; } GssSfx;
+/* Which SNESGSS sound effect each hook plays (GSS_SFX_* from gss_sfx.h,
+ * made by tools/gss_add_sfx.py from res/gss/sfx.toml), how loud (0..127)
+ * and on which channel. Effects only play on channels the song leaves
+ * free (the song here uses channel 0); one channel plays one effect at a
+ * time, so sounds that may overlap get different channels. */
+typedef struct { u8 sfx; u8 volume; u8 channel; } GssSfx;
 static const GssSfx gss_sfx[SFX_COUNT] = {
-    [SFX_MOVE]          = { GSS_NONE, 127 },
-    [SFX_SELECT]        = { GSS_NONE, 127 },
-    [SFX_BACK]          = { GSS_NONE, 127 },
-    [SFX_DENIED]        = { GSS_NONE, 127 },
-    [SFX_BLIP]          = { GSS_NONE, 127 },
-    [SFX_TEMMIE_VOICE]  = { GSS_NONE, 127 },
-    [SFX_SMUG]          = { GSS_NONE, 127 },
-    [SFX_ATTACK_START]  = { GSS_NONE, 127 },
-    [SFX_TEMMIE_STEP]   = { GSS_NONE, 127 },
-    [SFX_ARM_STEP]      = { GSS_NONE, 127 },
-    [SFX_ARM_RETRACT]   = { GSS_NONE, 127 },
-    [SFX_HURT]          = { GSS_NONE, 127 },
-    [SFX_HEART_CRACK]   = { GSS_NONE, 127 },
-    [SFX_HEART_SHATTER] = { GSS_NONE, 127 },
-    [SFX_SPARE]         = { GSS_NONE, 127 },
-    [SFX_EAT]           = { GSS_NONE, 127 },
-    [SFX_WIN]           = { GSS_NONE, 127 },
+    [SFX_MOVE]          = { GSS_NONE,           0,   6 },
+    [SFX_SELECT]        = { GSS_SFX_SELECT,     110, 6 },
+    [SFX_BACK]          = { GSS_NONE,           0,   6 },
+    [SFX_DENIED]        = { GSS_NONE,           0,   6 },
+    [SFX_BLIP]          = { GSS_SFX_TEXT,       90,  7 },
+    [SFX_TEMMIE_VOICE]  = { GSS_SFX_TEMMIE,     100, 7 },
+    [SFX_SMUG]          = { GSS_NONE,           0,   5 },
+    [SFX_ATTACK_START]  = { GSS_NONE,           0,   5 },
+    [SFX_TEMMIE_STEP]   = { GSS_NONE,           0,   4 },
+    [SFX_ARM_STEP]      = { GSS_NONE,           0,   4 },
+    [SFX_ARM_RETRACT]   = { GSS_NONE,           0,   4 },
+    [SFX_HURT]          = { GSS_SFX_HURT,       120, 5 },
+    [SFX_HEART_CRACK]   = { GSS_SFX_CRACK,      127, 5 },
+    [SFX_HEART_SHATTER] = { GSS_SFX_SHATTER,    127, 5 },
+    [SFX_SPARE]         = { GSS_NONE,           0,   6 },
+    [SFX_EAT]           = { GSS_NONE,           0,   6 },
+    [SFX_WIN]           = { GSS_NONE,           0,   6 },
 };
+
+/* The effects' samples and code, uploaded after the driver. */
+typedef struct { const u8 *data; u16 addr; u16 size; } GssPiece;
+static const GssPiece gss_bank[GSS_SFX_BANK_PIECES] = GSS_SFX_BANK;
 
 static u8  gss_ok;             /* the driver answered */
 static u16 gss_load_addr;      /* where songs go in APU RAM */
@@ -180,7 +189,7 @@ static void gss_find_loops(const u8 *song, u16 addr) {
 /* Upload a size-prefixed blob through the IPL (plus the loop patches, if
  * any), then (re)start the driver at $0200 and wait until it has cleared
  * the four ports. */
-static u8 gss_upload(const u8 *blob, u16 addr, u8 patches) {
+static u8 gss_upload(const u8 *blob, u16 addr, u8 patches, u8 with_bank) {
     u16 size = (u16)(blob[0] | (blob[1] << 8)), n = 0;
     u8 i;
 
@@ -189,6 +198,9 @@ static u8 gss_upload(const u8 *blob, u16 addr, u8 patches) {
     apuUpload(blob + 2, addr, size);
     for (i = 0; i < patches; i++)
         apuUpload(&gss_patch[i * 2], gss_patch_at[i], 2);
+    if (with_bank)
+        for (i = 0; i < GSS_SFX_BANK_PIECES; i++)
+            apuUpload(gss_bank[i].data, gss_bank[i].addr, gss_bank[i].size);
     apuExecute(GSS_DRIVER_ADDR);
     do {
         if ((REG_APUIO0 | REG_APUIO1 | REG_APUIO2 | REG_APUIO3) == 0)
@@ -199,7 +211,7 @@ static u8 gss_upload(const u8 *blob, u16 addr, u8 patches) {
 
 void sound_init(void) {
     gss_load_addr = (u16)(gss_driver[14] | (gss_driver[15] << 8));
-    gss_ok = gss_upload(gss_driver, GSS_DRIVER_ADDR, 0);
+    gss_ok = gss_upload(gss_driver, GSS_DRIVER_ADDR, 0, 1);
     gss_command(SCMD_INITIALIZE, 0);
     /* Stereo, as SNESGSS's preview and its .spc export play it: without
      * it the driver runs in mono and plays every voice at full volume on
@@ -224,7 +236,7 @@ void sound_bgm(u8 id) {
     gss_patches = 0;
     if (gss_music_loop[id])
         gss_find_loops(song, gss_load_addr);
-    gss_ok = gss_upload(song, gss_load_addr, gss_patches);
+    gss_ok = gss_upload(song, gss_load_addr, gss_patches, 0);
     gss_command(SCMD_MUSIC_PLAY, 0);
     gss_playing = id;
 }
@@ -234,7 +246,7 @@ void sound_sfx(u8 id) {
         return;
     /* sfx_play(chn, sfx, vol, pan): port 0 = chn << 4 | SFX_PLAY,
      * port 1 = volume, port 2 = effect, port 3 = pan. */
-    gss_command((u16)((gss_sfx[id].volume << 8) | ((GSS_SFX_CHANNEL & 0x0F) << 4) | SCMD_SFX_PLAY),
+    gss_command((u16)((gss_sfx[id].volume << 8) | ((gss_sfx[id].channel & 0x0F) << 4) | SCMD_SFX_PLAY),
                 (u16)((GSS_SFX_PAN << 8) | gss_sfx[id].sfx));
 }
 

@@ -41,7 +41,10 @@
  * through the text module, which flushes only what changed. */
 #define GLYPH_BLOCK  ((char)127)
 
+/** Video and input setup, with the screen still off. */
 void plat_init(void);
+/** Turn the screen on (after the slow work of boot, e.g. the sound upload). */
+void plat_show(void);
 /** Wait for the next frame and latch the pad. */
 void plat_frame(void);
 u16  plat_pressed(void);

@@ -165,13 +165,33 @@ the `music_N.bin` files. `gss_data.asm` replaces the exported
      `[BGM_WIN] = gss_music_2,`.
 
   A song hook set to `0` stops the music.
-- **Add sound effects:** create them in the same SNESGSS project, then
-  export and copy `spc700.bin` again (the effects travel inside it). The
-  driver numbers them 0, 1, 2… in the order the exported `sounds.h` lists
-  them. Give each hook its number in the `gss_sfx` table in
-  `src/sound.c`, for example `[SFX_HURT] = { 3, 127 },` (effect 3,
-  volume 127). Effects play on channel `GSS_SFX_CHANNEL` (7), so keep the
-  songs on fewer channels than that.
+- **Sound effects play together with the music.** Both run on the
+  SNESGSS driver, because only one program can drive the SNES sound chip.
+  You don't need to make the effects in SNESGSS: the WAV files in
+  `assets/sfx/` are added to the driver by `tools/gss_add_sfx.py`. That
+  script resamples each WAV, encodes it as BRR, and adds it to the driver
+  as an instrument plus a one-note effect. It writes
+  `res/gss/spc700_sfx.bin` (the driver the game loads), the sample data
+  (`res/gss/sfx_bank_N.bin` and `gss_sfx_data.asm`), and `src/gss_sfx.h`.
+  Your song stays at the address SNESGSS gave it.
+  - **To change a sound:** replace its WAV in `assets/sfx/`, then run
+    `python3 tools/gss_add_sfx.py` and `make`.
+  - **To add one:** put the WAV in `assets/sfx/`, add an `[[sfx]]` entry
+    to `res/gss/sfx.toml`, and run the script. Then give the hook its
+    effect in the `gss_sfx` table in `src/sound.c`, for example
+    `[SFX_SMUG] = { GSS_SFX_SMUG, 110, 5 },`. The three numbers are the
+    effect, the volume (0–127) and the channel.
+  - **After a new SNESGSS export:** copy `spc700.bin` and `music_1.bin`
+    in as before, then run the script again.
+  - **Channels:** the song uses channel 0. An effect only plays on a
+    channel the song doesn't use, and each channel plays one effect at a
+    time. Text plays on channel 7, menus on 6, and hurt and death sounds
+    on 5. A song that used channels 5 to 7 would silence those effects.
+  - **Space:** the six effects use about 33 KB of the 64 KB of sound
+    RAM, at 31.5 kHz (`note = 71` in `sfx.toml`). The script reports what
+    is left. `note = 60` halves the size at 16.7 kHz.
+  - **Boot:** uploading the effects takes about a second at power-on.
+    The screen stays black during it.
 
 After `INITIALIZE`, the game sends `STEREO` (on). Without it the driver
 runs in mono and plays every voice at full volume on both sides, twice as

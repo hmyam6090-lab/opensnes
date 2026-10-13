@@ -13,9 +13,10 @@
 
 int main(void) {
     plat_init();
-    sound_init();
+    sound_init();            /* about a second to upload the sound driver and effects */
     plat_seed(0x7E3A);
     battle_init();
+    plat_show();
 
     while (1) {
         plat_frame();

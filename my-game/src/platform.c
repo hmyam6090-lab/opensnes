@@ -88,6 +88,9 @@ void plat_init(void) {
     }
 
     setMainScreen(LAYER_BG1 | LAYER_OBJ);
+}
+
+void plat_show(void) {
     WaitForVBlank();
     setScreenOn();
 }

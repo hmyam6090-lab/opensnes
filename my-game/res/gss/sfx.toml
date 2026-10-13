@@ -1,0 +1,37 @@
+# Sound effects added to the SNESGSS driver by tools/gss_add_sfx.py.
+# After any change here (or to a WAV, or a new spc700.bin from SNESGSS):
+#     python3 tools/gss_add_sfx.py && make
+#
+# Each [[sfx]] becomes GSS_SFX_<NAME> in src/gss_sfx.h, in this order;
+# src/sound.c's gss_sfx table says which hook plays it.
+
+# The note the effects play: their WAVs are resampled so that this note
+# plays them at their own speed. 71 = 31.5 kHz (best quality); 60 = 16.7 kHz
+# (half the sound RAM).
+note = 71
+# Silence below this (dB under the sound's peak) is cut from both ends.
+trim_db = -50
+
+[[sfx]]
+name = "select"
+wav = "../../assets/sfx/snd_select.wav"
+
+[[sfx]]
+name = "text"
+wav = "../../assets/sfx/snd_txt2.wav"
+
+[[sfx]]
+name = "temmie"
+wav = "../../assets/sfx/snd_temmie.wav"
+
+[[sfx]]
+name = "hurt"
+wav = "../../assets/sfx/snd_hurt1.wav"
+
+[[sfx]]
+name = "crack"
+wav = "../../assets/sfx/snd_crack.wav"
+
+[[sfx]]
+name = "shatter"
+wav = "../../assets/sfx/snd_shatter.wav"
