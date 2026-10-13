@@ -1,0 +1,2701 @@
+; this file was created with wlalink by ville helin <ville.helin@iki.fi>.
+; wla symbolic information for "my-game.sfc".
+
+[information]
+version 3
+wlasymbol true
+
+[labels]
+00:821d EmptyHandler
+00:0000 tcc__r0
+00:0002 tcc__r0h
+00:0004 tcc__r1
+00:0006 tcc__r1h
+00:0008 tcc__r2
+00:000a tcc__r2h
+00:000c tcc__r3
+00:000e tcc__r3h
+00:0010 tcc__r4
+00:0012 tcc__r4h
+00:0014 tcc__r5
+00:0016 tcc__r5h
+00:0018 tcc__r9
+00:001a tcc__r9h
+00:001c tcc__r10
+00:001e tcc__r10h
+00:0020 tcc__retval_hi
+00:0022 nmi_callback
+00:0026 nmi_has_callback
+00:0027 dynamic_flush_hook
+00:002b oam_dynamic_draining
+00:002c tcc__fp
+00:0030 irq_callback
+00:0080 tcc__lf
+00:0f00 tcc__nmi_registers
+00:0e20 vblank_flag
+00:0e21 oam_update_flag
+00:0e22 tilemap_update_flag
+00:0e23 tilemap_vram_addr
+00:0e25 tilemap_src_addr
+00:0e27 tilemap_dirty_lo
+00:0e29 tilemap_dirty_hi
+00:0e2b frame_count
+00:0e2d frame_count_svg
+00:0e2f lag_frame_counter
+00:0e31 pad_keys
+00:0e3b pad_keysold
+00:0e45 pad_keysdown
+00:0e4f snes_mplay5
+00:0e50 mouse_reader
+00:0e54 scope_reader
+00:0e58 mplay5_reader
+00:0e5c pad_present
+00:0e5e mp5read
+00:0e5f bg_scroll_x
+00:0e67 bg_scroll_y
+00:0e6f bg_scroll_dirty
+00:0e70 oam_max_id
+00:0e71 mouse_con
+00:0e72 mouse_x
+00:0e74 mouse_y
+00:0e76 mouseConnect
+00:0e78 mousePressed
+00:0e7a mousePreviousPressed
+00:0e7c mouseButton
+00:0e7e mouseSensitivity
+00:0e80 mouseRequestChangeSensitivity
+00:0e82 sa1_status
+00:0e83 superfx_status
+00:0e84 nmitimen_shadow
+00:0e85 in_nmi_ctx
+00:0e86 setini_shadow
+00:0e87 bg3_opt
+00:0ec8 scope_con
+00:0ec9 scope_sinceshot
+00:0ecb scope_shoth
+00:0ecd scope_shotv
+00:0ecf scope_shothraw
+00:0ed1 scope_shotvraw
+00:0ed3 scope_centerh
+00:0ed5 scope_centerv
+00:0ed7 scope_down
+00:0ed9 scope_now
+00:0edb scope_held
+00:0edd scope_last
+00:0edf scope_port2down
+00:0ee1 scope_port2last
+00:0ee3 scope_port2now
+00:0ee5 scope_holddelay
+00:0ee7 scope_repdelay
+00:0ee9 scope_tohold
+00:0300 _reserved_7e_mirror
+7e:0300 oamMemory
+00:842e InitHardware
+00:84fb InitHardware@oam_clear_loop
+00:8514 InitHardware@oam_ext_clear
+00:8145 Start
+00:821c ZeroByte
+00:854a CopyInitData
+00:8552 CopyInitData@init_loop
+00:857e CopyInitData@copy_byte
+00:858a CopyInitData@next_record
+00:8599 CopyInitData@init_done
+00:8244 NmiHandler
+00:826d NmiHandler@vblank_work
+00:8276 NmiHandler@dynamic_flush_done
+00:82a7 NmiHandler@oam_done
+00:82bd NmiHandler@scroll_go
+00:82df NmiHandler@bg1_done
+00:8301 NmiHandler@bg2_done
+00:831e NmiHandler@bg3_raw
+00:8321 NmiHandler@bg3_vofs
+00:832d NmiHandler@bg3_done
+00:834c NmiHandler@bg4_done
+00:834f NmiHandler@scroll_done
+00:8358 NmiHandler@do_callback
+00:836d NmiHandler@callback_done
+00:8379 NmiHandler@skip_callback
+00:838d NmiHandler@mp5_done
+00:83e0 NmiHandler@p1_present_done
+00:83ef NmiHandler@p2_present_done
+00:83f9 NmiHandler@no_mp5_skip
+00:8402 NmiHandler@mouse_done
+00:840d NmiHandler@scope_done
+00:8412 NmiHandler@nmi_restore
+00:841a DefaultNmiCallback
+00:841b DefaultDynamicFlush
+00:841c WaitForVBlank
+00:859a CallMPlay5Reader
+00:859d CallMouseReader
+00:85a0 CallScopeReader
+00:8670 IrqHandler
+00:8673 DefaultIrqHandler
+00:867f tilemapFlush
+00:86d0 tilemapFlush@flush_none
+00:8000 tcc_mul16
+00:8051 tcc_mul16@soft_mul
+00:805d tcc_mul16@sm_loop
+00:806b tcc_mul16@sm_next
+00:806f tcc_mul16@sm_done
+00:8072 tcc_div16
+00:80af tcc_div16@div_zero
+00:80b6 tcc_div16@software_div
+00:80c1 tcc_div16@div_loop
+00:80d2 tcc_div16@no_sub
+00:80e0 tcc_mod16
+00:80e9 tcc_sdiv16
+00:80fb tcc_sdiv16@sdiv_dpos
+00:8105 tcc_sdiv16@sdiv_vpos
+00:8114 tcc_sdiv16@sdiv_done
+00:8118 tcc_smod16
+00:8126 tcc_smod16@smod_dpos
+00:8130 tcc_smod16@smod_vpos
+00:813f tcc_smod16@smod_done
+00:85a3 DataInitStart
+07:c7b2 sfx_blip_brr
+07:c830 sfx_blip_brr_end
+07:ba43 sfx_crack_brr
+07:bd2e sfx_crack_brr_end
+07:b086 sfx_eat_brr
+07:b65c sfx_eat_brr_end
+07:b65c sfx_hurt_brr
+07:ba43 sfx_hurt_brr_end
+07:c3d0 sfx_move_brr
+07:c4cc sfx_move_brr_end
+07:bf2e sfx_select_brr
+07:c126 sfx_select_brr_end
+07:a000 sfx_shatter_brr
+07:a8c1 sfx_shatter_brr_end
+07:a8c1 sfx_spare_brr
+07:b086 sfx_spare_brr_end
+07:c710 sfx_temmie_brr
+07:c7b2 sfx_temmie_brr_end
+07:8000 sprites_tiles
+07:a000 sprites_tiles_end
+07:cbb6 sprites_pal
+07:cbd6 sprites_pal_end
+00:8223 main
+00:8225 main@start.3
+00:8225 main@body.4
+00:8239 main@while_cond.5
+00:8239 main@while_body.6
+07:cd18 sprites.platform
+07:c830 box_tiles.platform
+00:1016 fixed_end.platform
+00:1052 fixed_used.platform
+07:cf16 piece_style.platform
+00:0ffa pad_pressed.platform
+00:1010 pad_held.platform
+00:1012 frame_counter.platform
+00:104e tiles_dirty.platform
+00:104d next_slot.platform
+00:104c used_slots.platform
+00:0d20 arm_tiles.platform
+00:b3d3 plat_init
+00:b3db plat_init@start.31
+00:b3ec plat_init@body.32
+00:b406 plat_init@inl1.start.3
+00:b406 plat_init@inl1.body.4
+00:b408 plat_init@inl1.for_cond.5
+00:b418 plat_init@scmp.1
+00:b41d plat_init@inl1.for_body.6
+00:b427 plat_init@inl1.for_cond.9
+00:b437 plat_init@scmp.2
+00:b43c plat_init@inl1.for_body.10
+00:b447 plat_init@scmp.3
+00:b449 plat_init@inl1.logic_right.13
+00:b454 plat_init@scmp.4
+00:b456 plat_init@inl1.if_false.16
+00:b461 plat_init@scmp.5
+00:b463 plat_init@inl1.if_false.23
+00:b46c plat_init@inl1.cond_false.29
+00:b474 plat_init@inl1.cond_true.28
+00:b479 plat_init@inl1.cond_join.30
+00:b47c plat_init@inl1.if_true.22
+00:b485 plat_init@inl1.cond_false.25
+00:b48d plat_init@inl1.cond_true.24
+00:b492 plat_init@inl1.cond_join.26
+00:b492 plat_init@inl1.if_join.27
+00:b495 plat_init@inl1.if_true.15
+00:b4a6 plat_init@inl1.if_true.17
+00:b4ab plat_init@inl1.if_false.18
+00:b4b4 plat_init@inl1.if_true.19
+00:b4bb plat_init@inl1.if_false.20
+00:b4bb plat_init@inl1.if_join.21
+00:b4fb plat_init@inl1.for_cont.11
+00:b503 plat_init@inl1.for_join.12
+00:b503 plat_init@inl1.for_cont.7
+00:b50b plat_init@inl1.for_join.8
+00:b50b plat_init@inl1.ret
+00:b521 plat_init@do_body.33
+00:b537 plat_init@do_cond.34
+00:b537 plat_init@do_join.35
+00:b537 plat_init@do_body.36
+00:b54d plat_init@do_cond.37
+00:b54d plat_init@do_join.38
+00:b54d plat_init@do_body.39
+00:b563 plat_init@do_cond.40
+00:b563 plat_init@do_join.41
+00:b563 plat_init@do_body.42
+00:b579 plat_init@do_cond.43
+00:b579 plat_init@do_join.44
+00:b579 plat_init@do_body.45
+00:b58f plat_init@do_cond.46
+00:b58f plat_init@do_join.47
+00:b58f plat_init@do_body.48
+00:b5a5 plat_init@do_cond.49
+00:b5a5 plat_init@do_join.50
+00:b5eb plat_init@for_cond.51
+00:b5fb plat_init@scmp.6
+00:b5fd plat_init@for_body.52
+00:b601 plat_init@cond_true.55
+00:b606 plat_init@cond_false.56
+00:b60b plat_init@cond_join.57
+00:b623 plat_init@for_cont.53
+00:b62b plat_init@for_join.54
+00:e073 plat_frame
+00:e075 plat_frame@start.58
+00:e075 plat_frame@body.59
+00:e081 plat_frame@if_true.60
+00:e08c plat_frame@if_false.61
+00:e3d0 plat_pressed
+00:e3d2 plat_pressed@start.62
+00:e3d2 plat_pressed@body.63
+00:e3dc plat_held
+00:e3de plat_held@start.64
+00:e3de plat_held@body.65
+00:e3e2 plat_frame_count
+00:e3e4 plat_frame_count@start.66
+00:e3e4 plat_frame_count@body.67
+00:e37d plat_text_color
+00:e37f plat_text_color@start.68
+00:e37f plat_text_color@body.69
+00:e0a4 plat_print
+00:e0a6 plat_print@start.70
+00:e0ae plat_print@body.71
+00:dfdb plat_putc
+00:dfdd plat_putc@start.72
+00:dfdd plat_putc@body.73
+00:e12c plat_print_u16
+00:e12e plat_print_u16@start.74
+00:e12e plat_print_u16@body.75
+00:dfa6 plat_clear
+00:dfa8 plat_clear@start.76
+00:dfa8 plat_clear@body.77
+00:df6f put_tile.platform
+00:df6f put_tile.platform@start.78
+00:df6f put_tile.platform@body.79
+00:e0d3 plat_put_tile
+00:e0d5 plat_put_tile@start.80
+00:e0d5 plat_put_tile@body.81
+00:c67a plat_box
+00:c682 plat_box@start.82
+00:c682 plat_box@body.83
+00:c6c9 plat_box@for_cond.84
+00:c6d6 plat_box@scmp.7
+00:c6d8 plat_box@for_body.85
+00:c6fe plat_box@for_cont.86
+00:c706 plat_box@for_join.87
+00:c70b plat_box@for_cond.88
+00:c718 plat_box@scmp.8
+00:c71a plat_box@for_body.89
+00:c740 plat_box@for_cont.90
+00:c748 plat_box@for_join.91
+00:e1a2 plat_soul
+00:e1a4 plat_soul@start.92
+00:e1a4 plat_soul@body.93
+00:e1ec plat_soul_tile
+00:e1ee plat_soul_tile@start.94
+00:e1ee plat_soul_tile@body.95
+00:e3bd plat_soul_hide
+00:e3bf plat_soul_hide@start.96
+00:e3bf plat_soul_hide@body.97
+00:da0a plat_face
+00:da0c plat_face@start.98
+00:da14 plat_face@body.99
+00:da1d plat_face@lcmp.9
+00:da1f plat_face@if_false.101
+00:da6f plat_face@if_true.100
+00:e3a5 plat_fixed_begin
+00:e3a7 plat_fixed_begin@start.102
+00:e3a7 plat_fixed_begin@body.103
+00:d635 plat_fixed_end
+00:d63d plat_fixed_end@start.104
+00:d63d plat_fixed_end@body.105
+00:d649 plat_fixed_end@for_cond.106
+00:d664 plat_fixed_end@scmp.10
+00:d666 plat_fixed_end@for_body.107
+00:d66e plat_fixed_end@for_cont.108
+00:d676 plat_fixed_end@for_join.109
+00:d6a4 plat_fixed_end@scmp.11
+00:d6a6 plat_fixed_end@if_true.110
+00:d6af plat_fixed_end@if_false.111
+00:e343 plat_sprites_begin
+00:e345 plat_sprites_begin@start.112
+00:e345 plat_sprites_begin@body.113
+00:dd9b plat_pieces
+00:dd9d plat_pieces@start.114
+00:dda5 plat_pieces@body.115
+00:ddba plat_pieces@scmp.12
+00:ddbc plat_pieces@if_true.116
+00:dde7 plat_pieces@if_false.117
+00:d99b plat_image
+00:d99d plat_image@start.118
+00:d9a5 plat_image@body.119
+00:d9ba plat_image@scmp.13
+00:d9bc plat_image@if_true.120
+00:da09 plat_image@if_false.121
+00:dbfb plat_sprites_end
+00:dc03 plat_sprites_end@start.122
+00:dc03 plat_sprites_end@body.123
+00:dc0f plat_sprites_end@for_cond.124
+00:dc2a plat_sprites_end@scmp.14
+00:dc2c plat_sprites_end@for_body.125
+00:dc34 plat_sprites_end@for_cont.126
+00:dc3c plat_sprites_end@for_join.127
+00:e3e8 plat_rand
+00:e3e8 plat_rand@start.128
+00:e3e8 plat_rand@body.129
+00:e3f0 plat_seed
+00:e3f0 plat_seed@start.130
+00:e3f0 plat_seed@body.131
+07:c59c sfx_table.sound
+00:1049 audio_ok.sound
+00:cd56 sound_init
+00:cd5e sound_init@start.3
+00:cd5e sound_init@body.4
+00:cd7f sound_init@if_false.6
+00:cd81 sound_init@for_cond.7
+00:cd91 sound_init@scmp.1
+00:cd96 sound_init@for_body.8
+00:cdb8 sound_init@if_true.11
+00:ce08 sound_init@if_false.12
+00:ce08 sound_init@for_cont.9
+00:ce10 sound_init@for_join.10
+00:ce17 sound_init@if_true.5
+00:d8b0 sound_sfx
+00:d8b2 sound_sfx@start.13
+00:d8b2 sound_sfx@body.14
+00:d8be sound_sfx@logic_right.15
+00:d8ce sound_sfx@scmp.2
+00:d8d0 sound_sfx@logic_right.17
+00:d8f5 sound_sfx@lcmp.3
+00:d8f7 sound_sfx@if_false.20
+00:d926 sound_sfx@if_true.19
+00:e3f4 sound_bgm
+00:e3f6 sound_bgm@start.21
+00:e3f6 sound_bgm@body.22
+00:1047 tb_finished.textbox
+00:0fe4 tb_text.textbox
+00:0ff6 tb_pos.textbox
+00:1044 tb_x0.textbox
+00:1043 tb_y0.textbox
+00:1042 tb_w.textbox
+00:1041 tb_h.textbox
+00:1040 tb_cx.textbox
+00:103f tb_cy.textbox
+00:103e tb_timer.textbox
+00:103d tb_count.textbox
+00:103c tb_blip.textbox
+00:103b tb_fresh.textbox
+00:103a tb_indent.textbox
+00:ce1e tb_start
+00:ce26 tb_start@start.3
+00:ce2e tb_start@body.4
+00:e1c7 newline.textbox
+00:e1c7 newline.textbox@start.14
+00:e1c7 newline.textbox@body.15
+00:bad6 step.textbox
+00:badc step.textbox@start.16
+00:badc step.textbox@body.17
+00:bb10 step.textbox@if_true.18
+00:bb1f step.textbox@if_false.19
+00:bb2f step.textbox@if_false.21
+00:bb34 step.textbox@logic_right.22
+00:bb40 step.textbox@if_true.24
+00:bb49 step.textbox@if_false.25
+00:bb53 step.textbox@if_true.26
+00:bb62 step.textbox@if_false.29
+00:bb73 step.textbox@inl1.start.5
+00:bb73 step.textbox@inl1.body.6
+00:bb75 step.textbox@inl1.while_cond.7
+00:bbae step.textbox@inl1.logic_right.10
+00:bbb3 step.textbox@inl1.logic_right.12
+00:bbba step.textbox@inl1.while_body.8
+00:bbc2 step.textbox@inl1.while_join.9
+00:bbc2 step.textbox@inl1.ret
+00:bbdc step.textbox@scmp.1
+00:bbe1 step.textbox@if_false.31
+00:bbe1 step.textbox@if_false.27
+00:bc03 step.textbox@scmp.2
+00:bc05 step.textbox@if_true.32
+00:bc09 step.textbox@if_false.33
+00:bc2b step.textbox@scmp.3
+00:bc2d step.textbox@if_false.35
+00:bc91 step.textbox@if_true.34
+00:bca0 step.textbox@if_true.30
+00:bcaa step.textbox@if_true.28
+00:bcb0 step.textbox@if_true.20
+00:cbab tb_update
+00:cbad tb_update@start.36
+00:cbad tb_update@body.37
+00:cbbc tb_update@if_false.39
+00:cbde tb_update@scmp.4
+00:cbe3 tb_update@if_false.41
+00:cbea tb_update@while_cond.42
+00:cbf6 tb_update@logic_right.45
+00:cbff tb_update@while_body.43
+00:cc02 tb_update@while_join.44
+00:cc11 tb_update@logic_right.47
+00:cc33 tb_update@scmp.5
+00:cc35 tb_update@if_true.49
+00:cc48 tb_update@if_false.50
+00:cc78 tb_update@if_true.51
+00:cc81 tb_update@if_false.52
+00:cc82 tb_update@if_true.40
+00:cc83 tb_update@if_true.38
+00:e318 tb_finish
+00:e31a tb_finish@start.53
+00:e31a tb_finish@body.54
+00:e31a tb_finish@while_cond.55
+00:e326 tb_finish@while_body.56
+00:e32d tb_finish@while_join.57
+00:e38c tb_done
+00:e38e tb_done@start.58
+00:e38e tb_done@body.59
+07:c9dd content_string.2
+07:cfae txt_encounter
+07:c890 content_string.3
+07:cfb2 txt_check
+07:cc4b content_string.4
+07:cf62 txt_talk
+07:caea content_string.5
+07:cfb6 txt_feed
+07:cb75 content_string.6
+07:cf66 txt_feed_prompt
+07:cbd6 content_string.7
+07:cfc2 txt_fight_stub
+07:ca11 content_string.8
+07:cf6e txt_item_have
+07:cc66 content_string.9
+07:cf72 txt_item_none
+07:cb54 content_string.10
+07:cb11 content_string.11
+07:cc11 content_string.12
+07:cbf4 content_string.13
+07:cc2e content_string.14
+07:ca43 content_string.15
+07:cc80 flavor_pool
+07:ccf1 content_string.16
+07:cc98 content_string.17
+07:ccaf content_string.18
+07:ceb8 neutral_pool
+07:cd06 content_string.19
+07:cf76 say_no_flakes
+07:cefe content_string.20
+07:cf7a say_foob
+07:ccc6 content_string.21
+07:cf7e say_win
+07:cb33 content_string.22
+07:cf82 say_refused
+07:cb96 content_string.23
+07:cf86 out_spared
+07:cac3 content_string.24
+07:cf8a out_fed
+07:ca71 content_string.25
+07:cf8e out_left
+07:ce70 content_string.26
+07:cf5e out_lose
+07:cd8a content_string.27
+07:cf9a ui_status
+07:cef6 content_string.28
+07:cfc6 ui_spare
+07:cf4a content_string.29
+07:cf96 ui_yes
+07:cfcd content_string.30
+07:cfba ui_no
+07:ced0 content_string.31
+07:cf6a ui_press_start
+07:cfda refusal_as_picture
+07:cf3a content_string.32
+07:cfbe content_string.33
+07:cf40 content_string.34
+07:cf34 content_string.35
+07:cd2a menu_labels
+07:cfa2 menu_cols
+07:ceee content_string.36
+07:cf26 content_string.37
+07:ccdc content_string.38
+07:ce4c act_labels
+07:cf9e text_box
+07:ce40 atk_box
+07:cfd4 neutral_attacks
+07:cedc tall_boxes
+07:cf5a tall_leg_x
+07:cf56 tall_leg_phase
+07:cfd9 tall_leg_top
+07:cfd8 tall_cage_x
+07:ca9b tall_params
+07:cdea arm_params
+07:c99d sine64
+07:cf52 dir_dx.attacks
+07:cf92 dir_dy.attacks
+07:cf4e dir_bit.attacks
+00:1000 board_l
+00:1002 board_r
+00:1004 board_t
+00:1008 board_b
+00:1054 atk_kind.attacks
+00:0ff8 atk_timer.attacks
+00:0fdc tp.attacks
+00:100e tem_x.attacks
+00:100c walk_target.attacks
+00:100a walk_speed.attacks
+00:1032 walk_pause.attacks
+00:1006 feint_left.attacks
+00:1017 sway_phase.attacks
+00:00a0 leg_ms.attacks
+00:1018 leg_n.attacks
+00:01a8 grid.attacks
+00:1019 gcols.attacks
+00:101a grows.attacks
+00:101b tile_c0.attacks
+00:101c tile_r0.attacks
+00:0034 cell_c.attacks
+00:0e88 cell_r.attacks
+00:101d cells.attacks
+00:101e arm_dir.attacks
+00:1014 arm_prog.attacks
+00:101f arm_phase.attacks
+00:1020 arm_wait.attacks
+00:0ff0 prev_sx.attacks
+00:0fee prev_sy.attacks
+00:0fec traced.attacks
+00:e3b1 soul_hx.attacks
+00:e3b1 soul_hx.attacks@start.11
+00:e3b1 soul_hx.attacks@body.12
+00:e399 soul_hy.attacks
+00:e399 soul_hy.attacks@start.13
+00:e399 soul_hy.attacks@body.14
+00:d7b4 hits_soul.attacks
+00:d7ba hits_soul.attacks@start.15
+00:d7ba hits_soul.attacks@body.16
+00:d7c6 hits_soul.attacks@inl1.start.3
+00:d7c6 hits_soul.attacks@inl1.body.4
+00:d7d7 hits_soul.attacks@scmp.1
+00:d7de hits_soul.attacks@inl1.logic_right.5
+00:d7f0 hits_soul.attacks@scmp.2
+00:d7f7 hits_soul.attacks@inl1.logic_right.7
+00:d808 hits_soul.attacks@scmp.3
+00:d80f hits_soul.attacks@inl1.logic_right.9
+00:d821 hits_soul.attacks@scmp.4
+00:d82d hits_soul.attacks@inl1.logic_join.10
+00:d82d hits_soul.attacks@inl1.ret
+00:e357 abs16.attacks
+00:e357 abs16.attacks@start.27
+00:e357 abs16.attacks@body.28
+00:e35b abs16.attacks@cond_false.30
+00:e362 abs16.attacks@cond_true.29
+00:e368 abs16.attacks@cond_join.31
+00:e28e rand_range.attacks
+00:e28e rand_range.attacks@start.32
+00:e28e rand_range.attacks@body.33
+00:dae1 leg_piece.attacks
+00:dae1 leg_piece.attacks@start.34
+00:dae9 leg_piece.attacks@body.35
+00:e3ec tall_lo.attacks
+00:e3ec tall_lo.attacks@start.36
+00:e3ec tall_lo.attacks@body.37
+00:e3c8 tall_hi.attacks
+00:e3c8 tall_hi.attacks@start.38
+00:e3c8 tall_hi.attacks@body.39
+00:d4ae cell_set.attacks
+00:d4ae cell_set.attacks@start.113
+00:d4ae cell_set.attacks@body.114
+00:de2d cell_mask.attacks
+00:de2d cell_mask.attacks@start.117
+00:de2d cell_mask.attacks@body.118
+00:b123 arm_turn.attacks
+00:b129 arm_turn.attacks@start.129
+00:b135 arm_turn.attacks@body.130
+00:b1dd arm_turn.attacks@cond_false.132
+00:b1e5 arm_turn.attacks@cond_true.131
+00:b1ea arm_turn.attacks@cond_join.133
+00:b20e arm_turn.attacks@cond_false.135
+00:b216 arm_turn.attacks@cond_true.134
+00:b21b arm_turn.attacks@cond_join.136
+00:b247 arm_turn.attacks@scmp.5
+00:b249 arm_turn.attacks@if_false.138
+00:b275 arm_turn.attacks@if_true.137
+00:b29e arm_turn.attacks@if_join.139
+00:b2a0 arm_turn.attacks@for_cond.140
+00:b2b0 arm_turn.attacks@scmp.6
+00:b2b5 arm_turn.attacks@for_body.141
+00:b2e0 arm_turn.attacks@logic_right.144
+00:b2ee arm_turn.attacks@if_false.147
+00:b31e arm_turn.attacks@inl5.start.119
+00:b31e arm_turn.attacks@inl5.body.120
+00:b32d arm_turn.attacks@inl5.logic_right.121
+00:b339 arm_turn.attacks@inl5.logic_right.123
+00:b34f arm_turn.attacks@scmp.7
+00:b351 arm_turn.attacks@inl5.logic_right.125
+00:b367 arm_turn.attacks@scmp.8
+00:b369 arm_turn.attacks@inl5.if_false.128
+00:b3ab arm_turn.attacks@inl5.if_true.127
+00:b3ad arm_turn.attacks@inl5.ret
+00:b3b1 arm_turn.attacks@if_false.149
+00:b3b4 arm_turn.attacks@if_true.148
+00:b3bf arm_turn.attacks@if_true.146
+00:b3bf arm_turn.attacks@for_cont.142
+00:b3c7 arm_turn.attacks@for_join.143
+00:d268 arm_choose.attacks
+00:d26e arm_choose.attacks@start.150
+00:d26e arm_choose.attacks@body.151
+00:d281 arm_choose.attacks@if_false.153
+00:d300 arm_choose.attacks@if_true.152
+00:d063 arm_begin_retract.attacks
+00:d069 arm_begin_retract.attacks@start.154
+00:d069 arm_begin_retract.attacks@body.155
+00:d0ad arm_begin_retract.attacks@if_true.156
+00:d0f1 arm_begin_retract.attacks@if_false.157
+00:dcaa arm_reset.attacks
+00:dcaa arm_reset.attacks@start.158
+00:dcaa arm_reset.attacks@body.159
+00:dcfa arm_reset.attacks@if_true.160
+00:dcfe arm_reset.attacks@if_false.161
+00:b643 atk_start
+00:b64b atk_start@start.284
+00:b64b atk_start@body.285
+00:b6c7 atk_start@if_false.287
+00:b6c7 atk_start@inl10.start.49
+00:b6c7 atk_start@inl10.body.50
+00:b78a atk_start@inl10.if_false.52
+00:b7c7 atk_start@inl10.if_true.51
+00:b7e2 atk_start@inl10.if_join.53
+00:b7e2 atk_start@inl10.ret
+00:b7e5 atk_start@if_true.286
+00:b7e5 atk_start@inl9.start.162
+00:b7e5 atk_start@inl9.body.163
+00:b853 atk_start@inl9.for_cond.164
+00:b85a atk_start@inl9.for_body.165
+00:b863 atk_start@inl9.for_cont.166
+00:b869 atk_start@inl9.for_join.167
+00:b895 atk_start@inl9.ret
+00:b895 atk_start@if_join.288
+00:86d3 atk_update
+00:86db atk_update@start.289
+00:86db atk_update@body.290
+00:86f4 atk_update@if_false.292
+00:86f4 atk_update@inl12.start.77
+00:86f4 atk_update@inl12.body.78
+00:870a atk_update@inl12.if_false.80
+00:8711 atk_update@inl12.logic_right.84
+00:871b atk_update@inl12.if_true.86
+00:8731 atk_update@inl12.if_false.89
+00:874d atk_update@inl12.if_true.88
+00:8762 atk_update@inl12.if_join.90
+00:877c atk_update@inl12.if_false.87
+00:878b atk_update@inl12.inl3.start.17
+00:878b atk_update@inl12.inl3.body.18
+00:8791 atk_update@inl12.inl3.if_false.20
+00:879c atk_update@inl12.inl3.cond_false.25
+00:87a6 atk_update@inl12.inl3.cond_true.24
+00:87aa atk_update@inl12.inl3.cond_join.26
+00:87ad atk_update@inl12.inl3.if_true.19
+00:87ba atk_update@inl12.inl3.cond_false.22
+00:87c4 atk_update@inl12.inl3.cond_true.21
+00:87c8 atk_update@inl12.inl3.cond_join.23
+00:87c8 atk_update@inl12.inl3.ret
+00:87d8 atk_update@inl12.if_true.91
+00:8819 atk_update@inl12.if_false.92
+00:881c atk_update@inl12.if_true.79
+00:8830 atk_update@inl12.if_true.81
+00:8830 atk_update@inl12.inl2.start.40
+00:8830 atk_update@inl12.inl2.body.41
+00:8888 atk_update@scmp.9
+00:888a atk_update@inl12.inl2.if_true.42
+00:889e atk_update@scmp.10
+00:88a0 atk_update@inl12.inl2.if_false.45
+00:88d5 atk_update@inl12.inl2.if_true.44
+00:8903 atk_update@inl12.inl2.if_join.46
+00:8903 atk_update@inl12.inl2.if_false.43
+00:8971 atk_update@scmp.11
+00:8973 atk_update@inl12.inl2.if_true.47
+00:899a atk_update@inl12.inl2.if_false.48
+00:899a atk_update@inl12.inl2.ret
+00:899a atk_update@inl12.if_false.82
+00:899a atk_update@inl12.if_join.83
+00:8a14 atk_update@inl12.logic_right.93
+00:8a1d atk_update@inl12.if_true.95
+00:8a25 atk_update@inl12.if_false.96
+00:8a41 atk_update@inl12.for_cond.97
+00:8a51 atk_update@scmp.12
+00:8a56 atk_update@inl12.for_body.98
+00:8adf atk_update@inl12.inl4.start.54
+00:8adf atk_update@inl12.inl4.body.55
+00:8b0c atk_update@inl12.inl4.if_true.56
+00:8b11 atk_update@inl12.inl4.if_false.57
+00:8b23 atk_update@scmp.13
+00:8b2c atk_update@inl12.inl4.if_true.58
+00:8b31 atk_update@inl12.inl4.if_false.59
+00:8b5c atk_update@inl12.inl4.cond_false.61
+00:8b64 atk_update@inl12.inl4.cond_true.60
+00:8b6a atk_update@inl12.inl4.cond_join.62
+00:8be0 atk_update@inl12.inl4.for_cond.63
+00:8bef atk_update@scmp.14
+00:8bf4 atk_update@inl12.inl4.for_body.64
+00:8c0d atk_update@scmp.15
+00:8c0f atk_update@inl12.inl4.if_true.67
+00:8c13 atk_update@inl12.inl4.if_false.68
+00:8c51 atk_update@inl12.inl4.logic_right.69
+00:8c75 atk_update@inl12.inl4.if_true.71
+00:8c7a atk_update@inl12.inl4.if_false.72
+00:8c7a atk_update@inl12.inl4.for_cont.65
+00:8c8d atk_update@inl12.inl4.for_join.66
+00:8cb7 atk_update@inl12.inl4.logic_right.73
+00:8cdb atk_update@inl12.inl4.if_true.75
+00:8ce0 atk_update@inl12.inl4.if_false.76
+00:8ce0 atk_update@inl12.inl4.ret
+00:8ce0 atk_update@inl12.for_cont.99
+00:8cf2 atk_update@inl12.for_join.100
+00:8d5d atk_update@inl12.if_false.102
+00:8d63 atk_update@inl12.for_cond.103
+00:8d73 atk_update@scmp.16
+00:8d78 atk_update@inl12.for_body.104
+00:8d9b atk_update@inl12.logic_right.107
+00:8e02 atk_update@inl12.if_true.109
+00:8e07 atk_update@inl12.if_false.110
+00:8e07 atk_update@inl12.for_cont.105
+00:8e13 atk_update@inl12.for_join.106
+00:8e17 atk_update@inl12.if_true.111
+00:8e43 atk_update@inl12.if_false.112
+00:8e46 atk_update@inl12.if_true.101
+00:8e46 atk_update@inl12.ret
+00:8e5f atk_update@if_true.291
+00:8e5f atk_update@inl11.start.230
+00:8e5f atk_update@inl11.body.231
+00:8e70 atk_update@inl11.if_true.232
+00:8e8b atk_update@inl11.if_true.234
+00:8fbc atk_update@scmp.17
+00:8fbe atk_update@inl11.logic_right.236
+00:8fc9 atk_update@scmp.18
+00:8fcb atk_update@inl11.logic_right.238
+00:8fd4 atk_update@inl11.if_true.240
+00:8fd8 atk_update@inl11.if_false.241
+00:8fd8 atk_update@inl11.if_false.235
+00:8fe7 atk_update@inl11.logic_right.242
+00:8fe7 atk_update@inl11.inl6.start.168
+00:8fe7 atk_update@inl11.inl6.body.169
+00:904a atk_update@scmp.19
+00:9054 atk_update@inl11.inl6.logic_right.170
+00:9062 atk_update@scmp.20
+00:906e atk_update@inl11.inl6.logic_join.171
+00:9089 atk_update@scmp.21
+00:9093 atk_update@inl11.inl6.logic_right.172
+00:90a1 atk_update@scmp.22
+00:90ad atk_update@inl11.inl6.logic_join.173
+00:90b1 atk_update@inl11.inl6.logic_right.174
+00:90b5 atk_update@inl11.inl6.if_true.176
+00:90bd atk_update@inl11.inl6.if_false.177
+00:9116 atk_update@inl11.inl6.if_false.179
+00:911a atk_update@inl11.inl6.logic_right.180
+00:9152 atk_update@scmp.23
+00:9154 atk_update@inl11.inl6.if_false.183
+00:9158 atk_update@inl11.inl6.logic_right.184
+00:9190 atk_update@scmp.24
+00:9192 atk_update@inl11.inl6.if_false.187
+00:9197 atk_update@inl11.inl6.if_true.186
+00:919f atk_update@inl11.inl6.if_true.182
+00:91a7 atk_update@inl11.inl6.if_true.178
+00:91a9 atk_update@inl11.inl6.ret
+00:91ad atk_update@inl11.if_true.244
+00:91b1 atk_update@inl11.if_false.245
+00:91b4 atk_update@inl11.if_false.233
+00:91b9 atk_update@inl11.if_false.248
+00:91eb atk_update@scmp.25
+00:91ed atk_update@inl11.if_true.264
+00:91f1 atk_update@inl11.if_false.265
+00:91f4 atk_update@inl11.if_true.247
+00:9226 atk_update@scmp.26
+00:922b atk_update@inl11.if_true.249
+00:9260 atk_update@inl11.inl7.start.115
+00:9260 atk_update@inl11.inl7.body.116
+00:92bf atk_update@inl11.inl7.ret
+00:92cd atk_update@inl11.if_false.252
+00:92dc atk_update@inl11.if_true.251
+00:9311 atk_update@scmp.27
+00:9313 atk_update@inl11.cond_false.254
+00:931d atk_update@scmp.28
+00:931f atk_update@inl11.cond_false.257
+00:9329 atk_update@scmp.29
+00:932b atk_update@inl11.cond_false.260
+00:9333 atk_update@inl11.cond_true.259
+00:9338 atk_update@inl11.cond_join.261
+00:933b atk_update@inl11.cond_true.256
+00:9340 atk_update@inl11.cond_join.258
+00:9347 atk_update@inl11.cond_true.253
+00:934c atk_update@inl11.cond_join.255
+00:9379 atk_update@inl11.if_join.262
+00:9379 atk_update@inl11.if_false.250
+00:9379 atk_update@inl11.if_join.263
+00:9379 atk_update@inl11.if_join.246
+00:9397 atk_update@inl11.if_false.267
+00:9421 atk_update@inl11.if_true.268
+00:947a atk_update@inl11.if_false.269
+00:94df atk_update@inl11.for_cond.270
+00:94ee atk_update@scmp.30
+00:94f0 atk_update@inl11.for_body.271
+00:9500 atk_update@scmp.31
+00:9502 atk_update@inl11.cond_false.275
+00:9509 atk_update@inl11.cond_true.274
+00:9509 atk_update@inl11.cond_join.276
+00:951f atk_update@inl11.for_cont.272
+00:952a atk_update@inl11.for_join.273
+00:955a atk_update@inl11.if_false.278
+00:956a atk_update@inl11.logic_right.280
+00:956a atk_update@inl11.inl8.start.188
+00:956a atk_update@inl11.inl8.body.189
+00:95d6 atk_update@inl11.inl8.for_cond.190
+00:95de atk_update@scmp.32
+00:95e3 atk_update@inl11.inl8.for_body.191
+00:95ee atk_update@inl11.inl8.for_cond.194
+00:95f8 atk_update@scmp.33
+00:95fd atk_update@inl11.inl8.for_body.195
+00:9604 atk_update@inl11.inl8.logic_right.198
+00:960b atk_update@inl11.inl8.logic_right.200
+00:9621 atk_update@scmp.34
+00:9626 atk_update@inl11.inl8.logic_right.202
+00:963c atk_update@scmp.35
+00:9641 atk_update@inl11.inl8.logic_right.204
+00:967d atk_update@inl11.inl8.if_false.207
+00:969c atk_update@inl11.inl8.cond_false.209
+00:96a4 atk_update@inl11.inl8.cond_true.208
+00:96a6 atk_update@inl11.inl8.cond_join.210
+00:96ad atk_update@inl11.inl8.cond_false.212
+00:96b5 atk_update@inl11.inl8.cond_true.211
+00:96ba atk_update@inl11.inl8.cond_join.213
+00:96c1 atk_update@inl11.inl8.cond_false.215
+00:96c9 atk_update@inl11.inl8.cond_true.214
+00:96cb atk_update@inl11.inl8.cond_join.216
+00:970e atk_update@inl11.inl8.if_false.218
+00:9715 atk_update@inl11.inl8.cond_false.220
+00:971d atk_update@inl11.inl8.cond_true.219
+00:971f atk_update@inl11.inl8.cond_join.221
+00:9726 atk_update@inl11.inl8.cond_false.223
+00:972e atk_update@inl11.inl8.cond_true.222
+00:9733 atk_update@inl11.inl8.cond_join.224
+00:973a atk_update@inl11.inl8.cond_false.226
+00:9742 atk_update@inl11.inl8.cond_true.225
+00:9744 atk_update@inl11.inl8.cond_join.227
+00:9777 atk_update@inl11.inl8.if_false.229
+00:977a atk_update@inl11.inl8.if_true.228
+00:9782 atk_update@inl11.inl8.if_true.217
+00:978a atk_update@inl11.inl8.if_true.206
+00:978a atk_update@inl11.inl8.for_cont.196
+00:9799 atk_update@scmp.36
+00:979e atk_update@inl11.inl8.for_join.197
+00:979e atk_update@inl11.inl8.for_cont.192
+00:97ad atk_update@scmp.37
+00:97b2 atk_update@inl11.inl8.for_join.193
+00:97b4 atk_update@inl11.inl8.ret
+00:97b8 atk_update@inl11.if_true.282
+00:97d1 atk_update@inl11.if_false.283
+00:97d4 atk_update@inl11.if_true.277
+00:97ed atk_update@inl11.if_join.279
+00:97f0 atk_update@inl11.if_true.266
+00:97f0 atk_update@inl11.ret
+00:97f6 atk_update@if_join.293
+07:cfca battle_string.5
+07:cfd0 battle_string.6
+07:cf06 battle_string.10
+07:cee6 battle_string.11
+07:cf1e battle_string.12
+07:cf0e battle_string.13
+07:cdaa battle_atk_names.9
+07:ce88 battle_string.14
+07:cfd6 battle_string.15
+07:cfd2 battle_string.16
+07:cf2d battle_string.17
+07:cf45 battle_string.18
+00:1021 battle_drawn.20
+07:cfdb battle_string.28
+00:1022 battle_state
+00:1023 battle_outcome
+00:1024 player_hp
+00:1025 temmie_sparable
+00:1026 has_flakes
+00:0fea soul_x
+00:0ff2 soul_y
+00:1027 invuln.battle
+00:1029 hp_dirty.battle
+00:102b menu_cursor.battle
+00:102d sub_cursor.battle
+00:0efc flavor.battle
+00:102e look.battle
+00:102f show_smug_text.battle
+00:1030 after_narrate.battle
+00:0fd4 enemy_lines.battle
+00:1031 enemy_count.battle
+00:1053 enemy_index.battle
+00:1033 enemy_picture.battle
+00:1034 after_enemy.battle
+00:1035 next_attack.battle
+00:1045 pending_outcome.battle
+00:1046 dbg_force.battle
+00:1048 death_timer.battle
+00:0ffc death_x.battle
+00:0ffe death_y.battle
+00:0fbc shard_x.battle
+00:0fc8 shard_y.battle
+00:0074 shard_vx.battle
+00:0fb0 shard_vy.battle
+00:e2e4 rand_below.battle
+00:e2e4 rand_below.battle@start.3
+00:e2e4 rand_below.battle@body.4
+00:c8c5 draw_hp.battle
+00:c8cb draw_hp.battle@start.9
+00:c8cb draw_hp.battle@body.10
+00:c8e2 draw_hp.battle@scmp.1
+00:c8e4 draw_hp.battle@cond_false.12
+00:c8ec draw_hp.battle@cond_true.11
+00:c8f1 draw_hp.battle@cond_join.13
+00:c8f3 draw_hp.battle@for_cond.14
+00:c903 draw_hp.battle@scmp.2
+00:c905 draw_hp.battle@for_body.15
+00:c91d draw_hp.battle@scmp.3
+00:c91f draw_hp.battle@cond_false.19
+00:c927 draw_hp.battle@cond_true.18
+00:c92c draw_hp.battle@cond_join.20
+00:c94b draw_hp.battle@for_cont.16
+00:c953 draw_hp.battle@for_join.17
+00:c986 draw_hp.battle@scmp.4
+00:c988 draw_hp.battle@cond_false.22
+00:c990 draw_hp.battle@cond_true.21
+00:c995 draw_hp.battle@cond_join.23
+00:cee5 draw_menu_buttons.battle
+00:ceeb draw_menu_buttons.battle@start.24
+00:ceeb draw_menu_buttons.battle@body.25
+00:cef7 draw_menu_buttons.battle@for_cond.26
+00:cf05 draw_menu_buttons.battle@scmp.5
+00:cf0a draw_menu_buttons.battle@for_body.27
+00:cf11 draw_menu_buttons.battle@logic_right.30
+00:cf1f draw_menu_buttons.battle@if_true.32
+00:cf27 draw_menu_buttons.battle@if_false.33
+00:cf2b draw_menu_buttons.battle@logic_right.35
+00:cf3d draw_menu_buttons.battle@if_false.38
+00:cf45 draw_menu_buttons.battle@if_true.37
+00:cf4a draw_menu_buttons.battle@if_join.39
+00:cf4a draw_menu_buttons.battle@if_join.34
+00:cf8e draw_menu_buttons.battle@for_cont.28
+00:cf96 draw_menu_buttons.battle@for_join.29
+00:cfa5 draw_debug.battle
+00:cfa5 draw_debug.battle@start.40
+00:cfa5 draw_debug.battle@body.41
+00:cfcf draw_debug.battle@cond_false.43
+00:cfdc draw_debug.battle@cond_true.42
+00:cfe6 draw_debug.battle@cond_join.44
+00:d832 show_box.battle
+00:d838 show_box.battle@start.60
+00:d840 show_box.battle@body.61
+00:e270 clear_bubble.battle
+00:e270 clear_bubble.battle@start.62
+00:e270 clear_bubble.battle@body.63
+00:e17c narrate_text.battle
+00:e17c narrate_text.battle@start.64
+00:e184 narrate_text.battle@body.65
+00:df33 enter_menu.battle
+00:df33 enter_menu.battle@start.66
+00:df33 enter_menu.battle@body.67
+00:dc54 enter_narrate.battle
+00:dc5a enter_narrate.battle@start.68
+00:dc62 enter_narrate.battle@body.69
+00:db9f enemy_say.battle
+00:db9f enemy_say.battle@start.70
+00:dbaf enemy_say.battle@body.71
+00:dbc9 enemy_say.battle@cond_false.73
+00:dbd1 enemy_say.battle@cond_true.72
+00:dbd6 enemy_say.battle@cond_join.74
+00:d30c start_enemy_line.battle
+00:d30c start_enemy_line.battle@start.75
+00:d30c start_enemy_line.battle@body.76
+00:d318 start_enemy_line.battle@if_false.78
+00:d364 start_enemy_line.battle@if_true.77
+00:d429 enter_enemy_talk.battle
+00:d429 enter_enemy_talk.battle@start.79
+00:d429 enter_enemy_talk.battle@body.80
+00:d44d enter_enemy_talk.battle@logic_right.81
+00:d45b enter_enemy_talk.battle@if_true.83
+00:d49a enter_enemy_talk.battle@if_false.84
+00:d4aa enter_enemy_talk.battle@if_join.85
+00:c536 enter_outcome.battle
+00:c53c enter_outcome.battle@start.86
+00:c53c enter_outcome.battle@body.87
+00:c581 enter_outcome.battle@if_true.88
+00:c58d enter_outcome.battle@if_false.89
+00:c594 enter_outcome.battle@if_true.90
+00:c5a0 enter_outcome.battle@if_false.91
+00:c5b2 enter_outcome.battle@if_true.92
+00:c5be enter_outcome.battle@if_false.93
+00:c5c5 enter_outcome.battle@logic_right.97
+00:c5ca enter_outcome.battle@cond_false.95
+00:c5cf enter_outcome.battle@cond_true.94
+00:c5d4 enter_outcome.battle@cond_join.96
+00:c5e4 enter_outcome.battle@if_false.100
+00:c5f3 enter_outcome.battle@cond_false.103
+00:c5fb enter_outcome.battle@cond_true.102
+00:c600 enter_outcome.battle@cond_join.104
+00:c60b enter_outcome.battle@if_true.99
+00:c613 enter_outcome.battle@if_join.101
+00:db41 battle_hurt
+00:db43 battle_hurt@start.289
+00:db43 battle_hurt@body.290
+00:db4f battle_hurt@logic_right.291
+00:db56 battle_hurt@if_true.293
+00:db57 battle_hurt@if_false.294
+00:db72 battle_hurt@scmp.6
+00:db74 battle_hurt@cond_false.296
+00:db79 battle_hurt@cond_true.295
+00:db83 battle_hurt@cond_join.297
+00:d6b6 battle_init
+00:d6b6 battle_init@start.298
+00:d6b6 battle_init@body.299
+00:980e battle_update
+00:9816 battle_update@start.300
+00:9816 battle_update@body.301
+00:981c battle_update@inl7.start.45
+00:981c battle_update@inl7.body.46
+00:9852 battle_update@inl7.if_true.47
+00:9870 battle_update@inl7.if_false.50
+00:9874 battle_update@inl7.if_true.52
+00:988a battle_update@inl7.if_false.53
+00:988d battle_update@inl7.if_true.49
+00:98a3 battle_update@inl7.if_join.51
+00:98af battle_update@inl7.if_true.54
+00:98c5 battle_update@inl7.if_false.55
+00:98c9 battle_update@inl7.if_false.48
+00:98d5 battle_update@inl7.if_false.57
+00:98e5 battle_update@inl7.if_true.58
+00:9905 battle_update@inl7.if_false.59
+00:992e battle_update@inl7.if_true.56
+00:9944 battle_update@inl7.ret
+00:9954 battle_update@switch_cond.302
+00:995c battle_update@switch_ne.313
+00:9966 battle_update@switch_gt.315
+00:996e battle_update@switch_ne.319
+00:9978 battle_update@switch_gt.321
+00:9980 battle_update@switch_ne.322
+00:998a battle_update@switch_gt.324
+00:998f battle_update@switch_ne.325
+00:9996 battle_update@switch_gt.327
+00:9999 battle_update@switch_lt.326
+00:999c battle_update@switch_case.312
+00:999c battle_update@inl16.start.107
+00:999c battle_update@inl16.body.108
+00:99c0 battle_update@scmp.7
+00:99c5 battle_update@inl16.if_false.110
+00:99d0 battle_update@scmp.8
+00:99d5 battle_update@inl16.if_false.113
+00:99df battle_update@inl16.if_true.117
+00:99ed battle_update@inl16.for_cond.119
+00:99fd battle_update@scmp.9
+00:99ff battle_update@inl16.for_body.120
+00:9a65 battle_update@inl16.for_cont.121
+00:9a6d battle_update@inl16.for_join.122
+00:9a6d battle_update@inl16.if_false.118
+00:9a6f battle_update@inl16.for_cond.123
+00:9a7f battle_update@scmp.10
+00:9a84 battle_update@inl16.for_body.124
+00:9aba battle_update@inl16.cond_false.128
+00:9ac7 battle_update@inl16.cond_true.127
+00:9ad1 battle_update@inl16.cond_join.129
+00:9b13 battle_update@inl16.for_cont.125
+00:9b1b battle_update@inl16.for_join.126
+00:9b2e battle_update@scmp.11
+00:9b30 battle_update@inl16.if_true.130
+00:9b38 battle_update@inl16.if_false.131
+00:9b3b battle_update@inl16.if_true.112
+00:9b42 battle_update@inl16.if_true.114
+00:9b4a battle_update@inl16.if_false.115
+00:9b67 battle_update@inl16.if_join.116
+00:9b6a battle_update@inl16.if_true.109
+00:9b84 battle_update@inl16.if_join.111
+00:9b84 battle_update@inl16.ret
+00:9b87 battle_update@switch_lt.323
+00:9b87 battle_update@switch_case.310
+00:9b8d battle_update@inl14.start.252
+00:9b8d battle_update@inl14.body.253
+00:9ba8 battle_update@inl14.if_true.254
+00:9bbd battle_update@inl14.cond_false.257
+00:9bc4 battle_update@inl14.cond_true.256
+00:9bcc battle_update@inl14.cond_join.258
+00:9bd1 battle_update@inl14.if_false.255
+00:9bd8 battle_update@inl14.if_true.259
+00:9bf3 battle_update@inl14.cond_false.262
+00:9bfa battle_update@inl14.cond_true.261
+00:9bfa battle_update@inl14.cond_join.263
+00:9bff battle_update@inl14.if_false.260
+00:9c06 battle_update@inl14.if_true.264
+00:9c1b battle_update@inl14.cond_false.267
+00:9c22 battle_update@inl14.cond_true.266
+00:9c2a battle_update@inl14.cond_join.268
+00:9c2f battle_update@inl14.if_false.265
+00:9c36 battle_update@inl14.if_true.269
+00:9c51 battle_update@inl14.cond_false.272
+00:9c58 battle_update@inl14.cond_true.271
+00:9c58 battle_update@inl14.cond_join.273
+00:9c5d battle_update@inl14.if_false.270
+00:9c71 battle_update@inl14.if_true.274
+00:9c7b battle_update@inl14.if_false.275
+00:9c82 battle_update@inl14.if_false.277
+00:9ca7 battle_update@inl14.if_true.276
+00:9cab battle_update@inl14.if_join.278
+00:9cb7 battle_update@inl14.if_true.279
+00:9cb7 battle_update@inl14.inl6.start.105
+00:9cb7 battle_update@inl14.inl6.body.106
+00:9d08 battle_update@inl14.inl6.ret
+00:9d0b battle_update@inl14.if_false.280
+00:9d1b battle_update@inl14.if_true.281
+00:9d20 battle_update@inl14.if_false.282
+00:9d25 battle_update@inl14.if_true.283
+00:9d54 battle_update@inl14.if_false.284
+00:9d54 battle_update@inl14.ret
+00:9d57 battle_update@switch_case.311
+00:9d57 battle_update@inl15.start.285
+00:9d57 battle_update@inl15.body.286
+00:9d62 battle_update@inl15.if_true.287
+00:9d66 battle_update@inl15.if_false.288
+00:9d66 battle_update@inl15.ret
+00:9d69 battle_update@switch_lt.320
+00:9d69 battle_update@switch_case.308
+00:9d69 battle_update@inl12.start.216
+00:9d69 battle_update@inl12.body.217
+00:9d70 battle_update@inl12.if_true.218
+00:9d8c battle_update@inl12.if_false.219
+00:9dba battle_update@inl12.if_true.220
+00:9dbd battle_update@inl12.if_false.221
+00:9dd1 battle_update@inl12.if_true.222
+00:9e25 battle_update@inl12.if_false.223
+00:9e63 battle_update@inl12.if_join.224
+00:9e67 battle_update@inl12.ret
+00:9e6a battle_update@switch_case.309
+00:9e6a battle_update@inl13.start.239
+00:9e6a battle_update@inl13.body.240
+00:9e75 battle_update@inl13.if_true.241
+00:9e78 battle_update@inl13.if_false.242
+00:9e81 battle_update@inl13.if_true.243
+00:9e88 battle_update@inl13.if_false.244
+00:9e8f battle_update@inl13.if_true.245
+00:9e92 battle_update@inl13.if_false.246
+00:9ec3 battle_update@scmp.12
+00:9ec8 battle_update@inl13.if_false.248
+00:9eda battle_update@inl13.if_false.250
+00:9ee6 battle_update@inl13.inl5.start.132
+00:9ee6 battle_update@inl13.inl5.body.133
+00:9f09 battle_update@inl13.inl5.cond_false.135
+00:9f0c battle_update@inl13.inl5.cond_true.134
+00:9f0c battle_update@inl13.inl5.cond_join.136
+00:9f51 battle_update@inl13.inl5.ret
+00:9f54 battle_update@inl13.if_true.249
+00:9f64 battle_update@inl13.if_join.251
+00:9f67 battle_update@inl13.if_true.247
+00:9f6b battle_update@inl13.ret
+00:9f6e battle_update@switch_lt.314
+00:9f76 battle_update@switch_ne.316
+00:9f7d battle_update@switch_gt.318
+00:9f7d battle_update@switch_case.306
+00:9f7d battle_update@inl10.start.210
+00:9f7d battle_update@inl10.body.211
+00:9f94 battle_update@inl10.if_false.213
+00:9f9b battle_update@inl10.if_true.214
+00:9fa3 battle_update@inl10.if_false.215
+00:9fa6 battle_update@inl10.if_true.212
+00:9fb6 battle_update@inl10.ret
+00:9fb9 battle_update@switch_lt.317
+00:9fb9 battle_update@switch_case.304
+00:9fb9 battle_update@inl8.start.147
+00:9fb9 battle_update@inl8.body.148
+00:9fd0 battle_update@inl8.if_true.149
+00:9ff0 battle_update@inl8.if_false.150
+00:9ff7 battle_update@inl8.if_true.151
+00:a014 battle_update@inl8.if_false.152
+00:a026 battle_update@inl8.if_true.153
+00:a036 battle_update@inl8.if_false.154
+00:a06b battle_update@inl8.if_true.155
+00:a083 battle_update@inl8.if_false.156
+00:a08a battle_update@inl8.if_true.157
+00:a0ab battle_update@inl8.if_false.158
+00:a0b2 battle_update@inl8.if_true.159
+00:a0c0 battle_update@inl8.if_false.160
+00:a0c7 battle_update@inl8.if_true.161
+00:a0ca battle_update@inl8.if_false.162
+00:a0d6 battle_update@inl8.switch_cond.163
+00:a0de battle_update@inl8.switch_ne.175
+00:a0e8 battle_update@inl8.switch_gt.177
+00:a0f0 battle_update@inl8.switch_ne.178
+00:a0fa battle_update@inl8.switch_gt.180
+00:a0ff battle_update@inl8.switch_ne.181
+00:a106 battle_update@inl8.switch_gt.183
+00:a109 battle_update@inl8.switch_lt.182
+00:a10c battle_update@inl8.switch_case.171
+00:a118 battle_update@inl8.if_false.173
+00:a123 battle_update@inl8.if_true.172
+00:a12b battle_update@inl8.inl2.start.143
+00:a12b battle_update@inl8.inl2.body.144
+00:a179 battle_update@inl8.inl2.ret
+00:a179 battle_update@inl8.if_join.174
+00:a17c battle_update@inl8.switch_lt.179
+00:a17f battle_update@inl8.switch_case.167
+00:a193 battle_update@inl8.cond_false.169
+00:a1a2 battle_update@inl8.cond_true.168
+00:a1ae battle_update@inl8.cond_join.170
+00:a1c2 battle_update@inl8.switch_lt.176
+00:a1c2 battle_update@inl8.switch_case.165
+00:a1e8 battle_update@inl8.switch_case.166
+00:a1f0 battle_update@inl8.inl1.start.137
+00:a1f0 battle_update@inl8.inl1.body.138
+00:a20e battle_update@inl8.inl1.for_cond.139
+00:a21e battle_update@scmp.13
+00:a220 battle_update@inl8.inl1.for_body.140
+00:a253 battle_update@inl8.inl1.for_cont.141
+00:a25b battle_update@inl8.inl1.for_join.142
+00:a25b battle_update@inl8.inl1.ret
+00:a25b battle_update@inl8.switch_join.164
+00:a25b battle_update@inl8.ret
+00:a25e battle_update@switch_case.305
+00:a25e battle_update@inl9.start.184
+00:a25e battle_update@inl9.body.185
+00:a278 battle_update@inl9.if_true.186
+00:a292 battle_update@inl9.if_false.187
+00:a299 battle_update@inl9.if_true.188
+00:a2b3 battle_update@inl9.if_false.189
+00:a2c0 battle_update@inl9.if_true.190
+00:a2c8 battle_update@inl9.if_false.191
+00:a2f2 battle_update@inl9.if_false.193
+00:a2f9 battle_update@inl9.if_true.194
+00:a2fc battle_update@inl9.if_false.195
+00:a304 battle_update@inl9.inl3.start.5
+00:a304 battle_update@inl9.inl3.body.6
+00:a312 battle_update@inl9.inl3.if_false.8
+00:a32e battle_update@inl9.inl3.if_true.7
+00:a330 battle_update@inl9.inl3.ret
+00:a341 battle_update@inl9.switch_cond.196
+00:a349 battle_update@inl9.switch_ne.204
+00:a353 battle_update@inl9.switch_gt.206
+00:a358 battle_update@inl9.switch_ne.207
+00:a35f battle_update@inl9.switch_gt.209
+00:a362 battle_update@inl9.switch_lt.208
+00:a365 battle_update@inl9.switch_case.200
+00:a371 battle_update@inl9.if_false.202
+00:a3bc battle_update@inl9.if_true.201
+00:a3d7 battle_update@inl9.if_join.203
+00:a3da battle_update@inl9.switch_lt.205
+00:a3da battle_update@inl9.switch_case.198
+00:a42a battle_update@inl9.switch_case.199
+00:a480 battle_update@inl9.switch_join.197
+00:a483 battle_update@inl9.if_true.192
+00:a493 battle_update@inl9.ret
+00:a496 battle_update@switch_case.307
+00:a496 battle_update@inl11.start.225
+00:a496 battle_update@inl11.body.226
+00:a4a1 battle_update@inl11.if_true.227
+00:a4a4 battle_update@inl11.if_false.228
+00:a4ad battle_update@inl11.if_true.229
+00:a4b4 battle_update@inl11.if_false.230
+00:a4bb battle_update@inl11.if_true.231
+00:a4be battle_update@inl11.if_false.232
+00:a4cc battle_update@inl11.if_true.233
+00:a4d7 battle_update@inl11.if_false.234
+00:a4dc battle_update@inl11.if_false.237
+00:a4e3 battle_update@inl11.if_true.236
+00:a4e3 battle_update@inl11.inl4.start.145
+00:a4e3 battle_update@inl11.inl4.body.146
+00:a55f battle_update@inl11.inl4.ret
+00:a55f battle_update@inl11.if_join.238
+00:a55f battle_update@inl11.if_join.235
+00:a55f battle_update@inl11.ret
+00:a55f battle_update@switch_join.303
+00:a56f battle_update@if_true.328
+00:a573 battle_update@if_false.329
+07:cd7a ms_soul.sprite_layout
+07:ce94 img_soul
+07:cd6a ms_soul_broken.sprite_layout
+07:ceac img_soul_broken
+07:cd4a ms_shard_a.sprite_layout
+07:cec4 img_shard_a
+07:cd3a ms_shard_b.sprite_layout
+07:cdf8 img_shard_b
+07:c8ed ms_idle.sprite_layout
+07:ce7c img_idle
+07:cdba ms_face.sprite_layout
+07:ce58 img_face
+07:c945 ms_smug.sprite_layout
+07:ce34 img_smug
+07:c668 ms_tall.sprite_layout
+07:ce10 img_tall
+07:cd5a ms_leg.sprite_layout
+07:ce1c img_leg
+07:cdca ms_foot.sprite_layout
+07:ce28 img_foot
+07:cdda ms_arm_line.sprite_layout
+07:ce64 img_arm_line
+07:cd9a ms_arm_head.sprite_layout
+07:cea0 img_arm_head
+07:c4cc ms_smug_text.sprite_layout
+07:ce04 img_smug_text
+00:cc84 apuWaitBoot
+00:cc94 apuWaitBoot@wait_aa
+00:cc9e apuWaitBoot@got_aa
+00:cca3 apuWaitBoot@wait_bb
+00:ccab apuWaitBoot@timeout
+00:ccaf apuWaitBoot@got_bb
+00:ccb1 apuWaitBoot@done
+00:ccb9 apuUpload
+00:cce4 apuUpload@cmd_ok
+00:ccea apuUpload@wait_begin
+00:ccf2 apuUpload@byte_loop
+00:ccfb apuUpload@wait_ack
+00:cd05 apuUpload@nothing
+00:cd08 apuExecute
+00:cd24 apuExecute@wait_exec
+00:cd2f apuReset
+00:cd3d apuReset@wait_ack
+00:cd44 apuReset@wait_aa
+00:cd4e apuReset@wait_bb
+00:104a audio_ready.audio
+00:104b audio_seq.audio
+00:104f audio_mvol.audio
+00:02a8 voice_mirror.audio
+7e:2000 sample_mirror.audio
+00:0fe8 sample_next_free.audio
+00:1050 audio_echo_reserved.audio
+00:1051 audio_rr_voice.audio
+00:1055 audio_pending.audio
+00:dcff cmd_wait.audio
+00:dcff cmd_wait.audio@start.1
+00:dcff cmd_wait.audio@body.2
+00:dd0d cmd_wait.audio@if_true.3
+00:dd11 cmd_wait.audio@if_false.4
+00:dd1a cmd_wait.audio@for_cond.5
+00:dd21 cmd_wait.audio@for_body.6
+00:dd38 cmd_wait.audio@if_false.10
+00:dd38 cmd_wait.audio@for_cont.7
+00:dd45 cmd_wait.audio@if_true.9
+00:dd49 cmd_wait.audio@for_join.8
+00:85ef cmd_post.audio
+00:85ef cmd_post.audio@start.11
+00:85ef cmd_post.audio@body.12
+00:85f8 cmd_post.audio@if_false.14
+00:860d cmd_post.audio@scmp.1
+00:860f cmd_post.audio@cond_false.16
+00:8614 cmd_post.audio@cond_true.15
+00:8619 cmd_post.audio@cond_join.17
+00:866c cmd_post.audio@if_true.13
+00:e042 cmd_send.audio
+00:e042 cmd_send.audio@start.18
+00:e042 cmd_send.audio@body.19
+00:e06a cmd_send.audio@if_false.21
+00:e06f cmd_send.audio@if_true.20
+00:c3ed audioInit
+00:c3f5 audioInit@start.22
+00:c406 audioInit@body.23
+00:c42a audioInit@for_cond.24
+00:c43a audioInit@scmp.2
+00:c43c audioInit@for_body.25
+00:c477 audioInit@for_cont.26
+00:c47f audioInit@for_join.27
+00:c481 audioInit@for_cond.28
+00:c491 audioInit@scmp.3
+00:c493 audioInit@for_body.29
+00:c4a6 audioInit@for_cont.30
+00:c4ae audioInit@for_join.31
+00:c4b7 audioInit@if_false.33
+00:c4f5 audioInit@logic_right.34
+00:c509 audioInit@if_true.36
+00:c51e audioInit@if_false.37
+00:c52a audioInit@if_true.32
+00:b89c audioLoadSample
+00:b8a4 audioLoadSample@start.87
+00:b8ac audioLoadSample@body.88
+00:b8bc audioLoadSample@scmp.13
+00:b8c1 audioLoadSample@if_false.90
+00:b8cd audioLoadSample@if_true.91
+00:b8d9 audioLoadSample@if_false.92
+00:b8e0 audioLoadSample@logic_right.93
+00:b8ec audioLoadSample@cond_false.96
+00:b8f4 audioLoadSample@cond_true.95
+00:b8f9 audioLoadSample@cond_join.97
+00:b90a audioLoadSample@if_false.99
+00:b946 audioLoadSample@logic_right.100
+00:b964 audioLoadSample@if_false.103
+00:b981 audioLoadSample@if_false.105
+00:b985 audioLoadSample@cond_false.110
+00:b98a audioLoadSample@cond_true.109
+00:b98f audioLoadSample@cond_join.111
+00:b99d audioLoadSample@cond_false.107
+00:b9a5 audioLoadSample@cond_true.106
+00:b9aa audioLoadSample@cond_join.108
+00:b9b6 audioLoadSample@for_cond.112
+00:b9bd audioLoadSample@for_body.113
+00:b9d4 audioLoadSample@if_false.117
+00:b9d4 audioLoadSample@for_cont.114
+00:b9e1 audioLoadSample@if_true.116
+00:b9e1 audioLoadSample@for_join.115
+00:b9eb audioLoadSample@if_false.119
+00:b9f7 audioLoadSample@for_cond.120
+00:b9fe audioLoadSample@for_body.121
+00:ba0f audioLoadSample@if_false.125
+00:ba0f audioLoadSample@for_cont.122
+00:ba1c audioLoadSample@if_true.124
+00:ba1c audioLoadSample@for_join.123
+00:ba23 audioLoadSample@if_false.127
+00:ba3d audioLoadSample@if_false.129
+00:ba82 audioLoadSample@if_true.128
+00:ba8e audioLoadSample@if_true.126
+00:ba9a audioLoadSample@if_true.118
+00:baa6 audioLoadSample@if_true.104
+00:bab2 audioLoadSample@if_true.102
+00:babe audioLoadSample@if_true.98
+00:baca audioLoadSample@if_true.89
+00:e00f audioPlaySampleEx
+00:e011 audioPlaySampleEx@start.158
+00:e011 audioPlaySampleEx@body.159
+00:ab7a audioPlaySampleOn
+00:ab82 audioPlaySampleOn@start.160
+00:ab90 audioPlaySampleOn@body.161
+00:aba0 audioPlaySampleOn@scmp.17
+00:aba5 audioPlaySampleOn@logic_right.162
+00:abbe audioPlaySampleOn@logic_right.164
+00:abcd audioPlaySampleOn@if_false.167
+00:abdf audioPlaySampleOn@scmp.18
+00:abe8 audioPlaySampleOn@if_true.168
+00:abed audioPlaySampleOn@if_false.169
+00:abfb audioPlaySampleOn@if_true.170
+00:ac00 audioPlaySampleOn@if_false.171
+00:ac0c audioPlaySampleOn@if_false.173
+00:ac15 audioPlaySampleOn@scmp.19
+00:ac17 audioPlaySampleOn@if_false.176
+00:ac1e audioPlaySampleOn@if_true.175
+00:ac2a audioPlaySampleOn@if_true.172
+00:ac41 audioPlaySampleOn@if_join.174
+00:ac41 audioPlaySampleOn@inl1.start.151
+00:ac41 audioPlaySampleOn@inl1.body.152
+00:ac53 audioPlaySampleOn@scmp.20
+00:ac5c audioPlaySampleOn@inl1.if_true.153
+00:ac61 audioPlaySampleOn@inl1.if_false.154
+00:ac6c audioPlaySampleOn@scmp.21
+00:ac6e audioPlaySampleOn@inl1.cond_false.156
+00:ac73 audioPlaySampleOn@inl1.cond_true.155
+00:ac73 audioPlaySampleOn@inl1.cond_join.157
+00:aca2 audioPlaySampleOn@inl1.ret
+00:acf4 audioPlaySampleOn@logic_right.177
+00:ad02 audioPlaySampleOn@if_true.179
+00:ad1f audioPlaySampleOn@if_false.182
+00:ad42 audioPlaySampleOn@if_false.180
+00:ad49 audioPlaySampleOn@logic_right.183
+00:ad53 audioPlaySampleOn@if_true.185
+00:ad70 audioPlaySampleOn@if_false.188
+00:ad93 audioPlaySampleOn@if_false.186
+00:ada2 audioPlaySampleOn@logic_right.189
+00:ada9 audioPlaySampleOn@if_true.191
+00:adc3 audioPlaySampleOn@if_false.194
+00:ade4 audioPlaySampleOn@if_true.193
+00:adf0 audioPlaySampleOn@if_false.192
+00:ae0a audioPlaySampleOn@if_false.196
+00:ae33 audioPlaySampleOn@if_true.195
+00:ae3f audioPlaySampleOn@if_true.187
+00:ae4b audioPlaySampleOn@if_true.181
+00:ae57 audioPlaySampleOn@if_true.166
+00:ae63 audio_driver_blob
+00:b123 audio_driver_blob_end
+00:d531 audio_stream_blocks
+00:d547 audio_stream_blocks@exchange
+00:d57b audio_stream_blocks@tail
+00:d5a6 audio_stream_blocks@timeout
+00:d5ad audio_stream_blocks@ok8
+00:d5af audio_stream_blocks@ok
+00:1039 bg12nba_shadow
+00:1037 bg34nba_shadow.background
+00:d735 bgSetMapPtr
+00:d737 bgSetMapPtr@start.7
+00:d737 bgSetMapPtr@body.8
+00:d737 bgSetMapPtr@switch_cond.9
+00:d75c bgSetMapPtr@switch_ne.15
+00:d761 bgSetMapPtr@switch_gt.17
+00:d768 bgSetMapPtr@switch_ne.18
+00:d76d bgSetMapPtr@switch_gt.20
+00:d774 bgSetMapPtr@switch_ne.21
+00:d779 bgSetMapPtr@switch_gt.23
+00:d77c bgSetMapPtr@switch_lt.22
+00:d77f bgSetMapPtr@switch_case.14
+00:d78c bgSetMapPtr@switch_lt.19
+00:d78f bgSetMapPtr@switch_case.13
+00:d79c bgSetMapPtr@switch_lt.16
+00:d79c bgSetMapPtr@switch_case.11
+00:d7a9 bgSetMapPtr@switch_case.12
+00:d7b3 bgSetMapPtr@switch_join.10
+00:cad0 bgSetGfxPtr
+00:cad2 bgSetGfxPtr@start.24
+00:cad2 bgSetGfxPtr@body.25
+00:cad2 bgSetGfxPtr@switch_cond.26
+00:caf5 bgSetGfxPtr@switch_ne.32
+00:cafa bgSetGfxPtr@switch_gt.34
+00:cb01 bgSetGfxPtr@switch_ne.35
+00:cb06 bgSetGfxPtr@switch_gt.37
+00:cb0d bgSetGfxPtr@switch_ne.38
+00:cb12 bgSetGfxPtr@switch_gt.40
+00:cb15 bgSetGfxPtr@switch_lt.39
+00:cb18 bgSetGfxPtr@switch_case.31
+00:cb40 bgSetGfxPtr@switch_lt.36
+00:cb43 bgSetGfxPtr@switch_case.30
+00:cb64 bgSetGfxPtr@switch_lt.33
+00:cb64 bgSetGfxPtr@switch_case.28
+00:cb85 bgSetGfxPtr@switch_case.29
+00:cbaa bgSetGfxPtr@switch_join.27
+07:cfaa bg_scroll_bit
+00:102c console_brightness
+00:102a console_force_blanked
+07:cfa6 __opensnes_force_emit_getFrameCount
+00:1028 is_pal_system.console
+00:0ff4 rand_seed.console
+00:e3d6 getFrameCount
+00:e3d8 getFrameCount@start.1
+00:e3d8 getFrameCount@body.2
+00:c9e5 consoleInit
+00:c9e7 consoleInit@start.3
+00:c9e7 consoleInit@body.4
+00:ca05 consoleInit@cond_false.6
+00:ca0a consoleInit@cond_true.5
+00:ca0f consoleInit@cond_join.7
+00:ca71 consoleInit@if_true.8
+00:ca77 consoleInit@if_false.9
+00:ca9b consoleInit@for_cond.10
+00:caa2 consoleInit@for_body.11
+00:cab2 consoleInit@for_cont.12
+00:cab8 consoleInit@for_join.13
+00:e2c9 setScreenOn
+00:e2cb setScreenOn@start.14
+00:e2cb setScreenOn@body.15
+00:deb3 rngNext
+00:deb5 rngNext@start.53
+00:deb5 rngNext@body.54
+00:e36b rngSeed
+00:e36d rngSeed@start.55
+00:e36d rngSeed@body.56
+00:e376 rngSeed@if_true.57
+00:e37c rngSeed@if_false.58
+00:d5b4 setMode
+00:d5b6 setMode@start.59
+00:d5b6 setMode@body.60
+00:d5eb setMode@logic_right.61
+00:d5f8 setMode@logic_right.63
+00:d609 setMode@logic_join.64
+00:d61b setMode@if_true.65
+00:d634 setMode@if_false.66
+00:c7a4 dmaCopyVram
+00:c7d9 dmaCopyCGram
+00:c80c dmaCopyOam
+00:c83e dmaCopyVramMode7
+00:c8b1 clearNmiFlag
+00:c8ba clearIrqFlag
+00:c8c3 unmaskIrq
+00:e251 oamInit
+00:e253 oamInit@start.3
+00:e253 oamInit@body.4
+00:d118 oamHide
+00:d11a oamHide@start.35
+00:d11a oamHide@body.36
+00:d124 oamHide@if_false.38
+00:d165 oamHide@cond_true.39
+00:d16d oamHide@cond_false.40
+00:d172 oamHide@cond_false.43
+00:d179 oamHide@cond_false.46
+00:d181 oamHide@cond_true.45
+00:d186 oamHide@cond_join.47
+00:d189 oamHide@cond_true.42
+00:d18e oamHide@cond_join.44
+00:d18e oamHide@cond_join.41
+00:d19f oamHide@do_body.48
+00:d1ad oamHide@if_true.51
+00:d1b6 oamHide@if_false.52
+00:d1b6 oamHide@do_cond.49
+00:d1b6 oamHide@do_join.50
+00:d1c0 oamHide@if_true.37
+00:d1c1 oamClear
+00:d1c3 oamClear@start.55
+00:d1c3 oamClear@body.56
+00:d1c5 oamClear@for_cond.57
+00:d1d5 oamClear@scmp.1
+00:d1d7 oamClear@for_body.58
+00:d214 oamClear@for_cont.59
+00:d21c oamClear@for_join.60
+00:d21e oamClear@for_cond.61
+00:d22e oamClear@scmp.2
+00:d230 oamClear@for_body.62
+00:d251 oamClear@for_cont.63
+00:d259 oamClear@for_join.64
+00:c137 oamDrawMetasprite
+00:c192 oamDrawMetasprite@loop_start
+00:c195 oamDrawMetasprite@loop
+00:c1d3 oamDrawMetasprite@place
+00:c277 oamDrawMetasprite@next
+00:c281 oamDrawMetasprite@done
+00:c294 oamDrawMetasprite@ret
+07:bd2e oam_ext_tab
+00:d927 oamSet
+00:d97f oamSet@x_done
+00:d98e oamSet@none
+00:d98f oamSet@x_high
+00:def3 oamSetSize
+00:df32 oamSetSize@none
+00:1036 text_cursor_x
+00:1038 text_cursor_y
+00:0eeb text_hex_chars.15
+00:0520 tilemapBuffer
+00:02f8 text_config
+00:e2ac text_dirty.text
+00:e2ac text_dirty.text@start.3
+00:e2ac text_dirty.text@body.4
+00:e2b7 text_dirty.text@if_true.5
+00:e2bc text_dirty.text@if_false.6
+00:e2c3 text_dirty.text@if_true.7
+00:e2c8 text_dirty.text@if_false.8
+00:da78 build_tile_entry.text
+00:da78 build_tile_entry.text@start.9
+00:da78 build_tile_entry.text@body.10
+00:da90 build_tile_entry.text@scmp.1
+00:da92 build_tile_entry.text@logic_right.11
+00:da9d build_tile_entry.text@scmp.2
+00:da9f build_tile_entry.text@if_false.14
+00:dab2 build_tile_entry.text@if_true.13
+00:dab7 build_tile_entry.text@if_join.15
+00:de72 textInit
+00:de74 textInit@start.18
+00:de74 textInit@body.19
+00:e100 textLoadFont
+00:e102 textLoadFont@start.20
+00:e102 textLoadFont@body.21
+00:e211 textSetPos
+00:e213 textSetPos@start.22
+00:e213 textSetPos@body.23
+00:c297 textPutChar
+00:c29f textPutChar@start.28
+00:c29f textPutChar@body.29
+00:c2b6 textPutChar@if_false.31
+00:c2be textPutChar@if_false.35
+00:c2e0 textPutChar@inl1.start.16
+00:c2e0 textPutChar@inl1.body.17
+00:c339 textPutChar@inl1.ret
+00:c36a textPutChar@scmp.3
+00:c36c textPutChar@if_true.36
+00:c391 textPutChar@scmp.4
+00:c393 textPutChar@if_true.38
+00:c39a textPutChar@if_false.39
+00:c39a textPutChar@if_false.37
+00:c3aa textPutChar@if_true.34
+00:c3b8 textPutChar@if_true.30
+00:c3dd textPutChar@scmp.5
+00:c3df textPutChar@if_true.32
+00:c3e6 textPutChar@if_false.33
+00:be61 textPrint
+00:be69 textPrint@start.40
+00:be71 textPrint@body.41
+00:bebe textPrint@while_cond.42
+00:beca textPrint@while_body.43
+00:bee1 textPrint@scmp.6
+00:bee6 textPrint@logic_right.45
+00:bef1 textPrint@scmp.7
+00:bef6 textPrint@logic_right.47
+00:bf01 textPrint@scmp.8
+00:bf06 textPrint@if_false.50
+00:bf8e textPrint@if_true.49
+00:bfce textPrint@while_join.44
+00:dde8 textPrintAt
+00:ddf0 textPrintAt@start.51
+00:ddf8 textPrintAt@body.52
+00:bcc1 textPrintU16
+00:bcc9 textPrintU16@start.53
+00:bcd2 textPrintU16@body.54
+00:bcd8 textPrintU16@while_cond.55
+00:bce6 textPrintU16@while_body.56
+00:bcf4 textPrintU16@while_join.57
+00:bcf8 textPrintU16@logic_right.58
+00:bcfb textPrintU16@if_true.60
+00:bd05 textPrintU16@if_false.61
+00:bd07 textPrintU16@while_cond.62
+00:bd15 textPrintU16@while_body.63
+00:bd23 textPrintU16@while_join.64
+00:bd35 textPrintU16@logic_right.65
+00:bd39 textPrintU16@if_true.67
+00:bd5a textPrintU16@if_false.68
+00:bd5c textPrintU16@while_cond.69
+00:bd6a textPrintU16@while_body.70
+00:bd78 textPrintU16@while_join.71
+00:bd83 textPrintU16@logic_right.72
+00:bd87 textPrintU16@if_true.74
+00:bdab textPrintU16@if_false.75
+00:bdad textPrintU16@while_cond.76
+00:bdbb textPrintU16@while_body.77
+00:bdc9 textPrintU16@while_join.78
+00:bdd4 textPrintU16@logic_right.79
+00:bddf textPrintU16@if_true.81
+00:be03 textPrintU16@if_false.82
+00:e2fe textClear
+00:e300 textClear@start.91
+00:e300 textClear@body.92
+00:bfd5 textClearRect
+00:bfdd textClearRect@start.115
+00:bfdd textClearRect@body.116
+00:bfdd textClearRect@inl2.start.93
+00:bfdd textClearRect@inl2.body.94
+00:c002 textClearRect@scmp.11
+00:c007 textClearRect@inl2.logic_right.95
+00:c017 textClearRect@scmp.12
+00:c01c textClearRect@inl2.if_false.98
+00:c02e textClearRect@inl2.if_true.99
+00:c033 textClearRect@inl2.if_false.100
+00:c046 textClearRect@inl2.if_true.101
+00:c04e textClearRect@inl2.if_false.102
+00:c057 textClearRect@inl2.logic_right.103
+00:c060 textClearRect@inl2.if_true.105
+00:c063 textClearRect@inl2.if_false.106
+00:c0af textClearRect@inl2.for_cond.107
+00:c0be textClearRect@scmp.13
+00:c0c0 textClearRect@inl2.for_body.108
+00:c0e3 textClearRect@inl2.for_cond.111
+00:c0f2 textClearRect@scmp.14
+00:c0f4 textClearRect@inl2.for_body.112
+00:c10c textClearRect@inl2.for_cont.113
+00:c11c textClearRect@inl2.for_join.114
+00:c11c textClearRect@inl2.for_cont.109
+00:c124 textClearRect@inl2.for_join.110
+00:c130 textClearRect@inl2.if_true.97
+00:c130 textClearRect@inl2.ret
+00:e32e textFlush
+00:e330 textFlush@start.117
+00:e330 textFlush@body.118
+00:d39e textModeInit
+00:d3a0 textModeInit@start.119
+00:d3a0 textModeInit@body.120
+00:d3b4 textModeInit@do_body.121
+00:d3ca textModeInit@do_cond.122
+00:d3ca textModeInit@do_join.123
+00:d3ca textModeInit@do_body.124
+00:d3e0 textModeInit@do_cond.125
+00:d3e0 textModeInit@do_join.126
+00:a57a opensnes_font_2bpp
+00:ab7a opensnes_font_2bpp_end
+00:e155 asm_textDMAFont
+00:e232 asm_textFillBuffer
+00:dd4d asm_textRun
+00:dd8f asm_textRun@run_hi
+00:dd98 asm_textRun@run_ret
+07:c291 tcc_mul32
+00:0fe0 mul32_lo
+00:0fe2 mul32_hi
+07:c126 tcc_udivmod32
+07:c145 tcc_sdivmod32
+07:c175 tcc_sdivmod32@sdvd_pos
+07:c178 tcc_sdivmod32@sdvd_done
+07:c1a8 tcc_sdivmod32@sdsr_pos
+07:c1ae tcc_sdivmod32@sdsr_done
+07:c1cf tcc_sdivmod32@squot_ok
+07:c1ed tcc_sdivmod32@srem_ok
+07:c1f2 div32_ucore
+07:c20c div32_ucore@hi_init
+07:c212 div32_ucore@hi
+07:c21d div32_ucore@hi_sub
+07:c223 div32_ucore@hi_no
+07:c226 div32_ucore@lo_init
+07:c229 div32_ucore@lo
+07:c234 div32_ucore@lo_sub
+07:c23a div32_ucore@lo_no
+07:c241 div32_ucore@zero
+07:c257 div32_ucore@big
+07:c266 div32_ucore@b
+07:c28d div32_ucore@b_no
+00:0fa0 div32_ql
+00:0fa2 div32_qh
+00:0fa4 div32_rl
+00:0fa6 div32_rh
+00:0fa8 div32_div_lo
+00:0faa div32_div_hi
+00:0fac div32_dvd_sign
+00:0fae div32_quot_sign
+00:85ef DataInitEnd
+00:0000 RAM_USAGE_SLOT_1_BANK_0_START
+00:1055 RAM_USAGE_SLOT_1_BANK_0_END
+00:0300 RAM_USAGE_SLOT_1_BANK_126_START
+00:051f RAM_USAGE_SLOT_1_BANK_126_END
+00:2000 RAM_USAGE_SLOT_2_BANK_126_START
+00:21ff RAM_USAGE_SLOT_2_BANK_126_END
+
+[definitions]
+00008000 __mul16
+00008072 __div16
+000080e0 __mod16
+000080e9 __sdiv16
+00008118 __smod16
+00000006 _sizeof_EmptyHandler
+00000002 _sizeof_tcc__r0
+00000002 _sizeof_tcc__r0h
+00000002 _sizeof_tcc__r1
+00000002 _sizeof_tcc__r1h
+00000002 _sizeof_tcc__r2
+00000002 _sizeof_tcc__r2h
+00000002 _sizeof_tcc__r3
+00000002 _sizeof_tcc__r3h
+00000002 _sizeof_tcc__r4
+00000002 _sizeof_tcc__r4h
+00000002 _sizeof_tcc__r5
+00000002 _sizeof_tcc__r5h
+00000002 _sizeof_tcc__r9
+00000002 _sizeof_tcc__r9h
+00000002 _sizeof_tcc__r10
+00000002 _sizeof_tcc__r10h
+00000002 _sizeof_tcc__retval_hi
+00000004 _sizeof_nmi_callback
+00000001 _sizeof_nmi_has_callback
+00000004 _sizeof_dynamic_flush_hook
+00000001 _sizeof_oam_dynamic_draining
+00000004 _sizeof_tcc__fp
+00000004 _sizeof_irq_callback
+00000020 _sizeof_tcc__lf
+000000a0 _sizeof_tcc__nmi_registers
+00000001 _sizeof_vblank_flag
+00000001 _sizeof_oam_update_flag
+00000001 _sizeof_tilemap_update_flag
+00000002 _sizeof_tilemap_vram_addr
+00000002 _sizeof_tilemap_src_addr
+00000002 _sizeof_tilemap_dirty_lo
+00000002 _sizeof_tilemap_dirty_hi
+00000002 _sizeof_frame_count
+00000002 _sizeof_frame_count_svg
+00000002 _sizeof_lag_frame_counter
+0000000a _sizeof_pad_keys
+0000000a _sizeof_pad_keysold
+0000000a _sizeof_pad_keysdown
+00000001 _sizeof_snes_mplay5
+00000004 _sizeof_mouse_reader
+00000004 _sizeof_scope_reader
+00000004 _sizeof_mplay5_reader
+00000002 _sizeof_pad_present
+00000001 _sizeof_mp5read
+00000008 _sizeof_bg_scroll_x
+00000008 _sizeof_bg_scroll_y
+00000001 _sizeof_bg_scroll_dirty
+00000001 _sizeof_oam_max_id
+00000001 _sizeof_mouse_con
+00000002 _sizeof_mouse_x
+00000002 _sizeof_mouse_y
+00000002 _sizeof_mouseConnect
+00000002 _sizeof_mousePressed
+00000002 _sizeof_mousePreviousPressed
+00000002 _sizeof_mouseButton
+00000002 _sizeof_mouseSensitivity
+00000002 _sizeof_mouseRequestChangeSensitivity
+00000001 _sizeof_sa1_status
+00000001 _sizeof_superfx_status
+00000001 _sizeof_nmitimen_shadow
+00000001 _sizeof_in_nmi_ctx
+00000001 _sizeof_setini_shadow
+00000001 _sizeof_bg3_opt
+00000001 _sizeof_scope_con
+00000002 _sizeof_scope_sinceshot
+00000002 _sizeof_scope_shoth
+00000002 _sizeof_scope_shotv
+00000002 _sizeof_scope_shothraw
+00000002 _sizeof_scope_shotvraw
+00000002 _sizeof_scope_centerh
+00000002 _sizeof_scope_centerv
+00000002 _sizeof_scope_down
+00000002 _sizeof_scope_now
+00000002 _sizeof_scope_held
+00000002 _sizeof_scope_last
+00000002 _sizeof_scope_port2down
+00000002 _sizeof_scope_port2last
+00000002 _sizeof_scope_port2now
+00000002 _sizeof_scope_holddelay
+00000002 _sizeof_scope_repdelay
+00000002 _sizeof_scope_tohold
+00000220 _sizeof__reserved_7e_mirror
+00000220 _sizeof_oamMemory
+0000011c _sizeof_InitHardware
+000000d7 _sizeof_Start
+00000001 _sizeof_ZeroByte
+00000050 _sizeof_CopyInitData
+000001d6 _sizeof_NmiHandler
+00000001 _sizeof_DefaultNmiCallback
+00000001 _sizeof_DefaultDynamicFlush
+00000012 _sizeof_WaitForVBlank
+00000003 _sizeof_CallMPlay5Reader
+00000003 _sizeof_CallMouseReader
+00000003 _sizeof_CallScopeReader
+00000003 _sizeof_IrqHandler
+0000000c _sizeof_DefaultIrqHandler
+00000054 _sizeof_tilemapFlush
+00000072 _sizeof_tcc_mul16
+0000006e _sizeof_tcc_div16
+00000009 _sizeof_tcc_mod16
+0000002f _sizeof_tcc_sdiv16
+0000002d _sizeof_tcc_smod16
+0000004c _sizeof_DataInitStart
+00000000 _sizeof_DataInitEnd
+0000007e _sizeof_sfx_blip_brr
+00000000 _sizeof_sfx_blip_brr_end
+000002eb _sizeof_sfx_crack_brr
+00000000 _sizeof_sfx_crack_brr_end
+000005d6 _sizeof_sfx_eat_brr
+00000000 _sizeof_sfx_eat_brr_end
+000003e7 _sizeof_sfx_hurt_brr
+00000000 _sizeof_sfx_hurt_brr_end
+000000fc _sizeof_sfx_move_brr
+00000000 _sizeof_sfx_move_brr_end
+000001f8 _sizeof_sfx_select_brr
+00000000 _sizeof_sfx_select_brr_end
+000008c1 _sizeof_sfx_shatter_brr
+00000000 _sizeof_sfx_shatter_brr_end
+000007c5 _sizeof_sfx_spare_brr
+00000000 _sizeof_sfx_spare_brr_end
+000000a2 _sizeof_sfx_temmie_brr
+00000000 _sizeof_sfx_temmie_brr_end
+00002000 _sizeof_sprites_tiles
+00000000 _sizeof_sprites_tiles_end
+00000020 _sizeof_sprites_pal
+00000000 _sizeof_sprites_pal_end
+00000021 _sizeof_main
+00000012 _sizeof_sprites.platform
+00000060 _sizeof_box_tiles.platform
+00000001 _sizeof_fixed_end.platform
+00000001 _sizeof_fixed_used.platform
+00000008 _sizeof_piece_style.platform
+00000002 _sizeof_pad_pressed.platform
+00000002 _sizeof_pad_held.platform
+00000002 _sizeof_frame_counter.platform
+00000001 _sizeof_tiles_dirty.platform
+00000001 _sizeof_next_slot.platform
+00000001 _sizeof_used_slots.platform
+00000100 _sizeof_arm_tiles.platform
+00000270 _sizeof_plat_init
+00000031 _sizeof_plat_frame
+00000006 _sizeof_plat_pressed
+00000006 _sizeof_plat_held
+00000006 _sizeof_plat_frame_count
+0000000f _sizeof_plat_text_color
+0000002f _sizeof_plat_print
+00000034 _sizeof_plat_putc
+00000029 _sizeof_plat_print_u16
+00000035 _sizeof_plat_clear
+00000037 _sizeof_put_tile.platform
+0000002d _sizeof_plat_put_tile
+0000012a _sizeof_plat_box
+00000025 _sizeof_plat_soul
+00000025 _sizeof_plat_soul_tile
+0000000b _sizeof_plat_soul_hide
+0000006e _sizeof_plat_face
+0000000c _sizeof_plat_fixed_begin
+00000081 _sizeof_plat_fixed_end
+00000014 _sizeof_plat_sprites_begin
+0000004d _sizeof_plat_pieces
+0000006f _sizeof_plat_image
+00000059 _sizeof_plat_sprites_end
+00000004 _sizeof_plat_rand
+00000004 _sizeof_plat_seed
+000000cc _sizeof_sfx_table.sound
+00000001 _sizeof_audio_ok.sound
+000000c8 _sizeof_sound_init
+00000077 _sizeof_sound_sfx
+00000003 _sizeof_sound_bgm
+00000001 _sizeof_tb_finished.textbox
+00000004 _sizeof_tb_text.textbox
+00000002 _sizeof_tb_pos.textbox
+00000001 _sizeof_tb_x0.textbox
+00000001 _sizeof_tb_y0.textbox
+00000001 _sizeof_tb_w.textbox
+00000001 _sizeof_tb_h.textbox
+00000001 _sizeof_tb_cx.textbox
+00000001 _sizeof_tb_cy.textbox
+00000001 _sizeof_tb_timer.textbox
+00000001 _sizeof_tb_count.textbox
+00000001 _sizeof_tb_blip.textbox
+00000001 _sizeof_tb_fresh.textbox
+00000001 _sizeof_tb_indent.textbox
+000000c7 _sizeof_tb_start
+00000025 _sizeof_newline.textbox
+000001eb _sizeof_step.textbox
+000000d9 _sizeof_tb_update
+00000016 _sizeof_tb_finish
+0000000d _sizeof_tb_done
+00000034 _sizeof_content_string.2
+00000004 _sizeof_txt_encounter
+0000005d _sizeof_content_string.3
+00000004 _sizeof_txt_check
+0000001b _sizeof_content_string.4
+00000004 _sizeof_txt_talk
+00000027 _sizeof_content_string.5
+00000004 _sizeof_txt_feed
+00000021 _sizeof_content_string.6
+00000004 _sizeof_txt_feed_prompt
+0000001e _sizeof_content_string.7
+00000004 _sizeof_txt_fight_stub
+00000032 _sizeof_content_string.8
+00000004 _sizeof_txt_item_have
+0000001a _sizeof_content_string.9
+00000004 _sizeof_txt_item_none
+00000021 _sizeof_content_string.10
+00000022 _sizeof_content_string.11
+0000001d _sizeof_content_string.12
+0000001d _sizeof_content_string.13
+0000001d _sizeof_content_string.14
+0000002e _sizeof_content_string.15
+00000018 _sizeof_flavor_pool
+00000015 _sizeof_content_string.16
+00000017 _sizeof_content_string.17
+00000017 _sizeof_content_string.18
+0000000c _sizeof_neutral_pool
+00000012 _sizeof_content_string.19
+00000004 _sizeof_say_no_flakes
+00000008 _sizeof_content_string.20
+00000004 _sizeof_say_foob
+00000016 _sizeof_content_string.21
+00000004 _sizeof_say_win
+00000021 _sizeof_content_string.22
+00000004 _sizeof_say_refused
+00000020 _sizeof_content_string.23
+00000004 _sizeof_out_spared
+00000027 _sizeof_content_string.24
+00000004 _sizeof_out_fed
+0000002a _sizeof_content_string.25
+00000004 _sizeof_out_left
+0000000c _sizeof_content_string.26
+00000004 _sizeof_out_lose
+00000010 _sizeof_content_string.27
+00000004 _sizeof_ui_status
+00000008 _sizeof_content_string.28
+00000004 _sizeof_ui_spare
+00000004 _sizeof_content_string.29
+00000004 _sizeof_ui_yes
+00000003 _sizeof_content_string.30
+00000004 _sizeof_ui_no
+0000000c _sizeof_content_string.31
+00000004 _sizeof_ui_press_start
+00000001 _sizeof_refusal_as_picture
+00000006 _sizeof_content_string.32
+00000004 _sizeof_content_string.33
+00000005 _sizeof_content_string.34
+00000006 _sizeof_content_string.35
+00000010 _sizeof_menu_labels
+00000004 _sizeof_menu_cols
+00000008 _sizeof_content_string.36
+00000007 _sizeof_content_string.37
+00000015 _sizeof_content_string.38
+0000000c _sizeof_act_labels
+00000004 _sizeof_text_box
+0000000c _sizeof_atk_box
+00000002 _sizeof_neutral_attacks
+0000000a _sizeof_tall_boxes
+00000004 _sizeof_tall_leg_x
+00000004 _sizeof_tall_leg_phase
+00000001 _sizeof_tall_leg_top
+00000001 _sizeof_tall_cage_x
+00000028 _sizeof_tall_params
+0000000e _sizeof_arm_params
+00000040 _sizeof_sine64
+00000004 _sizeof_dir_dx.attacks
+00000004 _sizeof_dir_dy.attacks
+00000004 _sizeof_dir_bit.attacks
+00000002 _sizeof_board_l
+00000002 _sizeof_board_r
+00000002 _sizeof_board_t
+00000002 _sizeof_board_b
+00000001 _sizeof_atk_kind.attacks
+00000002 _sizeof_atk_timer.attacks
+00000004 _sizeof_tp.attacks
+00000002 _sizeof_tem_x.attacks
+00000002 _sizeof_walk_target.attacks
+00000002 _sizeof_walk_speed.attacks
+00000001 _sizeof_walk_pause.attacks
+00000002 _sizeof_feint_left.attacks
+00000001 _sizeof_sway_phase.attacks
+00000108 _sizeof_leg_ms.attacks
+00000001 _sizeof_leg_n.attacks
+00000100 _sizeof_grid.attacks
+00000001 _sizeof_gcols.attacks
+00000001 _sizeof_grows.attacks
+00000001 _sizeof_tile_c0.attacks
+00000001 _sizeof_tile_r0.attacks
+00000040 _sizeof_cell_c.attacks
+00000040 _sizeof_cell_r.attacks
+00000001 _sizeof_cells.attacks
+00000001 _sizeof_arm_dir.attacks
+00000002 _sizeof_arm_prog.attacks
+00000001 _sizeof_arm_phase.attacks
+00000001 _sizeof_arm_wait.attacks
+00000002 _sizeof_prev_sx.attacks
+00000002 _sizeof_prev_sy.attacks
+00000002 _sizeof_traced.attacks
+0000000c _sizeof_soul_hx.attacks
+0000000c _sizeof_soul_hy.attacks
+0000007e _sizeof_hits_soul.attacks
+00000014 _sizeof_abs16.attacks
+0000001e _sizeof_rand_range.attacks
+00000060 _sizeof_leg_piece.attacks
+00000004 _sizeof_tall_lo.attacks
+00000008 _sizeof_tall_hi.attacks
+00000083 _sizeof_cell_set.attacks
+00000045 _sizeof_cell_mask.attacks
+000002b0 _sizeof_arm_turn.attacks
+000000a4 _sizeof_arm_choose.attacks
+000000b5 _sizeof_arm_begin_retract.attacks
+00000055 _sizeof_arm_reset.attacks
+00000259 _sizeof_atk_start
+0000113b _sizeof_atk_update
+00000003 _sizeof_battle_string.5
+00000002 _sizeof_battle_string.6
+00000008 _sizeof_battle_string.10
+00000008 _sizeof_battle_string.11
+00000008 _sizeof_battle_string.12
+00000008 _sizeof_battle_string.13
+00000010 _sizeof_battle_atk_names.9
+0000000c _sizeof_battle_string.14
+00000002 _sizeof_battle_string.15
+00000002 _sizeof_battle_string.16
+00000007 _sizeof_battle_string.17
+00000005 _sizeof_battle_string.18
+00000001 _sizeof_battle_drawn.20
+00000001 _sizeof_battle_string.28
+00000001 _sizeof_battle_state
+00000001 _sizeof_battle_outcome
+00000001 _sizeof_player_hp
+00000001 _sizeof_temmie_sparable
+00000001 _sizeof_has_flakes
+00000002 _sizeof_soul_x
+00000002 _sizeof_soul_y
+00000001 _sizeof_invuln.battle
+00000001 _sizeof_hp_dirty.battle
+00000001 _sizeof_menu_cursor.battle
+00000001 _sizeof_sub_cursor.battle
+00000004 _sizeof_flavor.battle
+00000001 _sizeof_look.battle
+00000001 _sizeof_show_smug_text.battle
+00000001 _sizeof_after_narrate.battle
+00000008 _sizeof_enemy_lines.battle
+00000001 _sizeof_enemy_count.battle
+00000001 _sizeof_enemy_index.battle
+00000001 _sizeof_enemy_picture.battle
+00000001 _sizeof_after_enemy.battle
+00000001 _sizeof_next_attack.battle
+00000001 _sizeof_pending_outcome.battle
+00000001 _sizeof_dbg_force.battle
+00000001 _sizeof_death_timer.battle
+00000002 _sizeof_death_x.battle
+00000002 _sizeof_death_y.battle
+0000000c _sizeof_shard_x.battle
+0000000c _sizeof_shard_y.battle
+0000000c _sizeof_shard_vx.battle
+0000000c _sizeof_shard_vy.battle
+0000001a _sizeof_rand_below.battle
+00000120 _sizeof_draw_hp.battle
+000000c0 _sizeof_draw_menu_buttons.battle
+000000be _sizeof_draw_debug.battle
+0000007e _sizeof_show_box.battle
+0000001e _sizeof_clear_bubble.battle
+00000026 _sizeof_narrate_text.battle
+0000003c _sizeof_enter_menu.battle
+00000056 _sizeof_enter_narrate.battle
+0000005c _sizeof_enemy_say.battle
+00000092 _sizeof_start_enemy_line.battle
+00000085 _sizeof_enter_enemy_talk.battle
+00000144 _sizeof_enter_outcome.battle
+0000005e _sizeof_battle_hurt
+0000007f _sizeof_battle_init
+00000d6c _sizeof_battle_update
+00000010 _sizeof_ms_soul.sprite_layout
+0000000c _sizeof_img_soul
+00000010 _sizeof_ms_soul_broken.sprite_layout
+0000000c _sizeof_img_soul_broken
+00000010 _sizeof_ms_shard_a.sprite_layout
+0000000c _sizeof_img_shard_a
+00000010 _sizeof_ms_shard_b.sprite_layout
+0000000c _sizeof_img_shard_b
+00000058 _sizeof_ms_idle.sprite_layout
+0000000c _sizeof_img_idle
+00000010 _sizeof_ms_face.sprite_layout
+0000000c _sizeof_img_face
+00000058 _sizeof_ms_smug.sprite_layout
+0000000c _sizeof_img_smug
+000000a8 _sizeof_ms_tall.sprite_layout
+0000000c _sizeof_img_tall
+00000010 _sizeof_ms_leg.sprite_layout
+0000000c _sizeof_img_leg
+00000010 _sizeof_ms_foot.sprite_layout
+0000000c _sizeof_img_foot
+00000010 _sizeof_ms_arm_line.sprite_layout
+0000000c _sizeof_img_arm_line
+00000010 _sizeof_ms_arm_head.sprite_layout
+0000000c _sizeof_img_arm_head
+000000d0 _sizeof_ms_smug_text.sprite_layout
+0000000c _sizeof_img_smug_text
+00000035 _sizeof_apuWaitBoot
+0000004f _sizeof_apuUpload
+00000027 _sizeof_apuExecute
+00000027 _sizeof_apuReset
+00000001 _sizeof_audio_ready.audio
+00000001 _sizeof_audio_seq.audio
+00000001 _sizeof_audio_mvol.audio
+00000050 _sizeof_voice_mirror.audio
+00000200 _sizeof_sample_mirror.audio
+00000002 _sizeof_sample_next_free.audio
+00000001 _sizeof_audio_echo_reserved.audio
+00000001 _sizeof_audio_rr_voice.audio
+00000001 _sizeof_audio_pending.audio
+0000004e _sizeof_cmd_wait.audio
+00000081 _sizeof_cmd_post.audio
+00000031 _sizeof_cmd_send.audio
+00000149 _sizeof_audioInit
+0000023a _sizeof_audioLoadSample
+00000033 _sizeof_audioPlaySampleEx
+000002e9 _sizeof_audioPlaySampleOn
+000002c0 _sizeof_audio_driver_blob
+00000000 _sizeof_audio_driver_blob_end
+00000083 _sizeof_audio_stream_blocks
+00000001 _sizeof_bg12nba_shadow
+00000001 _sizeof_bg34nba_shadow.background
+0000007f _sizeof_bgSetMapPtr
+000000db _sizeof_bgSetGfxPtr
+00000004 _sizeof_bg_scroll_bit
+00000001 _sizeof_console_brightness
+00000001 _sizeof_console_force_blanked
+00000004 _sizeof___opensnes_force_emit_getFrameCount
+00000001 _sizeof_is_pal_system.console
+00000002 _sizeof_rand_seed.console
+00000006 _sizeof_getFrameCount
+000000eb _sizeof_consoleInit
+0000001b _sizeof_setScreenOn
+00000040 _sizeof_rngNext
+00000012 _sizeof_rngSeed
+00000081 _sizeof_setMode
+00000035 _sizeof_dmaCopyVram
+00000033 _sizeof_dmaCopyCGram
+00000032 _sizeof_dmaCopyOam
+00000073 _sizeof_dmaCopyVramMode7
+00000009 _sizeof_clearNmiFlag
+00000009 _sizeof_clearIrqFlag
+00000002 _sizeof_unmaskIrq
+0000001f _sizeof_oamInit
+000000a9 _sizeof_oamHide
+000000a7 _sizeof_oamClear
+00000160 _sizeof_oamDrawMetasprite
+00000200 _sizeof_oam_ext_tab
+00000074 _sizeof_oamSet
+00000040 _sizeof_oamSetSize
+00000001 _sizeof_text_cursor_x
+00000001 _sizeof_text_cursor_y
+00000011 _sizeof_text_hex_chars.15
+00000800 _sizeof_tilemapBuffer
+00000008 _sizeof_text_config
+0000001d _sizeof_text_dirty.text
+00000069 _sizeof_build_tile_entry.text
+00000041 _sizeof_textInit
+0000002c _sizeof_textLoadFont
+00000021 _sizeof_textSetPos
+00000156 _sizeof_textPutChar
+00000174 _sizeof_textPrint
+00000045 _sizeof_textPrintAt
+000001a0 _sizeof_textPrintU16
+0000001a _sizeof_textClear
+00000162 _sizeof_textClearRect
+00000015 _sizeof_textFlush
+0000008b _sizeof_textModeInit
+00000600 _sizeof_opensnes_font_2bpp
+00000000 _sizeof_opensnes_font_2bpp_end
+00000027 _sizeof_asm_textDMAFont
+0000001f _sizeof_asm_textFillBuffer
+0000004e _sizeof_asm_textRun
+0000013f _sizeof_tcc_mul32
+00000002 _sizeof_mul32_lo
+00000002 _sizeof_mul32_hi
+0000001f _sizeof_tcc_udivmod32
+000000ad _sizeof_tcc_sdivmod32
+0000009f _sizeof_div32_ucore
+00000002 _sizeof_div32_ql
+00000002 _sizeof_div32_qh
+00000002 _sizeof_div32_rl
+00000002 _sizeof_div32_rh
+00000002 _sizeof_div32_div_lo
+00000002 _sizeof_div32_div_hi
+00000002 _sizeof_div32_dvd_sign
+00000002 _sizeof_div32_quot_sign
+
+[sections]
+00038000 07:0000 8000 00002000 asset.sprites_tiles
+000006d3 00:06d3 86d3 0000113b .text.atk_update
+0000180e 00:180e 980e 00000d6c .text.battle_update
+0003a000 07:2000 a000 000008c1 asset.sfx_shatter_brr
+0003a8c1 07:28c1 a8c1 000007c5 asset.sfx_spare_brr
+0000257a 00:257a a57a 00000600 .text_font_rodata
+0003b086 07:3086 b086 000005d6 asset.sfx_eat_brr
+0003b65c 07:365c b65c 000003e7 asset.sfx_hurt_brr
+0003ba43 07:3a43 ba43 000002eb asset.sfx_crack_brr
+00002b7a 00:2b7a ab7a 000002e9 .text.audioPlaySampleOn
+00002e63 00:2e63 ae63 000002c0 .audio_blob
+00003123 00:3123 b123 000002b0 .text.arm_turn.attacks
+000033d3 00:33d3 b3d3 00000270 .text.plat_init
+00003643 00:3643 b643 00000259 .text.atk_start
+0000389c 00:389c b89c 0000023a .text.audioLoadSample
+0003bd2e 07:3d2e bd2e 00000200 .rodata.oam_ext_tab
+0003bf2e 07:3f2e bf2e 000001f8 asset.sfx_select_brr
+00003ad6 00:3ad6 bad6 000001eb .text.step.textbox
+00000244 00:0244 8244 000001ea .nmi
+00003cc1 00:3cc1 bcc1 000001a0 .text.textPrintU16
+00003e61 00:3e61 be61 00000174 .text.textPrint
+0003c126 07:4126 c126 0000016b .div32
+00003fd5 00:3fd5 bfd5 00000162 .text.textClearRect
+00004137 00:4137 c137 00000160 .text.oamDrawMetasprite
+00004297 00:4297 c297 00000156 .text.textPutChar
+000043ed 00:43ed c3ed 00000149 .text.audioInit
+00000000 00:0000 8000 00000145 .runtime
+00004536 00:4536 c536 00000144 .text.enter_outcome.battle
+0003c291 07:4291 c291 0000013f .mul32
+0000467a 00:467a c67a 0000012a .text.plat_box
+000047a4 00:47a4 c7a4 00000121 .dma_asm
+000048c5 00:48c5 c8c5 00000120 .text.draw_hp.battle
+0000042e 00:042e 842e 0000011c .init
+0003c3d0 07:43d0 c3d0 000000fc asset.sfx_move_brr
+000049e5 00:49e5 c9e5 000000eb .text.consoleInit
+00004ad0 00:4ad0 cad0 000000db .text.bgSetGfxPtr
+00004bab 00:4bab cbab 000000d9 .text.tb_update
+00000145 00:0145 8145 000000d8 .start
+00004c84 00:4c84 cc84 000000d2 .apu_asm
+0003c4cc 07:44cc c4cc 000000d0 .rodata.25
+0003c59c 07:459c c59c 000000cc .rodata.1
+00004d56 00:4d56 cd56 000000c8 .text.sound_init
+00004e1e 00:4e1e ce1e 000000c7 .text.tb_start
+00004ee5 00:4ee5 cee5 000000c0 .text.draw_menu_buttons.battle
+00004fa5 00:4fa5 cfa5 000000be .text.draw_debug.battle
+00005063 00:5063 d063 000000b5 .text.arm_begin_retract.attacks
+00005118 00:5118 d118 000000a9 .text.oamHide
+0003c668 07:4668 c668 000000a8 .rodata.15
+000051c1 00:51c1 d1c1 000000a7 .text.oamClear
+00005268 00:5268 d268 000000a4 .text.arm_choose.attacks
+0003c710 07:4710 c710 000000a2 asset.sfx_temmie_brr
+0000530c 00:530c d30c 00000092 .text.start_enemy_line.battle
+0000539e 00:539e d39e 0000008b .text.textModeInit
+00005429 00:5429 d429 00000085 .text.enter_enemy_talk.battle
+000054ae 00:54ae d4ae 00000083 .text.cell_set.attacks
+00005531 00:5531 d531 00000083 .text.audio_stream_blocks
+000005ef 00:05ef 85ef 00000081 .text.cmd_post.audio
+000055b4 00:55b4 d5b4 00000081 .text.setMode
+00005635 00:5635 d635 00000081 .text.plat_fixed_end
+000056b6 00:56b6 d6b6 0000007f .text.battle_init
+00005735 00:5735 d735 0000007f .text.bgSetMapPtr
+0003c7b2 07:47b2 c7b2 0000007e asset.sfx_blip_brr
+000057b4 00:57b4 d7b4 0000007e .text.hits_soul.attacks
+00005832 00:5832 d832 0000007e .text.show_box.battle
+000058b0 00:58b0 d8b0 00000077 .text.sound_sfx
+00005927 00:5927 d927 00000074 .text.oamSet
+0000599b 00:599b d99b 0000006f .text.plat_image
+00005a0a 00:5a0a da0a 0000006e .text.plat_face
+00005a78 00:5a78 da78 00000069 .text.build_tile_entry.text
+0003c830 07:4830 c830 00000060 .rodata.2
+00005ae1 00:5ae1 dae1 00000060 .text.leg_piece.attacks
+00005b41 00:5b41 db41 0000005e .text.battle_hurt
+0003c890 07:4890 c890 0000005d .rodata.3
+00005b9f 00:5b9f db9f 0000005c .text.enemy_say.battle
+00005bfb 00:5bfb dbfb 00000059 .text.plat_sprites_end
+0003c8ed 07:48ed c8ed 00000058 .rodata.9
+0003c945 07:4945 c945 00000058 .rodata.13
+00005c54 00:5c54 dc54 00000056 .text.enter_narrate.battle
+00005caa 00:5caa dcaa 00000055 .text.arm_reset.attacks
+0000067f 00:067f 867f 00000054 .tilemap_flush
+0000054a 00:054a 854a 00000050 .copy_init
+00005cff 00:5cff dcff 0000004e .text.cmd_wait.audio
+00005d4d 00:5d4d dd4d 0000004e .text_run
+00005d9b 00:5d9b dd9b 0000004d .text.plat_pieces
+00005de8 00:5de8 dde8 00000045 .text.textPrintAt
+00005e2d 00:5e2d de2d 00000045 .text.cell_mask.attacks
+00005e72 00:5e72 de72 00000041 .text.textInit
+00005eb3 00:5eb3 deb3 00000040 .text.rngNext
+00005ef3 00:5ef3 def3 00000040 .text.oamSetSize
+0003c99d 07:499d c99d 00000040 .rodata.75
+00005f33 00:5f33 df33 0000003c .text.enter_menu.battle
+00005f6f 00:5f6f df6f 00000037 .text.put_tile.platform
+00005fa6 00:5fa6 dfa6 00000035 .text.plat_clear
+00005fdb 00:5fdb dfdb 00000034 .text.plat_putc
+0003c9dd 07:49dd c9dd 00000034 .rodata.1
+0000600f 00:600f e00f 00000033 .text.audioPlaySampleEx
+0003ca11 07:4a11 ca11 00000032 .rodata.13
+00006042 00:6042 e042 00000031 .text.cmd_send.audio
+00006073 00:6073 e073 00000031 .text.plat_frame
+000060a4 00:60a4 e0a4 0000002f .text.plat_print
+0003ca43 07:4a43 ca43 0000002e .rodata.22
+000060d3 00:60d3 e0d3 0000002d .text.plat_put_tile
+00006100 00:6100 e100 0000002c .text.textLoadFont
+0003ca71 07:4a71 ca71 0000002a .rodata.40
+0000612c 00:612c e12c 00000029 .text.plat_print_u16
+0003ca9b 07:4a9b ca9b 00000028 .rodata.73
+0003cac3 07:4ac3 cac3 00000027 .rodata.38
+00006155 00:6155 e155 00000027 .text_dma_font
+0003caea 07:4aea caea 00000027 .rodata.7
+0000617c 00:617c e17c 00000026 .text.narrate_text.battle
+000061a2 00:61a2 e1a2 00000025 .text.plat_soul
+000061c7 00:61c7 e1c7 00000025 .text.newline.textbox
+000061ec 00:61ec e1ec 00000025 .text.plat_soul_tile
+0003cb11 07:4b11 cb11 00000022 .rodata.18
+00000223 00:0223 8223 00000021 .text.main
+0003cb33 07:4b33 cb33 00000021 .rodata.34
+0003cb54 07:4b54 cb54 00000021 .rodata.17
+00006211 00:6211 e211 00000021 .text.textSetPos
+0003cb75 07:4b75 cb75 00000021 .rodata.9
+0003cb96 07:4b96 cb96 00000020 .rodata.36
+0003cbb6 07:4bb6 cbb6 00000020 asset.sprites_pal
+00006232 00:6232 e232 0000001f .text_fill_buffer
+00006251 00:6251 e251 0000001f .text.oamInit
+00006270 00:6270 e270 0000001e .text.clear_bubble.battle
+0000628e 00:628e e28e 0000001e .text.rand_range.attacks
+0003cbd6 07:4bd6 cbd6 0000001e .rodata.11
+0003cbf4 07:4bf4 cbf4 0000001d .rodata.20
+0003cc11 07:4c11 cc11 0000001d .rodata.19
+0003cc2e 07:4c2e cc2e 0000001d .rodata.21
+000062ac 00:62ac e2ac 0000001d .text.text_dirty.text
+000062c9 00:62c9 e2c9 0000001b .text.setScreenOn
+0003cc4b 07:4c4b cc4b 0000001b .rodata.5
+000062e4 00:62e4 e2e4 0000001a .text.rand_below.battle
+0003cc66 07:4c66 cc66 0000001a .rodata.15
+000062fe 00:62fe e2fe 0000001a .text.textClear
+0003cc80 07:4c80 cc80 00000018 .rodata.23
+0003cc98 07:4c98 cc98 00000017 .rodata.25
+0003ccaf 07:4caf ccaf 00000017 .rodata.26
+0003ccc6 07:4cc6 ccc6 00000016 .rodata.32
+00006318 00:6318 e318 00000016 .text.tb_finish
+0003ccdc 07:4cdc ccdc 00000015 .rodata.63
+0000632e 00:632e e32e 00000015 .text.textFlush
+0003ccf1 07:4cf1 ccf1 00000015 .rodata.24
+00006343 00:6343 e343 00000014 .text.plat_sprites_begin
+00006357 00:6357 e357 00000014 .text.abs16.attacks
+0003cd06 07:4d06 cd06 00000012 .rodata.28
+0003cd18 07:4d18 cd18 00000012 .rodata.1
+0000636b 00:636b e36b 00000012 .text.rngSeed
+0003cd2a 07:4d2a cd2a 00000010 .rodata.59
+0003cd3a 07:4d3a cd3a 00000010 .rodata.7
+0003cd4a 07:4d4a cd4a 00000010 .rodata.5
+0003cd5a 07:4d5a cd5a 00000010 .rodata.17
+0003cd6a 07:4d6a cd6a 00000010 .rodata.3
+0003cd7a 07:4d7a cd7a 00000010 .rodata.1
+0003cd8a 07:4d8a cd8a 00000010 .rodata.44
+0003cd9a 07:4d9a cd9a 00000010 .rodata.23
+0003cdaa 07:4daa cdaa 00000010 .rodata.7
+0003cdba 07:4dba cdba 00000010 .rodata.11
+0003cdca 07:4dca cdca 00000010 .rodata.19
+0003cdda 07:4dda cdda 00000010 .rodata.21
+00000670 00:0670 8670 0000000f .irq
+0000637d 00:637d e37d 0000000f .text.plat_text_color
+0003cdea 07:4dea cdea 0000000e .rodata.74
+0000638c 00:638c e38c 0000000d .text.tb_done
+0003cdf8 07:4df8 cdf8 0000000c .rodata.8
+00006399 00:6399 e399 0000000c .text.soul_hy.attacks
+000063a5 00:63a5 e3a5 0000000c .text.plat_fixed_begin
+0003ce04 07:4e04 ce04 0000000c .rodata.26
+000063b1 00:63b1 e3b1 0000000c .text.soul_hx.attacks
+0003ce10 07:4e10 ce10 0000000c .rodata.16
+0003ce1c 07:4e1c ce1c 0000000c .rodata.18
+0003ce28 07:4e28 ce28 0000000c .rodata.20
+0003ce34 07:4e34 ce34 0000000c .rodata.14
+0003ce40 07:4e40 ce40 0000000c .rodata.66
+0003ce4c 07:4e4c ce4c 0000000c .rodata.64
+0003ce58 07:4e58 ce58 0000000c .rodata.12
+0003ce64 07:4e64 ce64 0000000c .rodata.22
+0003ce70 07:4e70 ce70 0000000c .rodata.42
+0003ce7c 07:4e7c ce7c 0000000c .rodata.10
+0003ce88 07:4e88 ce88 0000000c .rodata.8
+0003ce94 07:4e94 ce94 0000000c .rodata.2
+0003cea0 07:4ea0 cea0 0000000c .rodata.24
+0003ceac 07:4eac ceac 0000000c .rodata.4
+0003ceb8 07:4eb8 ceb8 0000000c .rodata.27
+0003cec4 07:4ec4 cec4 0000000c .rodata.6
+0003ced0 07:4ed0 ced0 0000000c .rodata.52
+000063bd 00:63bd e3bd 0000000b .text.plat_soul_hide
+0003cedc 07:4edc cedc 0000000a .rodata.68
+0000059a 00:059a 859a 00000009 .reader_calls
+0003cee6 07:4ee6 cee6 00000008 .rodata.4
+0003ceee 07:4eee ceee 00000008 .rodata.61
+0003cef6 07:4ef6 cef6 00000008 .rodata.46
+0003cefe 07:4efe cefe 00000008 .rodata.30
+0003cf06 07:4f06 cf06 00000008 .rodata.3
+0003cf0e 07:4f0e cf0e 00000008 .rodata.6
+0003cf16 07:4f16 cf16 00000008 .rodata.5
+000063c8 00:63c8 e3c8 00000008 .text.tall_hi.attacks
+0003cf1e 07:4f1e cf1e 00000008 .rodata.5
+0003cf26 07:4f26 cf26 00000007 .rodata.62
+0003cf2d 07:4f2d cf2d 00000007 .rodata.11
+0000021d 00:021d 821d 00000006 .empty_handler
+0003cf34 07:4f34 cf34 00000006 .rodata.58
+000063d0 00:63d0 e3d0 00000006 .text.plat_pressed
+000063d6 00:63d6 e3d6 00000006 .text.getFrameCount
+0003cf3a 07:4f3a cf3a 00000006 .rodata.55
+000063dc 00:63dc e3dc 00000006 .text.plat_held
+000063e2 00:63e2 e3e2 00000006 .text.plat_frame_count
+0003cf40 07:4f40 cf40 00000005 .rodata.57
+0003cf45 07:4f45 cf45 00000005 .rodata.12
+0003cf4a 07:4f4a cf4a 00000004 .rodata.48
+0003cf4e 07:4f4e cf4e 00000004 .rodata.3
+0003cf52 07:4f52 cf52 00000004 .rodata.1
+0003cf56 07:4f56 cf56 00000004 .rodata.70
+0003cf5a 07:4f5a cf5a 00000004 .rodata.69
+000063e8 00:63e8 e3e8 00000004 .text.plat_rand
+0003cf5e 07:4f5e cf5e 00000004 .rodata.43
+000063ec 00:63ec e3ec 00000004 .text.tall_lo.attacks
+000063f0 00:63f0 e3f0 00000004 .text.plat_seed
+0003cf62 07:4f62 cf62 00000004 .rodata.6
+0003cf66 07:4f66 cf66 00000004 .rodata.10
+0003cf6a 07:4f6a cf6a 00000004 .rodata.53
+0003cf6e 07:4f6e cf6e 00000004 .rodata.14
+0003cf72 07:4f72 cf72 00000004 .rodata.16
+0003cf76 07:4f76 cf76 00000004 .rodata.29
+0003cf7a 07:4f7a cf7a 00000004 .rodata.31
+0003cf7e 07:4f7e cf7e 00000004 .rodata.33
+0003cf82 07:4f82 cf82 00000004 .rodata.35
+0003cf86 07:4f86 cf86 00000004 .rodata.37
+0003cf8a 07:4f8a cf8a 00000004 .rodata.39
+0003cf8e 07:4f8e cf8e 00000004 .rodata.41
+0003cf92 07:4f92 cf92 00000004 .rodata.2
+0003cf96 07:4f96 cf96 00000004 .rodata.49
+0003cf9a 07:4f9a cf9a 00000004 .rodata.45
+0003cf9e 07:4f9e cf9e 00000004 .rodata.65
+0003cfa2 07:4fa2 cfa2 00000004 .rodata.60
+0003cfa6 07:4fa6 cfa6 00000004 .rodata.3
+0003cfaa 07:4faa cfaa 00000004 .rodata.bg_scroll_bit
+0003cfae 07:4fae cfae 00000004 .rodata.2
+0003cfb2 07:4fb2 cfb2 00000004 .rodata.4
+0003cfb6 07:4fb6 cfb6 00000004 .rodata.8
+0003cfba 07:4fba cfba 00000004 .rodata.51
+0003cfbe 07:4fbe cfbe 00000004 .rodata.56
+0003cfc2 07:4fc2 cfc2 00000004 .rodata.12
+0003cfc6 07:4fc6 cfc6 00000004 .rodata.47
+000063f4 00:63f4 e3f4 00000003 .text.sound_bgm
+0003cfca 07:4fca cfca 00000003 .rodata.1
+0003cfcd 07:4fcd cfcd 00000003 .rodata.50
+0003cfd0 07:4fd0 cfd0 00000002 .rodata.2
+0003cfd2 07:4fd2 cfd2 00000002 .rodata.10
+0003cfd4 07:4fd4 cfd4 00000002 .rodata.67
+0003cfd6 07:4fd6 cfd6 00000002 .rodata.9
+0003cfd8 07:4fd8 cfd8 00000001 .rodata.72
+0003cfd9 07:4fd9 cfd9 00000001 .rodata.71
+0003cfda 07:4fda cfda 00000001 .rodata.54
+0003cfdb 07:4fdb cfdb 00000001 .rodata.14
+000005a3 00:05a3 85a3 0000004c .data_init
+
+[ramsections]
+00:0520 0520 00000800 .bss.4
+7e:0300 0300 00000220 .oam_buffer
+00:0300 0300 00000220 .reserved_7e_mirror
+7e:0000 2000 00000200 .far.5
+00:00a0 00a0 00000108 .bss.17
+00:01a8 01a8 00000100 .bss.19
+00:0d20 0d20 00000100 .bss.12
+00:0f00 0f00 000000a0 .nmi_registers
+00:0e20 0e20 00000068 .system
+00:02a8 02a8 00000050 .bss.4
+00:0034 0034 00000040 .bss.24
+00:0e88 0e88 00000040 .bss.25
+00:0000 0000 00000034 .registers
+00:0ec8 0ec8 00000023 .scope
+00:0080 0080 00000020 .leaf_frame
+00:0eeb 0eeb 00000011 .data.3
+00:0fa0 0fa0 00000010 .div32_ram
+00:0074 0074 0000000c .bss.43
+00:0fb0 0fb0 0000000c .bss.44
+00:0fbc 0fbc 0000000c .bss.41
+00:0fc8 0fc8 0000000c .bss.42
+00:02f8 02f8 00000008 .bss.5
+00:0fd4 0fd4 00000008 .bss.30
+00:0efc 0efc 00000004 .bss.26
+00:0fdc 0fdc 00000004 .bss.10
+00:0fe0 0fe0 00000004 .mul32_ram
+00:0fe4 0fe4 00000004 .bss.2
+00:0fe8 0fe8 00000002 .bss.6
+00:0fea 0fea 00000002 .bss.20
+00:0fec 0fec 00000002 .bss.33
+00:0fee 0fee 00000002 .bss.32
+00:0ff0 0ff0 00000002 .bss.31
+00:0ff2 0ff2 00000002 .bss.21
+00:0ff4 0ff4 00000002 .bss.5
+00:0ff6 0ff6 00000002 .bss.3
+00:0ff8 0ff8 00000002 .bss.9
+00:0ffa 0ffa 00000002 .bss.6
+00:0ffc 0ffc 00000002 .bss.39
+00:0ffe 0ffe 00000002 .bss.40
+00:1000 1000 00000002 .bss.4
+00:1002 1002 00000002 .bss.5
+00:1004 1004 00000002 .bss.6
+00:1006 1006 00000002 .bss.15
+00:1008 1008 00000002 .bss.7
+00:100a 100a 00000002 .bss.13
+00:100c 100c 00000002 .bss.12
+00:100e 100e 00000002 .bss.11
+00:1010 1010 00000002 .bss.7
+00:1012 1012 00000002 .bss.8
+00:1014 1014 00000002 .bss.28
+00:1016 1016 00000001 .data.3
+00:1017 1017 00000001 .bss.16
+00:1018 1018 00000001 .bss.18
+00:1019 1019 00000001 .bss.20
+00:101a 101a 00000001 .bss.21
+00:101b 101b 00000001 .bss.22
+00:101c 101c 00000001 .bss.23
+00:101d 101d 00000001 .bss.26
+00:101e 101e 00000001 .bss.27
+00:101f 101f 00000001 .bss.29
+00:1020 1020 00000001 .bss.30
+00:1021 1021 00000001 .data.13
+00:1022 1022 00000001 .bss.15
+00:1023 1023 00000001 .bss.16
+00:1024 1024 00000001 .bss.17
+00:1025 1025 00000001 .bss.18
+00:1026 1026 00000001 .bss.19
+00:1027 1027 00000001 .bss.22
+00:1028 1028 00000001 .bss.4
+00:1029 1029 00000001 .bss.23
+00:102a 102a 00000001 .data.2
+00:102b 102b 00000001 .bss.24
+00:102c 102c 00000001 .data.1
+00:102d 102d 00000001 .bss.25
+00:102e 102e 00000001 .bss.27
+00:102f 102f 00000001 .bss.28
+00:1030 1030 00000001 .bss.29
+00:1031 1031 00000001 .bss.31
+00:1032 1032 00000001 .bss.14
+00:1033 1033 00000001 .bss.33
+00:1034 1034 00000001 .bss.34
+00:1035 1035 00000001 .bss.35
+00:1036 1036 00000001 .data.1
+00:1037 1037 00000001 .bss.2
+00:1038 1038 00000001 .data.2
+00:1039 1039 00000001 .bss.1
+00:103a 103a 00000001 .bss.14
+00:103b 103b 00000001 .bss.13
+00:103c 103c 00000001 .bss.12
+00:103d 103d 00000001 .bss.11
+00:103e 103e 00000001 .bss.10
+00:103f 103f 00000001 .bss.9
+00:1040 1040 00000001 .bss.8
+00:1041 1041 00000001 .bss.7
+00:1042 1042 00000001 .bss.6
+00:1043 1043 00000001 .bss.5
+00:1044 1044 00000001 .bss.4
+00:1045 1045 00000001 .bss.36
+00:1046 1046 00000001 .bss.37
+00:1047 1047 00000001 .data.1
+00:1048 1048 00000001 .bss.38
+00:1049 1049 00000001 .bss.2
+00:104a 104a 00000001 .bss.1
+00:104b 104b 00000001 .bss.2
+00:104c 104c 00000001 .bss.11
+00:104d 104d 00000001 .bss.10
+00:104e 104e 00000001 .bss.9
+00:104f 104f 00000001 .bss.3
+00:1050 1050 00000001 .bss.7
+00:1051 1051 00000001 .bss.8
+00:1052 1052 00000001 .data.4
+00:1053 1053 00000001 .bss.32
+00:1054 1054 00000001 .bss.8
+00:1055 1055 00000001 .bss.9

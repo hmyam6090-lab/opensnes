@@ -1,17 +1,7 @@
 # Credentials
 .env
 
-# Build outputs
-*.o
-*.obj
-*.a
-*.lib
-*.sfc
-*.sym
-*.map
-*.cmap
-*.oops
-*.dbg
+
 
 # Binary executables (rebuilt from source)
 tools/aseprite2snes/aseprite2snes
