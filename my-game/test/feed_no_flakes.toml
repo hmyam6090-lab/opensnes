@@ -1,0 +1,10 @@
+# SELECT (debug) empties the pocket; ACT > Feed: "NO!!! so hungr..." and she leaves.
+rom = "../my-game.sfc"
+frames = 400
+input = "205:0x2000,207:0,210:0x100,212:0,220:0x80,222:0,230:0x400,232:0,240:0x400,242:0,250:0x80,252:0,260:0x8000,262:0,270:0x80,272:0,280:0x8000,282:0,290:0x80,292:0"
+
+[[checkpoint]]
+at_frame = 400
+[checkpoint.values]
+battle_state = 7          # ST_END
+battle_outcome = 3        # OUT_LEFT

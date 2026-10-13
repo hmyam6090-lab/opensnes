@@ -1,0 +1,10 @@
+# MERCY is inert until Temmie is sparable: LEFT wraps FIGHT -> MERCY, A does nothing.
+rom = "../my-game.sfc"
+frames = 260
+input = "210:0x200,212:0,220:0x80,222:0"
+
+[[checkpoint]]
+at_frame = 260
+[checkpoint.values]
+battle_state = 0          # still ST_MENU
+battle_outcome = 0

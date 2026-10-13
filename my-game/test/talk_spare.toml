@@ -1,0 +1,17 @@
+# ACT > Talk makes her sparable; the attack is skipped with START (debug),
+# then MERCY > Spare wins.
+rom = "../my-game.sfc"
+frames = 450
+input = "205:0x20,207:0,210:0x100,212:0,220:0x80,222:0,230:0x400,232:0,240:0x80,242:0,250:0x8000,252:0,260:0x80,262:0,270:0x8000,272:0,280:0x80,282:0,300:0x1000,302:0,340:0x100,342:0,350:0x100,352:0,360:0x80,362:0,370:0x80,372:0"
+
+[[checkpoint]]
+at_frame = 295
+[checkpoint.values]
+battle_state = 6          # ST_DODGE
+temmie_sparable = 1
+
+[[checkpoint]]
+at_frame = 450
+[checkpoint.values]
+battle_state = 7          # ST_END
+battle_outcome = 1        # OUT_SPARED

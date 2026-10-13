@@ -1,0 +1,18 @@
+# R (debug) drops HP to 1, L forces tall Temmie, Check, then stand still:
+# she walks away, a leg hits, and the SOUL breaks: frozen, cracked,
+# shattered (ST_DEATH), then GAME OVER.
+rom = "../my-game.sfc"
+frames = 650
+input = "200:0x10,202:0,205:0x20,207:0,220:0x100,222:0,230:0x80,232:0,240:0x80,242:0,260:0x8000,262:0,270:0x80,272:0,280:0x8000,282:0,290:0x80,292:0"
+
+[[checkpoint]]
+at_frame = 400
+[checkpoint.values]
+battle_state = 8          # ST_DEATH
+player_hp = 0
+
+[[checkpoint]]
+at_frame = 650
+[checkpoint.values]
+battle_state = 7          # ST_END
+battle_outcome = 4        # OUT_LOST
