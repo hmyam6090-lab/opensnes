@@ -19,9 +19,16 @@
 #define GAME_DEBUG 1
 #endif
 
-/** 1 = sound effects through the audio module (res/sfx_*.wav). */
-#ifndef GAME_AUDIO
-#define GAME_AUDIO 1
+/** Sound backend (sound.c). Only one can run: each one owns the SPC700.
+ *  SOUND_GSS      the SNESGSS driver: music (res/gss/music_N.bin) and the
+ *                 sound effects made in the same SNESGSS project
+ *  SOUND_SAMPLES  the OpenSNES audio module: res/sfx_*.wav, no music
+ *  SOUND_OFF      silent */
+#define SOUND_OFF     0
+#define SOUND_SAMPLES 1
+#define SOUND_GSS     2
+#ifndef GAME_SOUND
+#define GAME_SOUND SOUND_GSS
 #endif
 
 /** Does the player start with Temmie Flakes? (debug: SELECT toggles it) */

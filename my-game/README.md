@@ -106,75 +106,110 @@ The three outcome lines in `content.c` (`out_spared`, `out_fed`,
 
 ## Sound
 
-The game plays a sound hook (`sound_sfx(SFX_...)`) at every moment that
-could make a sound. A hook with no sound assigned stays silent. Here is
-every hook, from `src/sound.h`:
+Only one sound backend runs at a time, because each one uploads its own
+program to the SNES sound chip. You choose it with `GAME_SOUND` in
+`src/config.h`.
 
-| Hook | When | Sound now |
-|---|---|---|
-| `SFX_MOVE` | a menu cursor moves | placeholder |
-| `SFX_SELECT` | a menu choice is confirmed | placeholder |
-| `SFX_BACK` | B leaves a sub-menu | none |
-| `SFX_DENIED` | MERCY is pressed before Temmie is sparable | none |
-| `SFX_BLIP` | narration is typing | placeholder |
-| `SFX_TEMMIE_VOICE` | Temmie's speech is typing | placeholder |
-| `SFX_SMUG` | the "can't blame a BARK" picture appears | none |
-| `SFX_ATTACK_START` | an attack begins | none |
-| `SFX_TEMMIE_STEP` | a foot of tall Temmie lands while she walks | none |
-| `SFX_ARM_STEP` | the arm moves one cell | none |
-| `SFX_ARM_RETRACT` | the arm starts pulling back | none |
-| `SFX_HURT` | the SOUL takes damage | placeholder |
-| `SFX_HEART_CRACK` | death: the SOUL cracks | placeholder |
-| `SFX_HEART_SHATTER` | death: the SOUL shatters | placeholder |
-| `SFX_SPARE` | Temmie is spared | placeholder |
-| `SFX_EAT` | Temmie eats the Flakes | placeholder |
-| `SFX_WIN` | you win by feeding her, or she runs off | none |
+- **`SOUND_GSS` (default): SNESGSS.** This plays the music and any sound
+  effects made in the same SNESGSS project. The battle music is
+  `res/gss/music_1.bin`.
+- **`SOUND_SAMPLES`: the SDK's audio module.** This plays the WAV sound
+  effects in `res/sfx_*.wav`, but no music.
 
-There are also music hooks (`sound_bgm`): `BGM_BATTLE` at the start,
-`BGM_WIN`, `BGM_LOSE` at GAME OVER, and `BGM_NONE` when you die.
+The game plays a sound hook at every moment that could make a sound. A
+hook with nothing assigned stays silent.
 
-**To give a hook a sound** (the same three steps are in the comment at the
-top of `src/sound.c`):
+| Hook | When it plays |
+|---|---|
+| `SFX_MOVE` | a menu cursor moves |
+| `SFX_SELECT` | a menu choice is confirmed |
+| `SFX_BACK` | B leaves a sub-menu |
+| `SFX_DENIED` | MERCY is pressed before Temmie is sparable |
+| `SFX_BLIP` | narration is typing |
+| `SFX_TEMMIE_VOICE` | Temmie's speech is typing |
+| `SFX_SMUG` | the "can't blame a BARK" picture appears |
+| `SFX_ATTACK_START` | an attack begins |
+| `SFX_TEMMIE_STEP` | a foot of tall Temmie lands while she walks |
+| `SFX_ARM_STEP` | the arm moves one cell |
+| `SFX_ARM_RETRACT` | the arm starts pulling back |
+| `SFX_HURT` | the SOUL takes damage |
+| `SFX_HEART_CRACK` | death: the SOUL cracks |
+| `SFX_HEART_SHATTER` | death: the SOUL shatters |
+| `SFX_SPARE` | Temmie is spared |
+| `SFX_EAT` | Temmie eats the Flakes |
+| `SFX_WIN` | you win by feeding her, or she runs off |
+| `BGM_BATTLE` | music: the fight starts |
+| `BGM_WIN`, `BGM_LOSE` | music: you win, GAME OVER |
+| `BGM_NONE` | music: stops when you die |
 
-1. Put the sound in `res/` as a WAV file: mono, 16-bit PCM, any sample
-   rate, a short one-shot. For example, `res/sfx_step.wav`. Next to it,
-   add a settings file `res/sfx_step.wav.toml` (copy any existing
-   `res/sfx_*.wav.toml`). It contains:
+### SNESGSS (`SOUND_GSS`)
 
-   ```toml
-   tool = "opensnes-sample"
+From each SNESGSS export you only need `spc700.bin` (the sound driver) and
+the `music_N.bin` files. `gss_data.asm` replaces the exported
+`sounds.asm`, and the exported `sounds.h` isn't used.
 
-   [encode]
-   ```
+- **Update the music:** export again from SNESGSS, copy `spc700.bin` and
+  `music_1.bin` over the ones in `res/gss/`, then run `make`.
+- **Looping is done in code,** so you don't need a loop point in
+  SNESGSS. When the game loads a song, `sound.c` finds each channel's
+  end jump (`FF` followed by an address, which an unlooped song points at
+  its own last byte) and patches it to jump back to that channel's start.
+  `gss_music_loop` in `src/sound.c` sets which songs loop. A song that
+  already has a loop point (Ctrl+Home in SNESGSS) keeps it.
+- **Add another song,** for example a win theme:
+  1. Copy `music_2.bin` into `res/gss/`.
+  2. In `gss_data.asm`, add an `ASSET_SECTION` block that includes it,
+     with the label `gss_music_2`.
+  3. In `src/sound.c`, add `extern const u8 gss_music_2[];`.
+  4. In the `gss_music` table in `src/sound.c`, set
+     `[BGM_WIN] = gss_music_2,`.
 
-   When you run `make`, it converts the WAV and writes `res/sfx_step.h`.
+  A song hook set to `0` stops the music.
+- **Add sound effects:** create them in the same SNESGSS project, then
+  export and copy `spc700.bin` again (the effects travel inside it). The
+  driver numbers them 0, 1, 2… in the order the exported `sounds.h` lists
+  them. Give each hook its number in the `gss_sfx` table in
+  `src/sound.c`, for example `[SFX_HURT] = { 3, 127 },` (effect 3,
+  volume 127). Effects play on channel `GSS_SFX_CHANNEL` (7), so keep the
+  songs on fewer channels than that.
+
+After `INITIALIZE`, the game sends `STEREO` (on). Without it the driver
+runs in mono and plays every voice at full volume on both sides, twice as
+loud as SNESGSS's preview and its `.spc` export. Measured on the same
+emulator with stereo on, the game matches the `.spc`: same loudness, same
+pitch, envelope correlation 0.99.
+
+The code that loads and talks to the driver follows SNESGSS's own
+`snes/sneslib.asm` and `sneslib.h` from the
+[KungFuFurby/snesgss](https://github.com/KungFuFurby/snesgss) copy of
+Shiru's code. The driver is uploaded at `$0200` and sent `INITIALIZE`. To
+play a song, the game sends `LOAD`, uploads the song at the address in
+bytes 14–15 of `spc700.bin`, restarts the driver at `$0200`, and sends
+`MUSIC_PLAY`. The uploads use the SDK's `apu` module. If the driver
+doesn't answer, the game goes silent instead of freezing.
+
+### WAV sound effects (`SOUND_SAMPLES`)
+
+1. Put the sound in `res/` as a WAV file: mono, 16-bit PCM, a short
+   one-shot. For example, `res/sfx_step.wav`. Next to it, add a copy of
+   any `res/sfx_*.wav.toml` named `sfx_step.wav.toml`. `make` converts the
+   WAV and writes `res/sfx_step.h`.
 2. In `src/sound.c`, add `#include "../res/sfx_step.h"` next to the other
    includes.
-3. In `sfx_table` in the same file, fill the hook's row:
-   `[SFX_TEMMIE_STEP] = SFX(sfx_step, 90),`. The number is the volume,
-   from 0 to 127.
+3. Fill the hook's row in `sfx_table`: `[SFX_TEMMIE_STEP] = SFX(sfx_step, 90),`.
 
-**To replace a sound:** overwrite its WAV file and rebuild. You don't need
-to change anything else.
+To replace a sound, overwrite its WAV file and rebuild. The driver holds
+up to 64 samples, in about 58 KB of sound RAM. To regenerate the
+placeholder beeps, run `python3 tools/make_placeholder_sfx.py [names]`.
 
-**To add a new hook:** add an id to the enum in `src/sound.h`, call
-`sound_sfx(SFX_YOUR_ID);` where the event happens, then do the three steps
-above.
-
-**Limits:** the sound driver holds up to 64 samples, in about 58 KB of
-APU RAM. To regenerate the placeholder beeps, run
-`python3 tools/make_placeholder_sfx.py [names]`. Don't run it once you've
-replaced them, because it overwrites the WAVs.
-
-**Music:** `sound_bgm()` doesn't play anything yet. Tracker music needs
-the SDK's `snesmod` module, which drives the sound chip itself and plays
-the effects too. The comment in `src/sound.c` explains how.
+**To add a new hook (either backend):** add an id in `src/sound.h`, call
+`sound_sfx(SFX_YOUR_ID);` where the event happens, then give it a sound
+in the backend's table.
 
 ## Not implemented
 
 - FIGHT shows a "not implemented" line.
 - ITEM only reports whether you hold the Flakes.
-- There is no BGM yet.
 - The game stalls for 1 to 2 frames when a box is redrawn between states.
   Attacks run with no lag frames. Sprites go through the SDK's assembly
   `oamDrawMetasprite`, Temmie's portrait sits in fixed OAM slots, and the

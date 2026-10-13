@@ -4,8 +4,9 @@
  *
  * The game calls sound_sfx() / sound_bgm() at every moment that could make
  * a sound, whether a sound is assigned or not; an id with no sample is
- * silent. How to give a hook a sound: see the comment at the top of
- * sound.c (three steps), or README.md, "Sound".
+ * silent. How to give a hook a sound or a song depends on the backend
+ * (config.h, GAME_SOUND): see the comment at the top of sound.c, or
+ * README.md, "Sound".
  */
 #ifndef GAME_SOUND_H
 #define GAME_SOUND_H

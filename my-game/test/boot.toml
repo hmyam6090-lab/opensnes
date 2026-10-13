@@ -7,7 +7,7 @@ rom = "../my-game.sfc"
 frames = 180
 
 [asserts]
-fbhash = "6d14ebf97d2a4bc7"
+fbhash = "4c9b50e27a8b2857"
 
 [[checkpoint]]
 at_frame = 180
